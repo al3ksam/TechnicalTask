@@ -1,7 +1,7 @@
 ﻿namespace Solutions
 {
     /// <summary>
-    /// Представляет подключение к базе данных MS SQL Server.
+    ///     Представляет подключение к базе данных MS SQL Server.
     /// </summary>
     public interface IDatabase
     {
