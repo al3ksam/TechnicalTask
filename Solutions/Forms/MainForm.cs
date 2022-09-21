@@ -18,9 +18,12 @@ namespace Solutions
 
         private void _updateBtn_Click(object sender, EventArgs e)
         {
-            Database db =  Database.GetInstance();
-
-            db?.Connect();
+            using (Database db = Database.GetInstance())
+            {
+                db.Connect("DESKTOP-NIGHT");
+                db.Disconnect();
+                Console.WriteLine(db.IsConnected);
+            }
         }
     }
 }
