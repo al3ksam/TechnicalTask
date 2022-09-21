@@ -37,15 +37,17 @@ namespace Solutions
         ///     Отображает состояние подключения к базе данных.
         /// </summary>
         /// <returns>
-        ///     Возвращает True в случае успешного соединения с базой данных,
+        ///     Возвращает значение True в случае успешного соединения с базой данных,
         ///     False - в противном случае.
         /// </returns>
         public bool IsConnected => _sqlConnection.State == System.Data.ConnectionState.Open;
 
         /// <summary>
-        /// 
+        ///     Возвращает объект типа Database для работы с базой данных MS SQL Server.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        ///     Объект типа Database
+        /// </returns>
         public static Database GetInstance()
         {
             return _lazyDb.Value;
