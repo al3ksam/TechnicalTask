@@ -16,11 +16,23 @@
         ///     Открывает соединение с базой данных, используя проверку подлинности
         ///     пользователя Windows.
         /// </summary>
+        /// <param name="serverName">
+        ///     Имя сервера
+        /// </param>
         void Connect(string serverName);
         /// <summary>
         ///     Открывает соединение с базой данных, используя проверку подлинности
         ///     пользователя SQL Server (логин и пароль).
         /// </summary>
+        /// <param name="serverName">
+        ///     Имя сервера
+        /// </param>
+        /// <param name="userId">
+        ///     Имя пользователя SQL-сервера
+        /// </param>
+        /// <param name="password">
+        ///     Пароль пользователя SQL-сервера
+        /// </param>
         void Connect(string serverName, string userId, string password);
         /// <summary>
         ///     Закрывает соединение с базой данных.

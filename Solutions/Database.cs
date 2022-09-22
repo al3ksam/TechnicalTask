@@ -57,7 +57,9 @@ namespace Solutions
         ///     Открывает соединение с базой данных, используя проверку подлинности
         ///     пользователя Windows.
         /// </summary>
-        /// <param name="serverName">Имя сервера</param>
+        /// <param name="serverName">
+        ///     Имя сервера
+        /// </param>
         /// <exception cref="SqlException">
         ///     При открытии подключения произошла ошибка на уровне подключения.
         /// </exception>
@@ -75,11 +77,20 @@ namespace Solutions
 
         /// <summary>
         ///     Открывает соединение с базой данных, используя проверку подлинности
-        ///     пользователя SQL Server (логин и пароль).
+        ///     пользователя SQL Server (логин и пароль).<br /><br />
+        ///     Если <b>userId</b> установлен как <b>null</b> - подключение будет использовать проверку
+        ///     подлинности пользователя Windows:<br />
+        ///     <b><code>Connect("Server Name", null, null);</code></b>
         /// </summary>
-        /// <param name="serverName">Имя сервера</param>
-        /// <param name="userId">Имя пользователя SQL-сервера</param>
-        /// <param name="password">Пароль пользователя SQL-сервера</param>
+        /// <param name="serverName">
+        ///     Имя сервера
+        /// </param>
+        /// <param name="userId">
+        ///     Имя пользователя SQL-сервера
+        /// </param>
+        /// <param name="password">
+        ///     Пароль пользователя SQL-сервера
+        /// </param>
         /// <exception cref="SqlException">
         ///     При открытии подключения произошла ошибка на уровне подключения.
         /// </exception>

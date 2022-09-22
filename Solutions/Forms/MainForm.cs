@@ -21,7 +21,9 @@ namespace Solutions
             using (Database db = Database.GetInstance())
             {
                 db.Connect("DESKTOP-NIGHT");
+                db.Connect("DESKTOP-NIGHT", null, null);
                 db.Disconnect();
+                
                 Console.WriteLine(db.IsConnected);
             }
         }
