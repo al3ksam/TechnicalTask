@@ -61,11 +61,11 @@ namespace Solutions.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Растворы.
+        ///   Ищет локализованную строку, похожую на Hello World.
         /// </summary>
-        internal static string mainFormCaption {
+        internal static string connectingToServer {
             get {
-                return ResourceManager.GetString("mainFormCaption", resourceCulture);
+                return ResourceManager.GetString("connectingToServer", resourceCulture);
             }
         }
     }

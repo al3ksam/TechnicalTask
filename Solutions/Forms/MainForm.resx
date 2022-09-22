@@ -190,19 +190,19 @@
     <value>NoControl</value>
   </data>
   <data name="_settingsBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>924, 13</value>
+    <value>876, 13</value>
   </data>
   <data name="_settingsBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="_settingsBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 32</value>
+    <value>202, 32</value>
   </data>
   <data name="_settingsBtn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="_settingsBtn.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Connection settings</value>
   </data>
   <data name="&gt;&gt;_settingsBtn.Name" xml:space="preserve">
     <value>_settingsBtn</value>
@@ -219,9 +219,6 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 18</value>
-  </data>
   <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>

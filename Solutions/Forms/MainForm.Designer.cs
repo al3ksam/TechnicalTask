@@ -40,7 +40,6 @@ namespace Solutions.Forms
             resources.ApplyResources(this._updateBtn, "_updateBtn");
             this._updateBtn.Name = "_updateBtn";
             this._updateBtn.UseVisualStyleBackColor = true;
-            this._updateBtn.Click += new System.EventHandler(this._updateBtn_Click);
             // 
             // _saveBtn
             // 
@@ -57,8 +56,8 @@ namespace Solutions.Forms
             // 
             // MainForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._settingsBtn);
             this.Controls.Add(this._saveBtn);
             this.Controls.Add(this._updateBtn);

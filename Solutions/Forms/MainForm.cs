@@ -16,17 +16,9 @@ namespace Solutions.Forms
             InitializeComponent();
         }
 
-        private void _updateBtn_Click(object sender, EventArgs e)
-        {
-            Database db = Database.GetInstance();
-            
-            db.Connect("DESKTOP-NIGHT");
-
-            Console.WriteLine(db.IsConnected);
-        }
-
         private void _settingsBtn_Click(object sender, EventArgs e)
         {
+            // открываем форму с настройками соединения к БД
             using(SettingsForm settingsForm = new SettingsForm())
             {
                 settingsForm.ShowDialog();
