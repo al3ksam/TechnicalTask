@@ -1,5 +1,5 @@
 ﻿
-namespace Solutions
+namespace Solutions.Forms
 {
     partial class MainForm
     {
@@ -32,6 +32,7 @@ namespace Solutions
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this._updateBtn = new System.Windows.Forms.Button();
             this._saveBtn = new System.Windows.Forms.Button();
+            this._settingsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _updateBtn
@@ -47,10 +48,18 @@ namespace Solutions
             this._saveBtn.Name = "_saveBtn";
             this._saveBtn.UseVisualStyleBackColor = true;
             // 
+            // _settingsBtn
+            // 
+            resources.ApplyResources(this._settingsBtn, "_settingsBtn");
+            this._settingsBtn.Name = "_settingsBtn";
+            this._settingsBtn.UseVisualStyleBackColor = true;
+            this._settingsBtn.Click += new System.EventHandler(this._settingsBtn_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this._settingsBtn);
             this.Controls.Add(this._saveBtn);
             this.Controls.Add(this._updateBtn);
             this.MaximizeBox = false;
@@ -63,6 +72,7 @@ namespace Solutions
 
         private System.Windows.Forms.Button _updateBtn;
         private System.Windows.Forms.Button _saveBtn;
+        private System.Windows.Forms.Button _settingsBtn;
     }
 }
 

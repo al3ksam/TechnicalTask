@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Solutions
+namespace Solutions.Forms
 {
     public partial class MainForm : Form
     {
@@ -18,13 +18,18 @@ namespace Solutions
 
         private void _updateBtn_Click(object sender, EventArgs e)
         {
-            using (Database db = Database.GetInstance())
+            Database db = Database.GetInstance();
+            
+            db.Connect("DESKTOP-NIGHT");
+
+            Console.WriteLine(db.IsConnected);
+        }
+
+        private void _settingsBtn_Click(object sender, EventArgs e)
+        {
+            using(SettingsForm settingsForm = new SettingsForm())
             {
-                db.Connect("DESKTOP-NIGHT");
-                db.Connect("DESKTOP-NIGHT", null, null);
-                db.Disconnect();
-                
-                Console.WriteLine(db.IsConnected);
+                settingsForm.ShowDialog();
             }
         }
     }
