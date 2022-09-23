@@ -61,7 +61,7 @@ namespace Solutions.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Hello World.
+        ///   Ищет локализованную строку, похожую на Connecting to a MS SQL Server....
         /// </summary>
         internal static string connectingToServer {
             get {

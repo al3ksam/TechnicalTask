@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Security;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Solutions.Data;
+using Solutions.Components;
 
 namespace Solutions.Forms
 {
@@ -9,6 +13,15 @@ namespace Solutions.Forms
         public SettingsForm()
         {
             InitializeComponent();
+
+            ConnectionStatusChange += new ConnectionStatusEventHandler(OnConnectionStatusChange);
+        }
+
+        private event ConnectionStatusEventHandler ConnectionStatusChange;
+
+        private void OnConnectionStatusChange(object sender, ConnectionStatusEventArgs e)
+        {
+            _toolStripStatusLabel.Text = e.Text;
         }
 
         // Обработчик загрузки формы
@@ -39,33 +52,107 @@ namespace Solutions.Forms
         // Обработчик нажатия кнопки проверки соединения
         private void _testConnectionBtn_Click(object sender, EventArgs e)
         {
-            _testConnectionBtn.Enabled = false;
+        // _testConnectionBtn.Enabled = false;
 
-            MessageBox.Show(Program.ResourceManager.GetString("connectingToServer"));
+            string serverName = _serverNameTextBox.Text.Trim();
+            string userName = _usernameTextBox.Text.Trim();
+            string password = _passwordTextBox.Text;
+            int index = _authMethodComboBox.SelectedIndex;
 
-            using (Database db = Database.GetInstance())
+
+            Task.Factory.StartNew(() => 
             {
-                try
+                ConnectionStatusEventArgs connectionStatusEventArgs = new ConnectionStatusEventArgs();
+
+                using (Database db = Database.GetInstance())
                 {
-                    if (_authMethodComboBox.SelectedIndex == 0)
+                    db.ConnectionSettingsData = new Database.ConnectionSettings
                     {
-                        db.Connect(_serverNameTextBox.Text.Trim());
-                    }
-                    else
-                    {
-                        db.Connect(_serverNameTextBox.Text.Trim(), _usernameTextBox.Text.Trim(), _passwordTextBox.Text);
-                    }
+                        ServerName = serverName,
+                        UserId = userName,
+                        UserPassword = password
+                    };
 
+                    try
+                    {
+                        CallOnConnectionStatusChange("connectingToServer");                        
+
+                        if (index == 0)
+                        {
+                            
+                        }
+                        else
+                        {
+                            
+                        }
+
+                        db.Connect();
+
+
+                        if (ConnectionStatusChange != null && db.IsConnected)
+                        {
+                            connectionStatusEventArgs.Text = "К БД подключились";
+                            ConnectionStatusChange.Invoke(this, connectionStatusEventArgs);
+                        }
+                    }
+                    catch (SqlException)
+                    {
+                        connectionStatusEventArgs.Text = "Ошибка подключения к БД";
+                        ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
+
+                    }
                 }
-                catch (SqlException sqlException)
+
+                void CallOnConnectionStatusChange(string keyRes)
                 {
-
-                    Console.WriteLine(sqlException.Message);
+                    connectionStatusEventArgs.Text = Program.ResourceManager.GetString(keyRes);
+                    ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
                 }
+            });
 
-            }
+            //Task.Factory.StartNew(() =>
+            //{
+            //    string serverName = "";
+            //    string userName = "";
+            //    string password = "";
+            //    int index = 0;
 
-            _testConnectionBtn.Enabled = true;
+            //    if (_serverNameTextBox.InvokeRequired)
+            //    {
+            //        serverName = (string)_serverNameTextBox.Invoke(new Func<string>( () => _serverNameTextBox.Text.Trim()));
+            //    }
+            //    else
+            //    {
+            //        serverName = _serverNameTextBox.Text.Trim();
+            //    }
+
+            //    if (_usernameTextBox.InvokeRequired)
+            //    {
+            //        userName = (string)_usernameTextBox.Invoke(new Func<string>(() => _usernameTextBox.Text.Trim()));
+            //    }
+            //    else
+            //    {
+            //        userName = _usernameTextBox.Text.Trim();
+            //    }
+
+            //    if (_passwordTextBox.InvokeRequired)
+            //    {
+            //        password = (string)_usernameTextBox.Invoke(new Func<string>(() => _passwordTextBox.Text));
+            //    }
+            //    else
+            //    {
+            //        password = _passwordTextBox.Text;
+            //    }
+
+            //    if (_authMethodComboBox.InvokeRequired)
+            //    {
+            //        index = (int)_authMethodComboBox.Invoke(new Func<int>(() => _authMethodComboBox.SelectedIndex));
+            //    }
+            //    else
+            //    {
+            //        index = _authMethodComboBox.SelectedIndex;
+            //    }
+            //});
         }
 
         // Обработчик нажатия кнопки "Отмена"

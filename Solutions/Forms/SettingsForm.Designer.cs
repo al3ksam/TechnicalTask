@@ -18,6 +18,7 @@ namespace Solutions.Forms
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
