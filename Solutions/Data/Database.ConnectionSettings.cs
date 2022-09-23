@@ -25,6 +25,7 @@
             public string UserPassword { get; }
             public AuthentificationMethod AuthMethod { get; }
 
+            // Переопределение базовых методов
             public override bool Equals(object obj)
             {
                 return base.Equals(obj);
