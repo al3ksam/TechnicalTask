@@ -63,9 +63,9 @@ namespace Solutions.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Connecting to a MS SQL Server....
         /// </summary>
-        internal static string connectingToServer {
+        internal static string ConnectingToServer {
             get {
-                return ResourceManager.GetString("connectingToServer", resourceCulture);
+                return ResourceManager.GetString("ConnectingToServer", resourceCulture);
             }
         }
     }

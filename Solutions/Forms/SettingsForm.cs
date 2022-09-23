@@ -52,13 +52,33 @@ namespace Solutions.Forms
         // Обработчик нажатия кнопки проверки соединения
         private void _testConnectionBtn_Click(object sender, EventArgs e)
         {
-        // _testConnectionBtn.Enabled = false;
+            // _testConnectionBtn.Enabled = false;
 
-            string serverName = _serverNameTextBox.Text.Trim();
-            string userName = _usernameTextBox.Text.Trim();
-            string password = _passwordTextBox.Text;
-            int index = _authMethodComboBox.SelectedIndex;
+            Database.AuthentificationMethod authMethod = switch _authMethodComboBox.SelectedIndex =>
+                {
 
+            }
+
+
+
+            if (_authMethodComboBox.SelectedIndex == 0)
+            {
+                authMethod = Database.AuthentificationMethod.Windows;
+            }
+            else
+            {
+                authMethod = Database.AuthentificationMethod.SQLServer;
+            }
+
+            Database.ConnectionSettings connectionSettings = new Database.ConnectionSettings(
+                servername: _serverNameTextBox.Text.Trim()
+            ,   userId:     _usernameTextBox.Text.Trim()
+            ,   password:   _passwordTextBox.Text
+            ,   authMethod: authMethod
+            );
+
+
+            Database.GetInstance().Settings = connectionSettings;
 
             Task.Factory.StartNew(() => 
             {
@@ -66,28 +86,11 @@ namespace Solutions.Forms
 
                 using (Database db = Database.GetInstance())
                 {
-                    db.ConnectionSettingsData = new Database.ConnectionSettings
-                    {
-                        ServerName = serverName,
-                        UserId = userName,
-                        UserPassword = password
-                    };
-
                     try
                     {
-                        CallOnConnectionStatusChange("connectingToServer");                        
-
-                        if (index == 0)
-                        {
-                            
-                        }
-                        else
-                        {
-                            
-                        }
+                        CallOnConnectionStatusChange("ConnectingToServer");                        
 
                         db.Connect();
-
 
                         if (ConnectionStatusChange != null && db.IsConnected)
                         {
@@ -109,50 +112,6 @@ namespace Solutions.Forms
                     ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
                 }
             });
-
-            //Task.Factory.StartNew(() =>
-            //{
-            //    string serverName = "";
-            //    string userName = "";
-            //    string password = "";
-            //    int index = 0;
-
-            //    if (_serverNameTextBox.InvokeRequired)
-            //    {
-            //        serverName = (string)_serverNameTextBox.Invoke(new Func<string>( () => _serverNameTextBox.Text.Trim()));
-            //    }
-            //    else
-            //    {
-            //        serverName = _serverNameTextBox.Text.Trim();
-            //    }
-
-            //    if (_usernameTextBox.InvokeRequired)
-            //    {
-            //        userName = (string)_usernameTextBox.Invoke(new Func<string>(() => _usernameTextBox.Text.Trim()));
-            //    }
-            //    else
-            //    {
-            //        userName = _usernameTextBox.Text.Trim();
-            //    }
-
-            //    if (_passwordTextBox.InvokeRequired)
-            //    {
-            //        password = (string)_usernameTextBox.Invoke(new Func<string>(() => _passwordTextBox.Text));
-            //    }
-            //    else
-            //    {
-            //        password = _passwordTextBox.Text;
-            //    }
-
-            //    if (_authMethodComboBox.InvokeRequired)
-            //    {
-            //        index = (int)_authMethodComboBox.Invoke(new Func<int>(() => _authMethodComboBox.SelectedIndex));
-            //    }
-            //    else
-            //    {
-            //        index = _authMethodComboBox.SelectedIndex;
-            //    }
-            //});
         }
 
         // Обработчик нажатия кнопки "Отмена"

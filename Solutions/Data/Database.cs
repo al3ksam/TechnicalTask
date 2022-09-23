@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Security;
 using System.Data.SqlClient;
-using Solutions.Components;
 
 namespace Solutions.Data
 {
@@ -11,11 +9,7 @@ namespace Solutions.Data
     /// </summary>
     public sealed partial class Database : IDatabase, IDisposable
     {
-        /// <summary>
-        ///     Настройки соединения (имя сервера, ID пользователя и пароль)
-        /// </summary>
-        public ConnectionSettings ConnectionSettingsData { get; set; } = null;
-        
+        public ConnectionSettings Settings { get; set; }
 
         /// <summary>
         ///     Отображает состояние подключения к базе данных.
@@ -24,17 +18,16 @@ namespace Solutions.Data
         ///     Возвращает значение True в случае успешного соединения с базой данных,
         ///     False - в противном случае.
         /// </returns>
-        public bool IsConnected 
-        { 
-            get 
+        public bool IsConnected
+        {
+            get
             {
-                Console.WriteLine("IsConnected");
                 // Синхронизируем доступ к объекту SqlConnection между потоками
                 lock (_sqlConnection)
                 {
                     return _sqlConnection.State == System.Data.ConnectionState.Open;
                 }
-            } 
+            }
         }
 
         /// <summary>
@@ -50,21 +43,21 @@ namespace Solutions.Data
         /// </exception>
         public void Connect()
         {
-            // Если отсутствуют настройки соединения или уже подключены, выходим из метода
-            if (ConnectionSettingsData == null || IsConnected) return; 
+            // Если уже подключены, выходим из метода
+            if (IsConnected) return;
 
             // Синхронизируем доступ к объекту SqlConnection между потоками
             lock (_sqlConnection)
             {
-                _sqlConnection.ConnectionString = $@"Data Source ='{ConnectionSettingsData.ServerName}';";
+                _sqlConnection.ConnectionString = $@"Data Source ='{Settings.ServerName}';Timeout=5;";
 
-                _sqlConnection.ConnectionString += ConnectionSettingsData.UserId == null ?
+                _sqlConnection.ConnectionString += Settings.UserId == null ?
                     @"Integrated Security=True;" // Подключение через пользователя Windows
                     :
                     // Подключение через пользователя SQL Server
-                    $@"Integrated Security=false;User ID='{ConnectionSettingsData.UserId}';Password='{ConnectionSettingsData.UserPassword}';";
+                    $@"Integrated Security=false;User ID='{Settings.UserId}';Password='{Settings.UserPassword}';";
 
-                //_sqlConnection.Open();
+                _sqlConnection.Open();
                 Console.WriteLine(_sqlConnection.ConnectionString);
             }
         }
