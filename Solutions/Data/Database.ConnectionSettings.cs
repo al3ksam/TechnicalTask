@@ -6,7 +6,13 @@
         {
             public static readonly ConnectionSettings Empty;
 
-            public ConnectionSettings(string servername, string userId, string password, AuthentificationMethod authMethod)
+            public ConnectionSettings(string servername) 
+                : this(servername, null, null, AuthentificationMethod.Windows) { }
+
+            public ConnectionSettings(string servername, string userId, string password)
+                : this(servername, userId, password, AuthentificationMethod.SQLServer) { }
+
+            private ConnectionSettings(string servername, string userId, string password, AuthentificationMethod authMethod)
             {
                 ServerName = servername;
                 UserId = userId;

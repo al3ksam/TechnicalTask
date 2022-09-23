@@ -54,33 +54,9 @@ namespace Solutions.Forms
         {
             // _testConnectionBtn.Enabled = false;
 
-            Database.AuthentificationMethod authMethod = switch _authMethodComboBox.SelectedIndex =>
-                {
+            Database.GetInstance().Settings = GetConnectionSettings(_authMethodComboBox.SelectedIndex);
 
-            }
-
-
-
-            if (_authMethodComboBox.SelectedIndex == 0)
-            {
-                authMethod = Database.AuthentificationMethod.Windows;
-            }
-            else
-            {
-                authMethod = Database.AuthentificationMethod.SQLServer;
-            }
-
-            Database.ConnectionSettings connectionSettings = new Database.ConnectionSettings(
-                servername: _serverNameTextBox.Text.Trim()
-            ,   userId:     _usernameTextBox.Text.Trim()
-            ,   password:   _passwordTextBox.Text
-            ,   authMethod: authMethod
-            );
-
-
-            Database.GetInstance().Settings = connectionSettings;
-
-            Task.Factory.StartNew(() => 
+            Task.Factory.StartNew(() =>
             {
                 ConnectionStatusEventArgs connectionStatusEventArgs = new ConnectionStatusEventArgs();
 
@@ -88,7 +64,7 @@ namespace Solutions.Forms
                 {
                     try
                     {
-                        CallOnConnectionStatusChange("ConnectingToServer");                        
+                        CallOnConnectionStatusChange("ConnectingToServer");
 
                         db.Connect();
 
@@ -112,6 +88,26 @@ namespace Solutions.Forms
                     ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
                 }
             });
+
+            Database.ConnectionSettings GetConnectionSettings(in int index)
+            {
+                if (index == 0)
+                {
+                    return new Database.ConnectionSettings
+                    (
+                        servername: _serverNameTextBox.Text.Trim()
+                    );
+                }
+                else
+                {
+                    return new Database.ConnectionSettings
+                    (
+                        servername: _serverNameTextBox.Text.Trim()
+                    ,   userId:     _usernameTextBox.Text.Trim()
+                    ,   password:   _passwordTextBox.Text
+                    );
+                }
+            }
         }
 
         // Обработчик нажатия кнопки "Отмена"

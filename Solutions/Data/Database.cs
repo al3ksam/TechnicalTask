@@ -9,6 +9,9 @@ namespace Solutions.Data
     /// </summary>
     public sealed partial class Database : IDatabase, IDisposable
     {
+        /// <summary>
+        ///     Настройки соединения (имя сервера, имя пользователя и его пароль, метод аутентификации)
+        /// </summary>
         public ConnectionSettings Settings { get; set; }
 
         /// <summary>
