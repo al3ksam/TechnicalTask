@@ -118,102 +118,102 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="_updateBtn.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="UpdateBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
-  <data name="_updateBtn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="UpdateBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 13</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_updateBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="UpdateBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="_updateBtn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="UpdateBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_updateBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="UpdateBtn.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="_updateBtn.Text" xml:space="preserve">
+  <data name="UpdateBtn.Text" xml:space="preserve">
     <value>Update</value>
   </data>
-  <data name="&gt;&gt;_updateBtn.Name" xml:space="preserve">
-    <value>_updateBtn</value>
+  <data name="&gt;&gt;UpdateBtn.Name" xml:space="preserve">
+    <value>UpdateBtn</value>
   </data>
-  <data name="&gt;&gt;_updateBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;UpdateBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_updateBtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;UpdateBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;_updateBtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;UpdateBtn.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="_saveBtn.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="SaveBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
-  <data name="_saveBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="SaveBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="_saveBtn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SaveBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>133, 13</value>
   </data>
-  <data name="_saveBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="SaveBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="_saveBtn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SaveBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 32</value>
   </data>
-  <data name="_saveBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="SaveBtn.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="_saveBtn.Text" xml:space="preserve">
+  <data name="SaveBtn.Text" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="&gt;&gt;_saveBtn.Name" xml:space="preserve">
-    <value>_saveBtn</value>
+  <data name="&gt;&gt;SaveBtn.Name" xml:space="preserve">
+    <value>SaveBtn</value>
   </data>
-  <data name="&gt;&gt;_saveBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;SaveBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_saveBtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SaveBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;_saveBtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SaveBtn.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="_settingsBtn.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="SettingsBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
-  <data name="_settingsBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="SettingsBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="_settingsBtn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="SettingsBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>876, 13</value>
   </data>
-  <data name="_settingsBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="SettingsBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="_settingsBtn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SettingsBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 32</value>
   </data>
-  <data name="_settingsBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="SettingsBtn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="_settingsBtn.Text" xml:space="preserve">
+  <data name="SettingsBtn.Text" xml:space="preserve">
     <value>Connection settings</value>
   </data>
-  <data name="&gt;&gt;_settingsBtn.Name" xml:space="preserve">
-    <value>_settingsBtn</value>
+  <data name="&gt;&gt;SettingsBtn.Name" xml:space="preserve">
+    <value>SettingsBtn</value>
   </data>
-  <data name="&gt;&gt;_settingsBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;SettingsBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_settingsBtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SettingsBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;_settingsBtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SettingsBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -61,11 +61,29 @@ namespace Solutions.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Successfully connected to MS SQL Server..
+        /// </summary>
+        internal static string DbConnected {
+            get {
+                return ResourceManager.GetString("DbConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Failed to connect to the MS SQL Server..
+        /// </summary>
+        internal static string DbConnectFailed {
+            get {
+                return ResourceManager.GetString("DbConnectFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Connecting to a MS SQL Server....
         /// </summary>
-        internal static string ConnectingToServer {
+        internal static string DbConnecting {
             get {
-                return ResourceManager.GetString("ConnectingToServer", resourceCulture);
+                return ResourceManager.GetString("DbConnecting", resourceCulture);
             }
         }
     }

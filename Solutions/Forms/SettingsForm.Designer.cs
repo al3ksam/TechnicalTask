@@ -31,145 +31,139 @@ namespace Solutions.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
-            this._serverNameLabel = new System.Windows.Forms.Label();
-            this._authMethodLabel = new System.Windows.Forms.Label();
-            this._serverNameTextBox = new System.Windows.Forms.TextBox();
-            this._authMethodComboBox = new System.Windows.Forms.ComboBox();
-            this._userPanel = new System.Windows.Forms.Panel();
-            this._savePwdCheckBox = new System.Windows.Forms.CheckBox();
-            this._passwordTextBox = new System.Windows.Forms.TextBox();
-            this._usernameTextBox = new System.Windows.Forms.TextBox();
-            this._passwordLabel = new System.Windows.Forms.Label();
-            this._usernameLabel = new System.Windows.Forms.Label();
-            this._connectionBtn = new System.Windows.Forms.Button();
-            this._cancelBtn = new System.Windows.Forms.Button();
-            this._separatorLabel = new System.Windows.Forms.Label();
-            this._statusStrip = new System.Windows.Forms.StatusStrip();
-            this._toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this._userPanel.SuspendLayout();
-            this._statusStrip.SuspendLayout();
+            this.ServerNameLabel = new System.Windows.Forms.Label();
+            this.AuthMethodLabel = new System.Windows.Forms.Label();
+            this.ServerNameTextBox = new System.Windows.Forms.TextBox();
+            this.AuthMethodComboBox = new System.Windows.Forms.ComboBox();
+            this.UserPanel = new System.Windows.Forms.Panel();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.UsernameTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.UsernameLabel = new System.Windows.Forms.Label();
+            this.ConnectionBtn = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
+            this.SeparatorLabel = new System.Windows.Forms.Label();
+            this.StatusStrip = new System.Windows.Forms.StatusStrip();
+            this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.UserPanel.SuspendLayout();
+            this.StatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // _serverNameLabel
+            // ServerNameLabel
             // 
-            resources.ApplyResources(this._serverNameLabel, "_serverNameLabel");
-            this._serverNameLabel.Name = "_serverNameLabel";
+            resources.ApplyResources(this.ServerNameLabel, "ServerNameLabel");
+            this.ServerNameLabel.Name = "ServerNameLabel";
             // 
-            // _authMethodLabel
+            // AuthMethodLabel
             // 
-            resources.ApplyResources(this._authMethodLabel, "_authMethodLabel");
-            this._authMethodLabel.Name = "_authMethodLabel";
+            resources.ApplyResources(this.AuthMethodLabel, "AuthMethodLabel");
+            this.AuthMethodLabel.Name = "AuthMethodLabel";
             // 
-            // _serverNameTextBox
+            // ServerNameTextBox
             // 
-            resources.ApplyResources(this._serverNameTextBox, "_serverNameTextBox");
-            this._serverNameTextBox.Name = "_serverNameTextBox";
+            resources.ApplyResources(this.ServerNameTextBox, "ServerNameTextBox");
+            this.ServerNameTextBox.Name = "ServerNameTextBox";
+            this.ServerNameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // _authMethodComboBox
+            // AuthMethodComboBox
             // 
-            this._authMethodComboBox.DisplayMember = "0";
-            this._authMethodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._authMethodComboBox.FormattingEnabled = true;
-            this._authMethodComboBox.Items.AddRange(new object[] {
-            resources.GetString("_authMethodComboBox.Items"),
-            resources.GetString("_authMethodComboBox.Items1")});
-            resources.ApplyResources(this._authMethodComboBox, "_authMethodComboBox");
-            this._authMethodComboBox.Name = "_authMethodComboBox";
-            this._authMethodComboBox.SelectedIndexChanged += new System.EventHandler(this._authMethodComboBox_SelectedIndexChanged);
+            this.AuthMethodComboBox.DisplayMember = "0";
+            this.AuthMethodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AuthMethodComboBox.FormattingEnabled = true;
+            this.AuthMethodComboBox.Items.AddRange(new object[] {
+            resources.GetString("AuthMethodComboBox.Items"),
+            resources.GetString("AuthMethodComboBox.Items1")});
+            resources.ApplyResources(this.AuthMethodComboBox, "AuthMethodComboBox");
+            this.AuthMethodComboBox.Name = "AuthMethodComboBox";
+            this.AuthMethodComboBox.SelectedIndexChanged += new System.EventHandler(this.AuthMethodComboBox_SelectedIndexChanged);
             // 
-            // _userPanel
+            // UserPanel
             // 
-            this._userPanel.Controls.Add(this._savePwdCheckBox);
-            this._userPanel.Controls.Add(this._passwordTextBox);
-            this._userPanel.Controls.Add(this._usernameTextBox);
-            this._userPanel.Controls.Add(this._passwordLabel);
-            this._userPanel.Controls.Add(this._usernameLabel);
-            resources.ApplyResources(this._userPanel, "_userPanel");
-            this._userPanel.Name = "_userPanel";
+            this.UserPanel.Controls.Add(this.PasswordTextBox);
+            this.UserPanel.Controls.Add(this.UsernameTextBox);
+            this.UserPanel.Controls.Add(this.PasswordLabel);
+            this.UserPanel.Controls.Add(this.UsernameLabel);
+            resources.ApplyResources(this.UserPanel, "UserPanel");
+            this.UserPanel.Name = "UserPanel";
             // 
-            // _savePwdCheckBox
+            // PasswordTextBox
             // 
-            resources.ApplyResources(this._savePwdCheckBox, "_savePwdCheckBox");
-            this._savePwdCheckBox.Name = "_savePwdCheckBox";
-            this._savePwdCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.PasswordTextBox, "PasswordTextBox");
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // _passwordTextBox
+            // UsernameTextBox
             // 
-            resources.ApplyResources(this._passwordTextBox, "_passwordTextBox");
-            this._passwordTextBox.Name = "_passwordTextBox";
-            this._passwordTextBox.UseSystemPasswordChar = true;
+            resources.ApplyResources(this.UsernameTextBox, "UsernameTextBox");
+            this.UsernameTextBox.Name = "UsernameTextBox";
+            this.UsernameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // _usernameTextBox
+            // PasswordLabel
             // 
-            resources.ApplyResources(this._usernameTextBox, "_usernameTextBox");
-            this._usernameTextBox.Name = "_usernameTextBox";
+            resources.ApplyResources(this.PasswordLabel, "PasswordLabel");
+            this.PasswordLabel.Name = "PasswordLabel";
             // 
-            // _passwordLabel
+            // UsernameLabel
             // 
-            resources.ApplyResources(this._passwordLabel, "_passwordLabel");
-            this._passwordLabel.Name = "_passwordLabel";
+            resources.ApplyResources(this.UsernameLabel, "UsernameLabel");
+            this.UsernameLabel.Name = "UsernameLabel";
             // 
-            // _usernameLabel
+            // ConnectionBtn
             // 
-            resources.ApplyResources(this._usernameLabel, "_usernameLabel");
-            this._usernameLabel.Name = "_usernameLabel";
+            resources.ApplyResources(this.ConnectionBtn, "ConnectionBtn");
+            this.ConnectionBtn.Name = "ConnectionBtn";
+            this.ConnectionBtn.UseVisualStyleBackColor = true;
+            this.ConnectionBtn.Click += new System.EventHandler(this.ConnectionBtn_Click);
             // 
-            // _connectionBtn
+            // CancelBtn
             // 
-            resources.ApplyResources(this._connectionBtn, "_connectionBtn");
-            this._connectionBtn.Name = "_connectionBtn";
-            this._connectionBtn.UseVisualStyleBackColor = true;
-            this._connectionBtn.Click += new System.EventHandler(this._connectionBtn_Click);
+            resources.ApplyResources(this.CancelBtn, "CancelBtn");
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // _cancelBtn
+            // SeparatorLabel
             // 
-            resources.ApplyResources(this._cancelBtn, "_cancelBtn");
-            this._cancelBtn.Name = "_cancelBtn";
-            this._cancelBtn.UseVisualStyleBackColor = true;
-            this._cancelBtn.Click += new System.EventHandler(this._cancelBtn_Click);
+            this.SeparatorLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.SeparatorLabel, "SeparatorLabel");
+            this.SeparatorLabel.Name = "SeparatorLabel";
             // 
-            // _separatorLabel
+            // StatusStrip
             // 
-            this._separatorLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this._separatorLabel, "_separatorLabel");
-            this._separatorLabel.Name = "_separatorLabel";
+            resources.ApplyResources(this.StatusStrip, "StatusStrip");
+            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripStatusLabel});
+            this.StatusStrip.Name = "StatusStrip";
+            this.StatusStrip.SizingGrip = false;
             // 
-            // _statusStrip
+            // ToolStripStatusLabel
             // 
-            resources.ApplyResources(this._statusStrip, "_statusStrip");
-            this._statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._toolStripStatusLabel});
-            this._statusStrip.Name = "_statusStrip";
-            this._statusStrip.SizingGrip = false;
-            // 
-            // _toolStripStatusLabel
-            // 
-            this._toolStripStatusLabel.Name = "_toolStripStatusLabel";
-            resources.ApplyResources(this._toolStripStatusLabel, "_toolStripStatusLabel");
+            this.ToolStripStatusLabel.Name = "ToolStripStatusLabel";
+            resources.ApplyResources(this.ToolStripStatusLabel, "ToolStripStatusLabel");
             // 
             // SettingsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this._statusStrip);
-            this.Controls.Add(this._separatorLabel);
-            this.Controls.Add(this._cancelBtn);
-            this.Controls.Add(this._connectionBtn);
-            this.Controls.Add(this._userPanel);
-            this.Controls.Add(this._authMethodComboBox);
-            this.Controls.Add(this._serverNameTextBox);
-            this.Controls.Add(this._authMethodLabel);
-            this.Controls.Add(this._serverNameLabel);
+            this.Controls.Add(this.StatusStrip);
+            this.Controls.Add(this.SeparatorLabel);
+            this.Controls.Add(this.CancelBtn);
+            this.Controls.Add(this.ConnectionBtn);
+            this.Controls.Add(this.UserPanel);
+            this.Controls.Add(this.AuthMethodComboBox);
+            this.Controls.Add(this.ServerNameTextBox);
+            this.Controls.Add(this.AuthMethodLabel);
+            this.Controls.Add(this.ServerNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SettingsForm";
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.SettingsForm_Load);
-            this._userPanel.ResumeLayout(false);
-            this._userPanel.PerformLayout();
-            this._statusStrip.ResumeLayout(false);
-            this._statusStrip.PerformLayout();
+            this.UserPanel.ResumeLayout(false);
+            this.UserPanel.PerformLayout();
+            this.StatusStrip.ResumeLayout(false);
+            this.StatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,20 +171,19 @@ namespace Solutions.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label _serverNameLabel;
-        private System.Windows.Forms.Label _authMethodLabel;
-        private System.Windows.Forms.TextBox _serverNameTextBox;
-        private System.Windows.Forms.ComboBox _authMethodComboBox;
-        private System.Windows.Forms.Panel _userPanel;
-        private System.Windows.Forms.TextBox _passwordTextBox;
-        private System.Windows.Forms.TextBox _usernameTextBox;
-        private System.Windows.Forms.Label _passwordLabel;
-        private System.Windows.Forms.Label _usernameLabel;
-        private System.Windows.Forms.CheckBox _savePwdCheckBox;
-        private System.Windows.Forms.Button _connectionBtn;
-        private System.Windows.Forms.Button _cancelBtn;
-        private System.Windows.Forms.Label _separatorLabel;
-        private System.Windows.Forms.StatusStrip _statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel _toolStripStatusLabel;
+        private System.Windows.Forms.Label ServerNameLabel;
+        private System.Windows.Forms.Label AuthMethodLabel;
+        private System.Windows.Forms.TextBox ServerNameTextBox;
+        private System.Windows.Forms.ComboBox AuthMethodComboBox;
+        private System.Windows.Forms.Panel UserPanel;
+        private System.Windows.Forms.TextBox PasswordTextBox;
+        private System.Windows.Forms.TextBox UsernameTextBox;
+        private System.Windows.Forms.Label PasswordLabel;
+        private System.Windows.Forms.Label UsernameLabel;
+        private System.Windows.Forms.Button ConnectionBtn;
+        private System.Windows.Forms.Button CancelBtn;
+        private System.Windows.Forms.Label SeparatorLabel;
+        private System.Windows.Forms.StatusStrip StatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel;
     }
 }

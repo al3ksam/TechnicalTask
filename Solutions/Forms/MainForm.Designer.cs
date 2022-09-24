@@ -30,37 +30,37 @@ namespace Solutions.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this._updateBtn = new System.Windows.Forms.Button();
-            this._saveBtn = new System.Windows.Forms.Button();
-            this._settingsBtn = new System.Windows.Forms.Button();
+            this.UpdateBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.SettingsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // _updateBtn
+            // UpdateBtn
             // 
-            resources.ApplyResources(this._updateBtn, "_updateBtn");
-            this._updateBtn.Name = "_updateBtn";
-            this._updateBtn.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.UpdateBtn, "UpdateBtn");
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
             // 
-            // _saveBtn
+            // SaveBtn
             // 
-            resources.ApplyResources(this._saveBtn, "_saveBtn");
-            this._saveBtn.Name = "_saveBtn";
-            this._saveBtn.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.SaveBtn, "SaveBtn");
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.UseVisualStyleBackColor = true;
             // 
-            // _settingsBtn
+            // SettingsBtn
             // 
-            resources.ApplyResources(this._settingsBtn, "_settingsBtn");
-            this._settingsBtn.Name = "_settingsBtn";
-            this._settingsBtn.UseVisualStyleBackColor = true;
-            this._settingsBtn.Click += new System.EventHandler(this._settingsBtn_Click);
+            resources.ApplyResources(this.SettingsBtn, "SettingsBtn");
+            this.SettingsBtn.Name = "SettingsBtn";
+            this.SettingsBtn.UseVisualStyleBackColor = true;
+            this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this._settingsBtn);
-            this.Controls.Add(this._saveBtn);
-            this.Controls.Add(this._updateBtn);
+            this.Controls.Add(this.SettingsBtn);
+            this.Controls.Add(this.SaveBtn);
+            this.Controls.Add(this.UpdateBtn);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ResumeLayout(false);
@@ -69,9 +69,9 @@ namespace Solutions.Forms
 
         #endregion
 
-        private System.Windows.Forms.Button _updateBtn;
-        private System.Windows.Forms.Button _saveBtn;
-        private System.Windows.Forms.Button _settingsBtn;
+        private System.Windows.Forms.Button UpdateBtn;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button SettingsBtn;
     }
 }
 

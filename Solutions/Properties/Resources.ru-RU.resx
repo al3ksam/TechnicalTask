@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ConnectingToServer" xml:space="preserve">
+  <data name="DbConnected" xml:space="preserve">
+    <value>Успешно подключились к MS SQL Server.</value>
+  </data>
+  <data name="DbConnectFailed" xml:space="preserve">
+    <value>Не удалось подключиться к MS SQL Server.</value>
+  </data>
+  <data name="DbConnecting" xml:space="preserve">
     <value>Подключение к MS SQL Server...</value>
   </data>
 </root>
