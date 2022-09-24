@@ -46,8 +46,8 @@ namespace Solutions.Data
         /// </exception>
         public void Connect()
         {
-            // Если уже подключены, выходим из метода
-            if (IsConnected) return;
+            // Если нет объекта с настройками соединения или уже подключены, выходим из метода
+            if (Settings == null || IsConnected) return;
 
             // Синхронизируем доступ к объекту SqlConnection между потоками
             lock (_sqlConnection)
@@ -64,7 +64,7 @@ namespace Solutions.Data
                 else
                 {
                     _sqlConnection.ConnectionString +=
-                        $"Integrated Security=false;User ID='{Settings.UserId}';Password='{Settings.UserPassword}';";
+                        $@"Integrated Security=false;User ID='{Settings.UserId}';Password='{Settings.UserPassword}';";
                 }                    
 
                 //_sqlConnection.Open();
@@ -101,6 +101,9 @@ namespace Solutions.Data
             // Синхронизируем доступ к объекту SqlConnection между потоками
             lock (_sqlConnection)
             {
+                // Очищаем ссылку на объект с настройками соединения
+                Settings = null;
+
                 _sqlConnection.Dispose(); // Освобождаем ресурсы
             }
         }

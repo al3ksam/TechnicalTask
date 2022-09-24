@@ -21,6 +21,7 @@ namespace Solutions.Forms
 
         private void OnConnectionStatusChange(object sender, ConnectionStatusEventArgs e)
         {
+            if (e == null) return;
 
             _toolStripStatusLabel.Text = e.Text;
         }
@@ -136,7 +137,7 @@ namespace Solutions.Forms
         // Обработчик нажатия кнопки "Отмена"
         private void _cancelBtn_Click(object sender, EventArgs e)
         {
-            Close(); // закрываем форму
+            Close(); // Закрываем форму
         }
     }
 }

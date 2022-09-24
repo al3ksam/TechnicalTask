@@ -5,6 +5,12 @@ namespace Solutions.Forms
 {
     public partial class MainForm : Form
     {
+        // Инициализируем объект формы с настройками
+        /// <summary>
+        /// Форма с настройками соединения
+        /// </summary>
+        private SettingsForm _settingsForm = new SettingsForm();
+
         public MainForm()
         {
             InitializeComponent();
@@ -13,10 +19,7 @@ namespace Solutions.Forms
         private void _settingsBtn_Click(object sender, EventArgs e)
         {
             // Открываем форму с настройками соединения к БД
-            using(SettingsForm settingsForm = new SettingsForm())
-            {
-                settingsForm.ShowDialog();
-            }
+            _settingsForm.ShowDialog();
         }
     }
 }
