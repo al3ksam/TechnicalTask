@@ -95,7 +95,7 @@ namespace Solutions.Forms
 
             try
             {
-                ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs(Program.ResourceManager.GetString("ConnectingToServer")));
+                ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs(Program.ResManager.GetString("ConnectingToServer")));
 
                 db.Connect();
 

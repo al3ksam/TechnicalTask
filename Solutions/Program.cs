@@ -14,7 +14,7 @@ namespace Solutions
         /// <returns>
         ///     Объект типа System.Resources.ResourceManager
         /// </returns>
-        public static ResourceManager ResourceManager { get; } = 
+        public static ResourceManager ResManager { get; } = 
             new ResourceManager("Solutions.Properties.Resources", typeof(Program).Assembly);
 
         /// <summary>
