@@ -12,7 +12,7 @@ namespace Solutions.Forms
 
         private void _settingsBtn_Click(object sender, EventArgs e)
         {
-            // открываем форму с настройками соединения к БД
+            // Открываем форму с настройками соединения к БД
             using(SettingsForm settingsForm = new SettingsForm())
             {
                 settingsForm.ShowDialog();

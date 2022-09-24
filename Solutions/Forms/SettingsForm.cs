@@ -21,6 +21,7 @@ namespace Solutions.Forms
 
         private void OnConnectionStatusChange(object sender, ConnectionStatusEventArgs e)
         {
+
             _toolStripStatusLabel.Text = e.Text;
         }
 
@@ -54,40 +55,62 @@ namespace Solutions.Forms
         {
             // _testConnectionBtn.Enabled = false;
 
-            Database.GetInstance().Settings = GetConnectionSettings(_authMethodComboBox.SelectedIndex);
+            //Task.Factory.StartNew(() =>
+            //{
+            //    ConnectionStatusEventArgs connectionStatusEventArgs = new ConnectionStatusEventArgs();
 
-            Task.Factory.StartNew(() =>
+            //    using (Database db = Database.GetInstance())
+            //    {
+            //        try
+            //        {
+            //            CallOnConnectionStatusChange("ConnectingToServer");
+
+            //            db.Connect();
+
+            //            if (ConnectionStatusChange != null && db.IsConnected)
+            //            {
+            //                connectionStatusEventArgs.Text = "К БД подключились";
+            //                ConnectionStatusChange.Invoke(this, connectionStatusEventArgs);
+            //            }
+            //        }
+            //        catch (SqlException)
+            //        {
+            //            connectionStatusEventArgs.Text = "Ошибка подключения к БД";
+            //            ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
+
+            //        }
+            //    }
+
+            //    void CallOnConnectionStatusChange(string keyRes)
+            //    {
+            //        connectionStatusEventArgs.Text = Program.ResourceManager.GetString(keyRes);
+            //        ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
+            //    }
+            //});
+
+            Database db = Database.GetInstance();
+
+            db.Settings = GetConnectionSettings(_authMethodComboBox.SelectedIndex);
+
+            try
             {
-                ConnectionStatusEventArgs connectionStatusEventArgs = new ConnectionStatusEventArgs();
+                ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs(Program.ResourceManager.GetString("ConnectingToServer")));
 
-                using (Database db = Database.GetInstance())
+                db.Connect();
+
+                if (db.IsConnected)
                 {
-                    try
-                    {
-                        CallOnConnectionStatusChange("ConnectingToServer");
-
-                        db.Connect();
-
-                        if (ConnectionStatusChange != null && db.IsConnected)
-                        {
-                            connectionStatusEventArgs.Text = "К БД подключились";
-                            ConnectionStatusChange.Invoke(this, connectionStatusEventArgs);
-                        }
-                    }
-                    catch (SqlException)
-                    {
-                        connectionStatusEventArgs.Text = "Ошибка подключения к БД";
-                        ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
-
-                    }
+                    ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs("К БД подключились"));
                 }
-
-                void CallOnConnectionStatusChange(string keyRes)
+                else
                 {
-                    connectionStatusEventArgs.Text = Program.ResourceManager.GetString(keyRes);
-                    ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
+                    ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs("Что-то пошло не так :\\"));
                 }
-            });
+            }
+            catch (SqlException)
+            {
+                ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs("Ошибка подключения к БД"));
+            }
 
             Database.ConnectionSettings GetConnectionSettings(in int index)
             {

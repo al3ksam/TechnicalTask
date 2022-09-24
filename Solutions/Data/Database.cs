@@ -53,21 +53,21 @@ namespace Solutions.Data
             lock (_sqlConnection)
             {
 
-                _sqlConnection.ConnectionString = $@"Data Source ='{Settings.ServerName}';Timeout=5;";
+                _sqlConnection.ConnectionString = $"Data Source ='{Settings.ServerName}';Timeout=5;";
 
                 // Подключение через пользователя Windows
                 if (Settings.AuthMethod == AuthentificationMethod.Windows)
                 {
-                    _sqlConnection.ConnectionString += @"Integrated Security=True;";
+                    _sqlConnection.ConnectionString += "Integrated Security=True;";
                 }
                 // Подключение через пользователя SQL Server
                 else
                 {
                     _sqlConnection.ConnectionString +=
-                        $@"Integrated Security=false;User ID='{Settings.UserId}';Password='{Settings.UserPassword}';";
+                        $"Integrated Security=false;User ID='{Settings.UserId}';Password='{Settings.UserPassword}';";
                 }                    
 
-                _sqlConnection.Open();
+                //_sqlConnection.Open();
 
                 // TODO:
                 Console.WriteLine(_sqlConnection.ConnectionString);
