@@ -58,35 +58,7 @@ namespace Solutions.Forms
 
             //Task.Factory.StartNew(() =>
             //{
-            //    ConnectionStatusEventArgs connectionStatusEventArgs = new ConnectionStatusEventArgs();
-
-            //    using (Database db = Database.GetInstance())
-            //    {
-            //        try
-            //        {
-            //            CallOnConnectionStatusChange("ConnectingToServer");
-
-            //            db.Connect();
-
-            //            if (ConnectionStatusChange != null && db.IsConnected)
-            //            {
-            //                connectionStatusEventArgs.Text = "К БД подключились";
-            //                ConnectionStatusChange.Invoke(this, connectionStatusEventArgs);
-            //            }
-            //        }
-            //        catch (SqlException)
-            //        {
-            //            connectionStatusEventArgs.Text = "Ошибка подключения к БД";
-            //            ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
-
-            //        }
-            //    }
-
-            //    void CallOnConnectionStatusChange(string keyRes)
-            //    {
-            //        connectionStatusEventArgs.Text = Program.ResourceManager.GetString(keyRes);
-            //        ConnectionStatusChange?.Invoke(this, connectionStatusEventArgs);
-            //    }
+            //    Task
             //});
 
             Database db = Database.GetInstance();
