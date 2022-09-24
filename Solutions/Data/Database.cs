@@ -52,25 +52,26 @@ namespace Solutions.Data
             // Синхронизируем доступ к объекту SqlConnection между потоками
             lock (_sqlConnection)
             {
+                SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
 
-                _sqlConnection.ConnectionString = $"Data Source ='{Settings.ServerName}';Timeout=5;";
-
+                sqlConnectionStringBuilder.ConnectTimeout = 5; 
+                sqlConnectionStringBuilder.DataSource = Settings.ServerName;
+            
                 // Подключение через пользователя Windows
                 if (Settings.AuthMethod == AuthentificationMethod.Windows)
                 {
-                    _sqlConnection.ConnectionString += "Integrated Security=True;";
+                    sqlConnectionStringBuilder.IntegratedSecurity = true;
                 }
                 // Подключение через пользователя SQL Server
                 else
                 {
-                    _sqlConnection.ConnectionString +=
-                        $@"Integrated Security=false;User ID='{Settings.UserId}';Password='{Settings.UserPassword}';";
-                }                    
+                    sqlConnectionStringBuilder.IntegratedSecurity = false;
+                    sqlConnectionStringBuilder.UserID = Settings.UserId;
+                    sqlConnectionStringBuilder.Password = Settings.UserPassword;
+                }
 
-                //_sqlConnection.Open();
-
-                // TODO:
-                Console.WriteLine(_sqlConnection.ConnectionString);
+                _sqlConnection.ConnectionString = sqlConnectionStringBuilder.ConnectionString;
+                _sqlConnection.Open();
             }
         }
 

@@ -9,9 +9,9 @@ namespace Solutions.Data
         /// </summary>
         public sealed class ConnectionSettings
         {
-            private const byte MAXLEN_SERVERNAME = 128; // Максимальная длина имени сервера
-            private const byte MAXLEN_USERNAME = 128; // Максимальная длина имени пользователя
-            private const byte MAXLEN_PASSWORD = 128; // Максимальная длина пароля
+            private const byte _MAXLEN_SERVERNAME = 128; // Максимальная длина имени сервера
+            private const byte _MAXLEN_USERNAME = 128; // Максимальная длина имени пользователя
+            private const byte _MAXLEN_PASSWORD = 128; // Максимальная длина пароля
 
             private string _serverName; // Имя сервера
             private string _userId; // Имя пользователя
@@ -53,14 +53,16 @@ namespace Solutions.Data
                 {
                     if (value == null)
                     {
-                        _serverName = "";
+                        _serverName = string.Empty;
                     }
                     else
                     {
-                        if (value.Length > MAXLEN_SERVERNAME)
+                        if (value.Length > _MAXLEN_SERVERNAME)
                         {
-                            throw new ArgumentException($"Server name exceeds {MAXLEN_SERVERNAME} characters.");
+                            throw new ArgumentException($"Server name exceeds {_MAXLEN_SERVERNAME} characters.");
                         }
+
+                        _serverName = value;
                     }
                 } 
             }
@@ -74,14 +76,16 @@ namespace Solutions.Data
                 {
                     if (value == null)
                     {
-                        _userId = "";
+                        _userId = string.Empty;
                     }
                     else
                     {
-                        if (value.Length > MAXLEN_USERNAME)
+                        if (value.Length > _MAXLEN_USERNAME)
                         {
-                            throw new ArgumentException($"Username exceeds {MAXLEN_USERNAME} characters.");
+                            throw new ArgumentException($"Username exceeds {_MAXLEN_USERNAME} characters.");
                         }
+
+                        _userId = value;
                     }
                 }
             }
@@ -95,15 +99,17 @@ namespace Solutions.Data
                 {
                     if (value == null)
                     {
-                        _password = "";
+                        _password = string.Empty;
                     }
                     else
                     {
-                        if (value.Length > MAXLEN_PASSWORD)
+                        if (value.Length > _MAXLEN_PASSWORD)
                         {
-                            throw new ArgumentException($"User password exceeds {MAXLEN_PASSWORD} characters.");
+                            throw new ArgumentException($"User password exceeds {_MAXLEN_PASSWORD} characters.");
                         }
                     }
+
+                    _password = value;
                 }
             }
             /// <summary>
