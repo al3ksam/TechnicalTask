@@ -91,7 +91,18 @@ namespace Solutions.Forms
 
             Database db = Database.GetInstance();
 
-            db.Settings = GetConnectionSettings(_authMethodComboBox.SelectedIndex);
+            db.Settings = _authMethodComboBox.SelectedIndex == 0 ?
+                new Database.ConnectionSettings(
+                    servername: _serverNameTextBox.Text.Trim()
+                )
+                :
+                new Database.ConnectionSettings
+                (
+                    servername: _serverNameTextBox.Text.Trim()
+                ,   userId: _usernameTextBox.Text.Trim()
+                ,   password: _passwordTextBox.Text
+                );
+            ;
 
             try
             {
@@ -111,26 +122,6 @@ namespace Solutions.Forms
             catch (SqlException)
             {
                 ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs("Ошибка подключения к БД"));
-            }
-
-            Database.ConnectionSettings GetConnectionSettings(in int index)
-            {
-                if (index == 0)
-                {
-                    return new Database.ConnectionSettings
-                    (
-                        servername: _serverNameTextBox.Text.Trim()
-                    );
-                }
-                else
-                {
-                    return new Database.ConnectionSettings
-                    (
-                        servername: _serverNameTextBox.Text.Trim()
-                    ,   userId:     _usernameTextBox.Text.Trim()
-                    ,   password:   _passwordTextBox.Text
-                    );
-                }
             }
         }
 
