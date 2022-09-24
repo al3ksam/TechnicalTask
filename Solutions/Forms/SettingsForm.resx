@@ -237,90 +237,6 @@
   <data name="&gt;&gt;_authMethodComboBox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;_savePwdCheckBox.Name" xml:space="preserve">
-    <value>_savePwdCheckBox</value>
-  </data>
-  <data name="&gt;&gt;_savePwdCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_savePwdCheckBox.Parent" xml:space="preserve">
-    <value>_userPanel</value>
-  </data>
-  <data name="&gt;&gt;_savePwdCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;_passwordTextBox.Name" xml:space="preserve">
-    <value>_passwordTextBox</value>
-  </data>
-  <data name="&gt;&gt;_passwordTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_passwordTextBox.Parent" xml:space="preserve">
-    <value>_userPanel</value>
-  </data>
-  <data name="&gt;&gt;_passwordTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;_usernameTextBox.Name" xml:space="preserve">
-    <value>_usernameTextBox</value>
-  </data>
-  <data name="&gt;&gt;_usernameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_usernameTextBox.Parent" xml:space="preserve">
-    <value>_userPanel</value>
-  </data>
-  <data name="&gt;&gt;_usernameTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;_passwordLabel.Name" xml:space="preserve">
-    <value>_passwordLabel</value>
-  </data>
-  <data name="&gt;&gt;_passwordLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_passwordLabel.Parent" xml:space="preserve">
-    <value>_userPanel</value>
-  </data>
-  <data name="&gt;&gt;_passwordLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;_usernameLabel.Name" xml:space="preserve">
-    <value>_usernameLabel</value>
-  </data>
-  <data name="&gt;&gt;_usernameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_usernameLabel.Parent" xml:space="preserve">
-    <value>_userPanel</value>
-  </data>
-  <data name="&gt;&gt;_usernameLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="_userPanel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="_userPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 86</value>
-  </data>
-  <data name="_userPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 99</value>
-  </data>
-  <data name="_userPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;_userPanel.Name" xml:space="preserve">
-    <value>_userPanel</value>
-  </data>
-  <data name="&gt;&gt;_userPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;_userPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;_userPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="_savePwdCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -468,38 +384,62 @@
   <data name="&gt;&gt;_usernameLabel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="_testConnectionBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 206</value>
+  <data name="_userPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="_testConnectionBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 28</value>
+  <data name="_userPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 86</value>
   </data>
-  <data name="_testConnectionBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="_userPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 99</value>
   </data>
-  <data name="_testConnectionBtn.Text" xml:space="preserve">
-    <value>Test connection</value>
+  <data name="_userPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;_testConnectionBtn.Name" xml:space="preserve">
-    <value>_testConnectionBtn</value>
+  <data name="&gt;&gt;_userPanel.Name" xml:space="preserve">
+    <value>_userPanel</value>
   </data>
-  <data name="&gt;&gt;_testConnectionBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;_userPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;_testConnectionBtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;_userPanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;_testConnectionBtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;_userPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="_connectionBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 206</value>
+  </data>
+  <data name="_connectionBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 28</value>
+  </data>
+  <data name="_connectionBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="_connectionBtn.Text" xml:space="preserve">
+    <value>Connecting</value>
+  </data>
+  <data name="&gt;&gt;_connectionBtn.Name" xml:space="preserve">
+    <value>_connectionBtn</value>
+  </data>
+  <data name="&gt;&gt;_connectionBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_connectionBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_connectionBtn.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="_cancelBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="_cancelBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 206</value>
+    <value>366, 206</value>
   </data>
   <data name="_cancelBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 28</value>
+    <value>89, 28</value>
   </data>
   <data name="_cancelBtn.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>

@@ -138,8 +138,8 @@
   <data name="_usernameLabel.Text" xml:space="preserve">
     <value>Имя пользователя:</value>
   </data>
-  <data name="_testConnectionBtn.Text" xml:space="preserve">
-    <value>Проверить соединение</value>
+  <data name="_connectionBtn.Text" xml:space="preserve">
+    <value>Соединить</value>
   </data>
   <data name="_cancelBtn.Text" xml:space="preserve">
     <value>Отмена</value>

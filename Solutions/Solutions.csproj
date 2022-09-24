@@ -45,8 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\ConnectionStatusEventArgs.cs" />
-    <Compile Include="Components\ConnectionStatusEventHandler.cs" />
+    <Compile Include="Forms\Components\DbConnectionStateChangedEventArgs.cs" />
+    <Compile Include="Forms\Components\DbConnectionStateChangedEventHandler.cs" />
     <Compile Include="Data\Database.AuthentificationMethod.cs" />
     <Compile Include="Data\Database.ConnectionSettings.cs" />
     <Compile Include="Data\Database.cs" />

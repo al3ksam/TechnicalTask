@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Security;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Solutions.Data;
-using Solutions.Components;
+using Solutions.Forms.Components;
 
 namespace Solutions.Forms
 {
@@ -14,12 +13,12 @@ namespace Solutions.Forms
         {
             InitializeComponent();
 
-            ConnectionStatusChange += new ConnectionStatusEventHandler(OnConnectionStatusChange);
+            DbConnectionStateChanged += new DbConnectionStateChangedEventHandler(OnDbConnectionStateChanged);
         }
 
-        private event ConnectionStatusEventHandler ConnectionStatusChange;
+        private event DbConnectionStateChangedEventHandler DbConnectionStateChanged;
 
-        private void OnConnectionStatusChange(object sender, ConnectionStatusEventArgs e)
+        private void OnDbConnectionStateChanged(object sender, DbConnectionStateChangedEventArgs e)
         {
             if (e == null) return;
 
@@ -51,8 +50,8 @@ namespace Solutions.Forms
             }
         }
 
-        // Обработчик нажатия кнопки проверки соединения
-        private void _testConnectionBtn_Click(object sender, EventArgs e)
+        // Обработчик нажатия кнопки соединения с БД
+        private void _connectionBtn_Click(object sender, EventArgs e)
         {
             // _testConnectionBtn.Enabled = false;
 
@@ -62,6 +61,8 @@ namespace Solutions.Forms
             //});
 
             Database db = Database.GetInstance();
+
+            
 
             db.Settings = _authMethodComboBox.SelectedIndex == 0 ?
                 new Database.ConnectionSettings(
@@ -78,22 +79,27 @@ namespace Solutions.Forms
 
             try
             {
-                ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs(Program.ResManager.GetString("ConnectingToServer")));
+                InvokeOnDbConnectionStateChanged(Program.ResManager.GetString("ConnectingToServer"));
 
                 db.Connect();
 
                 if (db.IsConnected)
                 {
-                    ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs("К БД подключились"));
+                    InvokeOnDbConnectionStateChanged("Подключились к БД :)");
                 }
                 else
                 {
-                    ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs("Что-то пошло не так :\\"));
+                    InvokeOnDbConnectionStateChanged("Что-то пошло не так :\\");
                 }
             }
             catch (SqlException)
             {
-                ConnectionStatusChange?.Invoke(this, new ConnectionStatusEventArgs("Ошибка подключения к БД"));
+                InvokeOnDbConnectionStateChanged("Ошибка подключения к БД");
+            }
+
+            void InvokeOnDbConnectionStateChanged(in string text)
+            {
+                DbConnectionStateChanged?.Invoke(sender, new DbConnectionStateChangedEventArgs(text));
             }
         }
 

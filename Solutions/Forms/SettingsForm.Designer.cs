@@ -41,7 +41,7 @@ namespace Solutions.Forms
             this._usernameTextBox = new System.Windows.Forms.TextBox();
             this._passwordLabel = new System.Windows.Forms.Label();
             this._usernameLabel = new System.Windows.Forms.Label();
-            this._testConnectionBtn = new System.Windows.Forms.Button();
+            this._connectionBtn = new System.Windows.Forms.Button();
             this._cancelBtn = new System.Windows.Forms.Button();
             this._separatorLabel = new System.Windows.Forms.Label();
             this._statusStrip = new System.Windows.Forms.StatusStrip();
@@ -114,12 +114,12 @@ namespace Solutions.Forms
             resources.ApplyResources(this._usernameLabel, "_usernameLabel");
             this._usernameLabel.Name = "_usernameLabel";
             // 
-            // _testConnectionBtn
+            // _connectionBtn
             // 
-            resources.ApplyResources(this._testConnectionBtn, "_testConnectionBtn");
-            this._testConnectionBtn.Name = "_testConnectionBtn";
-            this._testConnectionBtn.UseVisualStyleBackColor = true;
-            this._testConnectionBtn.Click += new System.EventHandler(this._testConnectionBtn_Click);
+            resources.ApplyResources(this._connectionBtn, "_connectionBtn");
+            this._connectionBtn.Name = "_connectionBtn";
+            this._connectionBtn.UseVisualStyleBackColor = true;
+            this._connectionBtn.Click += new System.EventHandler(this._connectionBtn_Click);
             // 
             // _cancelBtn
             // 
@@ -154,7 +154,7 @@ namespace Solutions.Forms
             this.Controls.Add(this._statusStrip);
             this.Controls.Add(this._separatorLabel);
             this.Controls.Add(this._cancelBtn);
-            this.Controls.Add(this._testConnectionBtn);
+            this.Controls.Add(this._connectionBtn);
             this.Controls.Add(this._userPanel);
             this.Controls.Add(this._authMethodComboBox);
             this.Controls.Add(this._serverNameTextBox);
@@ -187,7 +187,7 @@ namespace Solutions.Forms
         private System.Windows.Forms.Label _passwordLabel;
         private System.Windows.Forms.Label _usernameLabel;
         private System.Windows.Forms.CheckBox _savePwdCheckBox;
-        private System.Windows.Forms.Button _testConnectionBtn;
+        private System.Windows.Forms.Button _connectionBtn;
         private System.Windows.Forms.Button _cancelBtn;
         private System.Windows.Forms.Label _separatorLabel;
         private System.Windows.Forms.StatusStrip _statusStrip;
