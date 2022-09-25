@@ -104,5 +104,24 @@ namespace Solutions.Properties {
                 return ResourceManager.GetString("DbConnectionNot", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на There is no connection to the database.
+        ///Check the connection!.
+        /// </summary>
+        internal static string DbConnectionNotMsg {
+            get {
+                return ResourceManager.GetString("DbConnectionNotMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Error.
+        /// </summary>
+        internal static string DbConnectionNotMsgCaption {
+            get {
+                return ResourceManager.GetString("DbConnectionNotMsgCaption", resourceCulture);
+            }
+        }
     }
 }

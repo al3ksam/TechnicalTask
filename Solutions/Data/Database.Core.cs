@@ -20,7 +20,7 @@ namespace Solutions.Data
         /// <summary>
         ///     Объект соединения с базой данных MS SQL Server.
         /// </summary>
-        private SqlConnection _sqlConnection = new SqlConnection();
+        public SqlConnection _sqlConnection = new SqlConnection();
 
         /// <summary>
         ///     Закрытый конструктор для предотвращения создания объектов за пределами класса.

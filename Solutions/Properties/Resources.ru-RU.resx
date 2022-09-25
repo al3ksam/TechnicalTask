@@ -132,4 +132,11 @@
   <data name="DbConnectionNot" xml:space="preserve">
     <value>Нет соединения с MS SQL Server.</value>
   </data>
+  <data name="DbConnectionNotMsg" xml:space="preserve">
+    <value>Отсутствует соединение с MS SQL Server.
+Проверьте подключение!</value>
+  </data>
+  <data name="DbConnectionNotMsgCaption" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
 </root>

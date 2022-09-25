@@ -132,4 +132,11 @@
   <data name="DbConnectionNot" xml:space="preserve">
     <value>Not connected to the MS SQL Server.</value>
   </data>
+  <data name="DbConnectionNotMsg" xml:space="preserve">
+    <value>There is no connection to the database.
+Check the connection!</value>
+  </data>
+  <data name="DbConnectionNotMsgCaption" xml:space="preserve">
+    <value>Error</value>
+  </data>
 </root>

@@ -117,29 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UpdateBtn.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="SaveBtn.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="SettingsBtn.Text" xml:space="preserve">
-    <value>Настройки соединения</value>
-  </data>
-  <data name="SolutionName.HeaderText" xml:space="preserve">
-    <value>Название</value>
-  </data>
-  <data name="SolutionVolume.HeaderText" xml:space="preserve">
-    <value>Объём, м3</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="SolutionsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 18</value>
+  <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 16</value>
   </data>
-  <data name="SolutionsLabel.Text" xml:space="preserve">
-    <value>Растворы:</value>
+  <data name="NameLabel.Text" xml:space="preserve">
+    <value>Название раствора:</value>
+  </data>
+  <data name="VolumeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 16</value>
+  </data>
+  <data name="VolumeLabel.Text" xml:space="preserve">
+    <value>Объём, м3:</value>
+  </data>
+  <data name="AddBtn.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="CancelBtn.Text" xml:space="preserve">
+    <value>Отмена</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Растворы</value>
+    <value>Добавить раствор</value>
   </data>
 </root>
