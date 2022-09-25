@@ -36,15 +36,15 @@ namespace Solutions.Forms
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ConnectionPanel = new System.Windows.Forms.Panel();
-            this.UserPanel = new System.Windows.Forms.Panel();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.UsernameTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordLabel = new System.Windows.Forms.Label();
-            this.UsernameLabel = new System.Windows.Forms.Label();
-            this.AuthMethodComboBox = new System.Windows.Forms.ComboBox();
             this.ServerNameTextBox = new System.Windows.Forms.TextBox();
+            this.AuthMethodComboBox = new System.Windows.Forms.ComboBox();
             this.AuthMethodLabel = new System.Windows.Forms.Label();
             this.ServerNameLabel = new System.Windows.Forms.Label();
+            this.UserPanel = new System.Windows.Forms.Panel();
+            this.UsernameTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.UsernameLabel = new System.Windows.Forms.Label();
             this.SeparatorLabel = new System.Windows.Forms.Label();
             this.StatusStrip.SuspendLayout();
             this.ConnectionPanel.SuspendLayout();
@@ -55,6 +55,7 @@ namespace Solutions.Forms
             // 
             resources.ApplyResources(this.ConnectionBtn, "ConnectionBtn");
             this.ConnectionBtn.Name = "ConnectionBtn";
+            this.ConnectionBtn.TabStop = false;
             this.ConnectionBtn.UseVisualStyleBackColor = true;
             this.ConnectionBtn.Click += new System.EventHandler(this.ConnectionBtn_Click);
             // 
@@ -62,6 +63,7 @@ namespace Solutions.Forms
             // 
             resources.ApplyResources(this.CancelBtn, "CancelBtn");
             this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.TabStop = false;
             this.CancelBtn.UseVisualStyleBackColor = true;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
@@ -80,44 +82,19 @@ namespace Solutions.Forms
             // 
             // ConnectionPanel
             // 
-            this.ConnectionPanel.Controls.Add(this.UserPanel);
-            this.ConnectionPanel.Controls.Add(this.AuthMethodComboBox);
             this.ConnectionPanel.Controls.Add(this.ServerNameTextBox);
+            this.ConnectionPanel.Controls.Add(this.AuthMethodComboBox);
             this.ConnectionPanel.Controls.Add(this.AuthMethodLabel);
             this.ConnectionPanel.Controls.Add(this.ServerNameLabel);
+            this.ConnectionPanel.Controls.Add(this.UserPanel);
             resources.ApplyResources(this.ConnectionPanel, "ConnectionPanel");
             this.ConnectionPanel.Name = "ConnectionPanel";
             // 
-            // UserPanel
+            // ServerNameTextBox
             // 
-            this.UserPanel.Controls.Add(this.PasswordTextBox);
-            this.UserPanel.Controls.Add(this.UsernameTextBox);
-            this.UserPanel.Controls.Add(this.PasswordLabel);
-            this.UserPanel.Controls.Add(this.UsernameLabel);
-            resources.ApplyResources(this.UserPanel, "UserPanel");
-            this.UserPanel.Name = "UserPanel";
-            // 
-            // PasswordTextBox
-            // 
-            resources.ApplyResources(this.PasswordTextBox, "PasswordTextBox");
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.UseSystemPasswordChar = true;
-            // 
-            // UsernameTextBox
-            // 
-            resources.ApplyResources(this.UsernameTextBox, "UsernameTextBox");
-            this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            // 
-            // PasswordLabel
-            // 
-            resources.ApplyResources(this.PasswordLabel, "PasswordLabel");
-            this.PasswordLabel.Name = "PasswordLabel";
-            // 
-            // UsernameLabel
-            // 
-            resources.ApplyResources(this.UsernameLabel, "UsernameLabel");
-            this.UsernameLabel.Name = "UsernameLabel";
+            resources.ApplyResources(this.ServerNameTextBox, "ServerNameTextBox");
+            this.ServerNameTextBox.Name = "ServerNameTextBox";
+            this.ServerNameTextBox.TextChanged += new System.EventHandler(this.ControlsValueChanged);
             // 
             // AuthMethodComboBox
             // 
@@ -131,12 +108,6 @@ namespace Solutions.Forms
             this.AuthMethodComboBox.Name = "AuthMethodComboBox";
             this.AuthMethodComboBox.SelectedIndexChanged += new System.EventHandler(this.AuthMethodComboBox_SelectedIndexChanged);
             // 
-            // ServerNameTextBox
-            // 
-            resources.ApplyResources(this.ServerNameTextBox, "ServerNameTextBox");
-            this.ServerNameTextBox.Name = "ServerNameTextBox";
-            this.ServerNameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            // 
             // AuthMethodLabel
             // 
             resources.ApplyResources(this.AuthMethodLabel, "AuthMethodLabel");
@@ -146,6 +117,37 @@ namespace Solutions.Forms
             // 
             resources.ApplyResources(this.ServerNameLabel, "ServerNameLabel");
             this.ServerNameLabel.Name = "ServerNameLabel";
+            // 
+            // UserPanel
+            // 
+            this.UserPanel.Controls.Add(this.UsernameTextBox);
+            this.UserPanel.Controls.Add(this.PasswordTextBox);
+            this.UserPanel.Controls.Add(this.PasswordLabel);
+            this.UserPanel.Controls.Add(this.UsernameLabel);
+            resources.ApplyResources(this.UserPanel, "UserPanel");
+            this.UserPanel.Name = "UserPanel";
+            // 
+            // UsernameTextBox
+            // 
+            resources.ApplyResources(this.UsernameTextBox, "UsernameTextBox");
+            this.UsernameTextBox.Name = "UsernameTextBox";
+            this.UsernameTextBox.TextChanged += new System.EventHandler(this.ControlsValueChanged);
+            // 
+            // PasswordTextBox
+            // 
+            resources.ApplyResources(this.PasswordTextBox, "PasswordTextBox");
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.UseSystemPasswordChar = true;
+            // 
+            // PasswordLabel
+            // 
+            resources.ApplyResources(this.PasswordLabel, "PasswordLabel");
+            this.PasswordLabel.Name = "PasswordLabel";
+            // 
+            // UsernameLabel
+            // 
+            resources.ApplyResources(this.UsernameLabel, "UsernameLabel");
+            this.UsernameLabel.Name = "UsernameLabel";
             // 
             // SeparatorLabel
             // 
