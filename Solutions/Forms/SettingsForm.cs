@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Solutions.Data;
-using Solutions.Forms.Components;
 
 namespace Solutions.Forms
 {
@@ -12,19 +11,22 @@ namespace Solutions.Forms
         public SettingsForm()
         {
             InitializeComponent();
-
-            DbConnectionStateChanged += new DbConnectionStateChangedEventHandler(OnDbConnectionStateChanged);
         }
 
-        // Событие изменения состояния подключения к БД
-        private event DbConnectionStateChangedEventHandler DbConnectionStateChanged;
-
-        // Обработчик события изменения состояния подключения к БД
-        private void OnDbConnectionStateChanged(object sender, DbConnectionStateChangedEventArgs e)
+        private void UpdateStatusStrip(string text)
         {
-            if (e == null) return;
-
-            ToolStripStatusLabel.Text = e.Text;
+            if (InvokeRequired)
+            {
+                Invoke(new Action<string>((str) =>
+                {
+                    ToolStripStatusLabel.Text = str;
+                }), text);
+                Console.WriteLine("InvokeRequired");
+            }
+            else
+            {
+                ToolStripStatusLabel.Text = text;
+            }
         }
 
         // Обработчик загрузки формы
@@ -87,7 +89,8 @@ namespace Solutions.Forms
             {
                 UserPanel.Enabled = true;
 
-                if (UsernameTextBox.Text.Trim() == string.Empty)
+                if (ServerNameTextBox.Text.Trim() == string.Empty || 
+                    UsernameTextBox.Text.Trim() == string.Empty)
                 {
                     ConnectionBtn.Enabled = false;
                 }
@@ -101,10 +104,11 @@ namespace Solutions.Forms
         // Обработчик нажатия кнопки соединения с БД
         private void ConnectionBtn_Click(object sender, EventArgs e)
         {
-            // _testConnectionBtn.Enabled = false;
+            ConnectionBtn.Enabled = false; // Отключаем кнопку соединения
 
             Database db = Database.GetInstance();
 
+            // Задаем настройки подключения к БД
             db.Settings = AuthMethodComboBox.SelectedIndex == 0 ?
                 new Database.ConnectionSettings(
                     servername: ServerNameTextBox.Text.Trim()
@@ -113,8 +117,8 @@ namespace Solutions.Forms
                 new Database.ConnectionSettings
                 (
                     servername: ServerNameTextBox.Text.Trim()
-                , userId: UsernameTextBox.Text.Trim()
-                , password: PasswordTextBox.Text
+                ,   userId: UsernameTextBox.Text.Trim()
+                ,   password: PasswordTextBox.Text
                 );
             ;
 
@@ -122,27 +126,22 @@ namespace Solutions.Forms
             {
                 try
                 {
-                    InvokeOnDbConnectionStateChanged(Program.ResManager.GetString("DbConnecting"));
+                    UpdateStatusStrip(Program.ResManager.GetString("DbConnecting"));
 
                     db.Connect();
 
                     if (db.IsConnected)
                     {
-                        InvokeOnDbConnectionStateChanged(Program.ResManager.GetString("DbConnected"));
+                        UpdateStatusStrip(Program.ResManager.GetString("DbConnected"));
                     }
                     else
                     {
-                        InvokeOnDbConnectionStateChanged(Program.ResManager.GetString("DbConnectFailed"));
+                        UpdateStatusStrip(Program.ResManager.GetString("DbConnectFailed"));
                     }
                 }
                 catch (SqlException)
                 {
-                    InvokeOnDbConnectionStateChanged(Program.ResManager.GetString("DbConnectFailed"));
-                }
-
-                void InvokeOnDbConnectionStateChanged(in string text)
-                {
-                    DbConnectionStateChanged?.Invoke(this, new DbConnectionStateChangedEventArgs(text));
+                    UpdateStatusStrip(Program.ResManager.GetString("DbConnectFailed"));
                 }
             });
         }
