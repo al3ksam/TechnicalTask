@@ -54,7 +54,7 @@ namespace Solutions.Data
             {
                 SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
 
-                sqlConnectionStringBuilder.ConnectTimeout = 5; 
+                sqlConnectionStringBuilder.ConnectTimeout = 3;
                 sqlConnectionStringBuilder.DataSource = Settings.ServerName;
             
                 // Подключение через пользователя Windows
@@ -71,7 +71,15 @@ namespace Solutions.Data
                 }
 
                 _sqlConnection.ConnectionString = sqlConnectionStringBuilder.ConnectionString;
-                _sqlConnection.Open();
+
+                try
+                {
+                    _sqlConnection.Open(); // Открываем соединение
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
 

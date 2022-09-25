@@ -21,7 +21,10 @@ namespace Solutions.Forms
         private void SettingsBtn_Click(object sender, EventArgs e)
         {
             // Открываем форму с настройками соединения к БД
-            _settingsForm.ShowDialog();
+            if (_settingsForm != null)
+            {
+                _settingsForm.ShowDialog();
+            }
         }
     }
 }

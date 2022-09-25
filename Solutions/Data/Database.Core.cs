@@ -29,6 +29,11 @@ namespace Solutions.Data
         {
         }
 
+        private void OnStateChange(object sender, System.Data.StateChangeEventArgs e)
+        {
+            Console.WriteLine($"{e.OriginalState} | {e.CurrentState}");
+        }
+
         /// <summary>
         ///     Возвращает объект типа Database для работы с базой данных MS SQL Server.
         /// </summary>

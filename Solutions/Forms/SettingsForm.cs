@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using Solutions.Data;
 
 namespace Solutions.Forms
@@ -12,62 +10,59 @@ namespace Solutions.Forms
         {
             InitializeComponent();
         }
-
-        private void UpdateStatusStrip(string text)
+        // Вызывается при отображении формы.
+        private void SettingsForm_Shown(object sender, EventArgs e)
         {
-            if (InvokeRequired)
+            // Если есть подключение, запрещаем редактирование и выводим сообщение на строку состояния.
+            if (Database.GetInstance().IsConnected)
             {
-                Invoke(new Action<string>((str) =>
-                {
-                    ToolStripStatusLabel.Text = str;
-                }), text);
-                Console.WriteLine("InvokeRequired");
+                UserEditingEnable(false);
+                UpdateStatusStrip("DbConnection");
             }
+            // Если нет подключения, запрещаем редактирование.
             else
             {
-                ToolStripStatusLabel.Text = text;
+                UserEditingEnable(true);
+                UpdateStatusStrip("DbConnectionNot");
             }
-        }
-
-        // Обработчик загрузки формы
-        private void SettingsForm_Load(object sender, EventArgs e)
-        {
+            
             // Проверяем наличие элементов. 
             // Устанавливаем метод аутентификации Windows по умолчанию,
-            // если метод аутентификации не выбран
-            if (AuthMethodComboBox.Items.Count == 2 && AuthMethodComboBox.SelectedIndex == -1)
+            // если метод аутентификации не выбран.
+            if (AuthMethodComboBox.Items.Count > 0 && AuthMethodComboBox.SelectedIndex == -1)
             {
                 AuthMethodComboBox.SelectedIndex = 0;
             }
         }
 
-        // Обработчик изменения значения свойства Text компонентов TextBox
-        private void TextBox_TextChanged(object sender, EventArgs e)
+        // Обработчик закрытия формы.
+        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // На всякий случай :)
-            if (sender == null) return;
-
-            // Обработчик вызвал компонент TextBox
-            if (sender is TextBox textBox)
+            // Скрываем форму, если нажимаем на "крестик"
+            if (e.CloseReason == CloseReason.UserClosing)
             {
-                // Если имя сервера или пользователя пустое, отключаем кнопку "Соединить"
-                if 
-                (
-                    (textBox.Equals(ServerNameTextBox) || textBox.Equals(UsernameTextBox)) 
-                    && 
-                    textBox.Text.Trim() == string.Empty
-                )
-                {
-                    ConnectionBtn.Enabled = false;
-                }
-                else
-                {
-                    ConnectionBtn.Enabled = true;
-                }
+                e.Cancel = true;
+
+                Hide();
             }
         }
 
-        // Обработчик изменения значения индекса в ComboBox-е
+        // Обработчик изменения значения свойства Text компонентов TextBox.
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            // Обработчик вызвал компонент Обработчик событий для ServerNameTextBox и UsernameTextBox.
+            if
+            (
+                (sender != null) && 
+                (sender is TextBox textBox) &&
+                (textBox.Equals(ServerNameTextBox) || textBox.Equals(UsernameTextBox))
+            )
+            {
+                CheckEmptyServernameAndUsername();
+            }
+        }
+
+        // Обработчик изменения значения индекса в ComboBox-е.
         private void AuthMethodComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Активируем панель пользователя (возможность вводить логин и пароль),
@@ -75,36 +70,20 @@ namespace Solutions.Forms
             if (AuthMethodComboBox.SelectedIndex == 0)
             {
                 UserPanel.Enabled = false;
-
-                if (ServerNameTextBox.Text.Trim() == string.Empty)
-                {
-                    ConnectionBtn.Enabled = false;
-                }
-                else
-                {
-                    ConnectionBtn.Enabled = true;
-                }
             }
             else
             {
                 UserPanel.Enabled = true;
-
-                if (ServerNameTextBox.Text.Trim() == string.Empty || 
-                    UsernameTextBox.Text.Trim() == string.Empty)
-                {
-                    ConnectionBtn.Enabled = false;
-                }
-                else
-                {
-                    ConnectionBtn.Enabled = true;
-                }
             }
+
+            CheckEmptyServernameAndUsername();
         }
 
-        // Обработчик нажатия кнопки соединения с БД
+        // Обработчик нажатия кнопки соединения с БД.
         private void ConnectionBtn_Click(object sender, EventArgs e)
         {
-            ConnectionBtn.Enabled = false; // Отключаем кнопку соединения
+            // Блокируем редактирование
+            UserEditingEnable(false);
 
             Database db = Database.GetInstance();
 
@@ -116,40 +95,90 @@ namespace Solutions.Forms
                 :
                 new Database.ConnectionSettings
                 (
-                    servername: ServerNameTextBox.Text.Trim()
-                ,   userId: UsernameTextBox.Text.Trim()
-                ,   password: PasswordTextBox.Text
+                    servername: ServerNameTextBox.Text.Trim(),
+                    userId: UsernameTextBox.Text.Trim(),
+                    password: PasswordTextBox.Text
                 );
             ;
 
-            Task.Factory.StartNew(() =>
+            UpdateStatusStrip("DbConnecting");
+
+            try
             {
-                try
+                db.Connect();
+            }
+            catch (Exception)
+            {
+                // Error Handlers...
+            }
+            finally
+            {
+                if (db.IsConnected) // Если подключились
                 {
-                    UpdateStatusStrip(Program.ResManager.GetString("DbConnecting"));
-
-                    db.Connect();
-
-                    if (db.IsConnected)
-                    {
-                        UpdateStatusStrip(Program.ResManager.GetString("DbConnected"));
-                    }
-                    else
-                    {
-                        UpdateStatusStrip(Program.ResManager.GetString("DbConnectFailed"));
-                    }
+                    UpdateStatusStrip("DbConnected");
                 }
-                catch (SqlException)
+                else // // Если подключиться не удалось
                 {
-                    UpdateStatusStrip(Program.ResManager.GetString("DbConnectFailed"));
+                    UpdateStatusStrip("DbConnectFailed");
+                    UserEditingEnable(true);
                 }
-            });
+            }
         }
 
-        // Обработчик нажатия кнопки "Отмена"
+        // Обработчик нажатия кнопки "Отмена".
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            Close(); // Закрываем форму
+            Database db = Database.GetInstance();
+
+            // Отключаем от БД, если подключены ...
+            if (db.IsConnected)
+            {
+                db.Disconnect();
+
+                if (db.IsConnected == false)
+                {
+                    UserEditingEnable(true);
+                    UpdateStatusStrip("DbConnectionNot");
+                }
+            }
+            else // ... Или скрываем форму, если отключены
+            {
+                Hide();
+            }
+        }
+
+        // Обновление полосы состояния, параметр strResKey - имя строкового ресурса.
+        private void UpdateStatusStrip(in string strResKey)
+        {
+            // Получаем значение ресурса
+            string text = Program.ResManager.GetString(strResKey);
+            if (text == null) { text = string.Empty; }
+            ToolStripStatusLabel.Text = text;
+        }
+
+        // Отключение/включение элементов для редактирования пользователем.
+        private void UserEditingEnable(bool value)
+        {
+            ConnectionPanel.Enabled = value; 
+            ConnectionBtn.Enabled = value;
+        }
+
+        // Проверка имя сервера и имя пользователя на пустое значение: отключаем кнопку "Соединить".
+        private void CheckEmptyServernameAndUsername()
+        {
+            // Если имя сервера или пользователя пустое, отключаем кнопку "Соединить".
+            if 
+            (
+                (ServerNameTextBox.Text.Trim() == string.Empty) ||
+                (UsernameTextBox.Text.Trim() == string.Empty && AuthMethodComboBox.SelectedIndex == 1)
+            )
+            {
+                ConnectionBtn.Enabled = false;
+            }
+            else
+            {
+                ConnectionBtn.Enabled = true;
+            }
         }
     }
 }

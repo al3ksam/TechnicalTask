@@ -86,5 +86,23 @@ namespace Solutions.Properties {
                 return ResourceManager.GetString("DbConnecting", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Connected to the MS SQL Server..
+        /// </summary>
+        internal static string DbConnection {
+            get {
+                return ResourceManager.GetString("DbConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Not connected to the MS SQL Server..
+        /// </summary>
+        internal static string DbConnectionNot {
+            get {
+                return ResourceManager.GetString("DbConnectionNot", resourceCulture);
+            }
+        }
     }
 }

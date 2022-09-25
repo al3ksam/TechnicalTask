@@ -126,4 +126,10 @@
   <data name="DbConnecting" xml:space="preserve">
     <value>Connecting to a MS SQL Server...</value>
   </data>
+  <data name="DbConnection" xml:space="preserve">
+    <value>Connected to the MS SQL Server.</value>
+  </data>
+  <data name="DbConnectionNot" xml:space="preserve">
+    <value>Not connected to the MS SQL Server.</value>
+  </data>
 </root>

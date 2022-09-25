@@ -126,4 +126,10 @@
   <data name="DbConnecting" xml:space="preserve">
     <value>Подключение к MS SQL Server...</value>
   </data>
+  <data name="DbConnection" xml:space="preserve">
+    <value>Соединение с MS SQL Server установлено.</value>
+  </data>
+  <data name="DbConnectionNot" xml:space="preserve">
+    <value>Нет соединения с MS SQL Server.</value>
+  </data>
 </root>
