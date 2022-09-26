@@ -24,7 +24,9 @@ namespace Solutions.Forms
         private SqlDataAdapter sqlAdapter2 = null;
         private DataTable table2 = null;
 
-        private int _maxSolutionId = 0;
+        private int _maxSolutionId = 0; // Максимальный Id таблицы "Растворы"
+
+        private bool _isSolutionRowAdded = false; // Флаг добавления записи в таблицу "Растворы"
 
         // --------------------------------------------
 
@@ -123,7 +125,7 @@ namespace Solutions.Forms
                 table2.Rows.Clear();
                 sqlAdapter2.Fill(table2);
 
-
+                SaveBtn.Enabled = true;
                 SolutionAddBtn.Enabled = true;
             }
             catch (Exception exception)
@@ -177,13 +179,22 @@ namespace Solutions.Forms
                         row.SetField(0, ++_maxSolutionId);
                         row.SetField(1, addSolutionForm.SolutionName);
                         row.SetField(2, addSolutionForm.SolutionVolume);
-   
+
+                        // Устанавливаем флаг добавления строки
+                        _isSolutionRowAdded = true; 
+
                         table.Rows.Add(row); // Добавляем строку
                     }
                 }
             }
             catch (Exception exception)
             {
+                // Снимаем флаг, если была ошибка
+                if (_isSolutionRowAdded == true)
+                {
+                    _isSolutionRowAdded = false;
+                }
+
                 ShowErrorMsgDialog(exception);
             }
         }
@@ -258,6 +269,25 @@ namespace Solutions.Forms
             {
                 SolutionDelBtn.Enabled = true;
             }
+        }
+
+        // Обработчик добавления строк в GridView растворов
+        private void SolutionGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            // Если добавили строку
+            if (_isSolutionRowAdded == true)
+            {
+                // Выделяем строку и "скроллимся" на неё
+                DataGridViewRow row = SolutionGridView.Rows[e.RowIndex];
+                if (row != null)
+                {
+                    row.Selected = true;
+                    SolutionGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                }
+
+                _isSolutionRowAdded = false; // Снимаем флаг
+            }
+            
         }
 
         // Обработчик отображения элемента управления для редактирования ячейки

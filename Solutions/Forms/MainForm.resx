@@ -150,6 +150,9 @@
   <data name="&gt;&gt;UpdateBtn.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="SaveBtn.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="SaveBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
@@ -216,17 +219,32 @@
   <data name="&gt;&gt;SettingsBtn.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <metadata name="SolutionId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SolutionName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SolutionVolume.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="SolutionGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>40</value>
+  </data>
+  <metadata name="SolutionIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SolutionIdColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="SolutionIdColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="SolutionNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SolutionNameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <metadata name="SolutionVolumeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SolutionVolumeColumn.HeaderText" xml:space="preserve">
+    <value>Volume, m3</value>
+  </data>
+  <data name="SolutionVolumeColumn.Width" type="System.Int32, mscorlib">
+    <value>126</value>
   </data>
   <data name="SolutionGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 89</value>
@@ -248,30 +266,6 @@
   </data>
   <data name="&gt;&gt;SolutionGridView.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <metadata name="SolutionId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="SolutionId.HeaderText" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="SolutionId.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="SolutionName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="SolutionName.HeaderText" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <metadata name="SolutionVolume.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="SolutionVolume.HeaderText" xml:space="preserve">
-    <value>Volume, m3</value>
-  </data>
-  <data name="SolutionVolume.Width" type="System.Int32, mscorlib">
-    <value>126</value>
   </data>
   <data name="SolutionsLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -372,23 +366,50 @@
   <data name="&gt;&gt;SolutionAddBtn.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SolId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="IsMain.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="ComponentsGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>40</value>
+  </data>
+  <metadata name="ComIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ComIdColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ComIdColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="SolIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SolIdColumn.HeaderText" xml:space="preserve">
+    <value>SolId</value>
+  </data>
+  <data name="SolIdColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="ComNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ComNameColumn.HeaderText" xml:space="preserve">
+    <value>Component</value>
+  </data>
+  <metadata name="ComAmountColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ComAmountColumn.HeaderText" xml:space="preserve">
+    <value>Amount, %</value>
+  </data>
+  <data name="ComAmountColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="ComIsMainColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ComIsMainColumn.HeaderText" xml:space="preserve">
+    <value>IsMain</value>
+  </data>
+  <data name="ComIsMainColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ComponentsGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>576, 89</value>
@@ -410,48 +431,6 @@
   </data>
   <data name="&gt;&gt;ComponentsGridView.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="dataGridViewTextBoxColumn1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="SolId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="SolId.HeaderText" xml:space="preserve">
-    <value>SolId</value>
-  </data>
-  <data name="SolId.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
-    <value>Component</value>
-  </data>
-  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dataGridViewTextBoxColumn3.HeaderText" xml:space="preserve">
-    <value>Amount, %</value>
-  </data>
-  <data name="dataGridViewTextBoxColumn3.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <metadata name="IsMain.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="IsMain.HeaderText" xml:space="preserve">
-    <value>IsMain</value>
-  </data>
-  <data name="IsMain.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="ComponentsLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -540,52 +519,52 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Solutions</value>
   </data>
-  <data name="&gt;&gt;SolutionId.Name" xml:space="preserve">
-    <value>SolutionId</value>
+  <data name="&gt;&gt;ComIdColumn.Name" xml:space="preserve">
+    <value>ComIdColumn</value>
   </data>
-  <data name="&gt;&gt;SolutionId.Type" xml:space="preserve">
+  <data name="&gt;&gt;ComIdColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SolutionName.Name" xml:space="preserve">
-    <value>SolutionName</value>
+  <data name="&gt;&gt;SolIdColumn.Name" xml:space="preserve">
+    <value>SolIdColumn</value>
   </data>
-  <data name="&gt;&gt;SolutionName.Type" xml:space="preserve">
+  <data name="&gt;&gt;SolIdColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SolutionVolume.Name" xml:space="preserve">
-    <value>SolutionVolume</value>
+  <data name="&gt;&gt;ComNameColumn.Name" xml:space="preserve">
+    <value>ComNameColumn</value>
   </data>
-  <data name="&gt;&gt;SolutionVolume.Type" xml:space="preserve">
+  <data name="&gt;&gt;ComNameColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn1</value>
+  <data name="&gt;&gt;ComAmountColumn.Name" xml:space="preserve">
+    <value>ComAmountColumn</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ComAmountColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SolId.Name" xml:space="preserve">
-    <value>SolId</value>
+  <data name="&gt;&gt;ComIsMainColumn.Name" xml:space="preserve">
+    <value>ComIsMainColumn</value>
   </data>
-  <data name="&gt;&gt;SolId.Type" xml:space="preserve">
+  <data name="&gt;&gt;ComIsMainColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn2</value>
+  <data name="&gt;&gt;SolutionIdColumn.Name" xml:space="preserve">
+    <value>SolutionIdColumn</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
+  <data name="&gt;&gt;SolutionIdColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn3</value>
+  <data name="&gt;&gt;SolutionNameColumn.Name" xml:space="preserve">
+    <value>SolutionNameColumn</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
+  <data name="&gt;&gt;SolutionNameColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;IsMain.Name" xml:space="preserve">
-    <value>IsMain</value>
+  <data name="&gt;&gt;SolutionVolumeColumn.Name" xml:space="preserve">
+    <value>SolutionVolumeColumn</value>
   </data>
-  <data name="&gt;&gt;IsMain.Type" xml:space="preserve">
+  <data name="&gt;&gt;SolutionVolumeColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
