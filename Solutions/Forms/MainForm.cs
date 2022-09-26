@@ -261,12 +261,11 @@ namespace Solutions.Forms
         {
             try
             {
-                if (SolutionGridView.Rows.Count > 0 && table2 != null)
+                if (SolutionGridView.Rows.Count > 0 && table2 != null && table2.Rows.Count > 0)
                 {
-                    //int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
-                    //table2.DefaultView.RowFilter = string.Format($"SolutionId = {index}");
-
-
+                    int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
+                    table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");
+                    Console.WriteLine(table2.Columns[1].ColumnName);
                 }
             }
             catch (Exception exception)
