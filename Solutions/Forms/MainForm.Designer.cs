@@ -38,14 +38,16 @@ namespace Solutions.Forms
             this.SolutionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SolutionVolume = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SolutionsLabel = new System.Windows.Forms.Label();
-            this.DeleteSolutionBtn = new System.Windows.Forms.Button();
+            this.SolutionDelBtn = new System.Windows.Forms.Button();
             this.SolutionAddBtn = new System.Windows.Forms.Button();
             this.ComponentsGridView = new System.Windows.Forms.DataGridView();
-            this.ComponentsLabel = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsMain = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ComponentsLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SolutionGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComponentsGridView)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +96,7 @@ namespace Solutions.Forms
             this.SolutionGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SolutionGridView.RowTemplate.Height = 40;
             this.SolutionGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SolutionGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.SolutionGridView_DataBindingComplete);
             this.SolutionGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.SolutionGridView_EditingControlShowing);
             this.SolutionGridView.SelectionChanged += new System.EventHandler(this.SolutionGridView_SelectionChanged);
             // 
@@ -124,12 +127,12 @@ namespace Solutions.Forms
             resources.ApplyResources(this.SolutionsLabel, "SolutionsLabel");
             this.SolutionsLabel.Name = "SolutionsLabel";
             // 
-            // DeleteSolutionBtn
+            // SolutionDelBtn
             // 
-            resources.ApplyResources(this.DeleteSolutionBtn, "DeleteSolutionBtn");
-            this.DeleteSolutionBtn.Name = "DeleteSolutionBtn";
-            this.DeleteSolutionBtn.UseVisualStyleBackColor = true;
-            this.DeleteSolutionBtn.Click += new System.EventHandler(this.DeleteSolutionBtn_Click);
+            resources.ApplyResources(this.SolutionDelBtn, "SolutionDelBtn");
+            this.SolutionDelBtn.Name = "SolutionDelBtn";
+            this.SolutionDelBtn.UseVisualStyleBackColor = true;
+            this.SolutionDelBtn.Click += new System.EventHandler(this.SolutionDelBtn_Click);
             // 
             // SolutionAddBtn
             // 
@@ -152,7 +155,8 @@ namespace Solutions.Forms
             this.dataGridViewTextBoxColumn1,
             this.SolId,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.IsMain});
             this.ComponentsGridView.EnableHeadersVisualStyles = false;
             this.ComponentsGridView.MultiSelect = false;
             this.ComponentsGridView.Name = "ComponentsGridView";
@@ -163,11 +167,6 @@ namespace Solutions.Forms
             this.ComponentsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComponentsGridView.RowTemplate.Height = 40;
             this.ComponentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // ComponentsLabel
-            // 
-            resources.ApplyResources(this.ComponentsLabel, "ComponentsLabel");
-            this.ComponentsLabel.Name = "ComponentsLabel";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -200,14 +199,33 @@ namespace Solutions.Forms
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // IsMain
+            // 
+            this.IsMain.DataPropertyName = "IsMain";
+            resources.ApplyResources(this.IsMain, "IsMain");
+            this.IsMain.Name = "IsMain";
+            this.IsMain.ReadOnly = true;
+            // 
+            // ComponentsLabel
+            // 
+            resources.ApplyResources(this.ComponentsLabel, "ComponentsLabel");
+            this.ComponentsLabel.Name = "ComponentsLabel";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ComponentsLabel);
             this.Controls.Add(this.ComponentsGridView);
             this.Controls.Add(this.SolutionAddBtn);
-            this.Controls.Add(this.DeleteSolutionBtn);
+            this.Controls.Add(this.SolutionDelBtn);
             this.Controls.Add(this.SolutionsLabel);
             this.Controls.Add(this.SolutionGridView);
             this.Controls.Add(this.SettingsBtn);
@@ -216,6 +234,7 @@ namespace Solutions.Forms
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.SolutionGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComponentsGridView)).EndInit();
@@ -231,17 +250,19 @@ namespace Solutions.Forms
         private System.Windows.Forms.Button SettingsBtn;
         private System.Windows.Forms.DataGridView SolutionGridView;
         private System.Windows.Forms.Label SolutionsLabel;
-        private System.Windows.Forms.Button DeleteSolutionBtn;
+        private System.Windows.Forms.Button SolutionDelBtn;
         private System.Windows.Forms.Button SolutionAddBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SolutionId;
         private System.Windows.Forms.DataGridViewTextBoxColumn SolutionName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SolutionVolume;
         private System.Windows.Forms.DataGridView ComponentsGridView;
         private System.Windows.Forms.Label ComponentsLabel;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SolId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsMain;
     }
 }
 

@@ -24,6 +24,8 @@ namespace Solutions.Forms
         private SqlDataAdapter sqlAdapter2 = null;
         private DataTable table2 = null;
 
+        private int _maxSolutionId = 0;
+
         // --------------------------------------------
 
         public MainForm()
@@ -61,6 +63,15 @@ namespace Solutions.Forms
                 return true;
             }
         }
+        // Обработчик закгрузки формы
+        private void MainForm_Load(object sender, EventArgs e)
+        { 
+            table = new DataTable();
+            SolutionGridView.DataSource = table;
+
+            table2 = new DataTable();
+            ComponentsGridView.DataSource = table2;
+        }
 
         // Обработчик отображения формы
         private void MainForm_Shown(object sender, EventArgs e)
@@ -91,11 +102,15 @@ namespace Solutions.Forms
                 sqlBuilder.GetInsertCommand();
                 sqlBuilder.GetDeleteCommand();
 
-                table = new DataTable();
-
+                table.Rows.Clear();
                 sqlAdapter.Fill(table);
 
+                // Ищем максимальное значение индекса
+                string indexColName = table.Columns[0].ColumnName;
+                DataRow indexRow = table.Select($"{indexColName}=MAX({indexColName})")[0];
+                _maxSolutionId = indexRow.Field<int>(0); // Сохраняем
 
+                
 
                 sqlAdapter2 = new SqlDataAdapter("SELECT *  FROM [MudDBTest].[dbo].[Components]", Database.GetInstance()._sqlConnection);
 
@@ -105,11 +120,11 @@ namespace Solutions.Forms
                 sqlBuilder2.GetInsertCommand();
                 sqlBuilder2.GetDeleteCommand();
 
-                table2 = new DataTable();
-
+                table2.Rows.Clear();
                 sqlAdapter2.Fill(table2);
 
-                SolutionGridView.DataSource = table;
+
+                SolutionAddBtn.Enabled = true;
             }
             catch (Exception exception)
             {
@@ -120,14 +135,14 @@ namespace Solutions.Forms
         // Обработчик нажатия на кнопку "Сохранить"
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (CheckDbConnection() == false) return;
+            if (CheckDbConnection() == false || sqlAdapter == null) return;
 
             try
             {
                 if (table != null)
                 {
                     sqlAdapter.Update(table); // Сохраняем изменения в БД.
-                } 
+                }
                 else
                 {
                     MessageBox.Show(
@@ -147,8 +162,7 @@ namespace Solutions.Forms
         // Обработчик добавления записи в таблицу "Растворы"
         private void SolutionAddBtn_Click(object sender, EventArgs e)
         {
-            // Проверяем соединение
-            if (CheckDbConnection() == false || table == null) return;
+            if (table == null) return;
 
             try
             {
@@ -158,14 +172,9 @@ namespace Solutions.Forms
 
                     if (dialogResult == DialogResult.OK)
                     {
-                        // Ищем максимальное значение индекса
-                        string indexColName = table.Columns[0].ColumnName;
-                        DataRow indexRow = table.Select($"{indexColName}=MAX({indexColName})")[0];
-                        int id = indexRow.Field<int>(0) + 1; // Новый индекс
-
                         // Создаем новую строку и заполняем значениями
                         DataRow row = table.NewRow();
-                        row.SetField(0, id);
+                        row.SetField(0, ++_maxSolutionId);
                         row.SetField(1, addSolutionForm.SolutionName);
                         row.SetField(2, addSolutionForm.SolutionVolume);
    
@@ -180,10 +189,9 @@ namespace Solutions.Forms
         }
 
         // Обработчик удаления записи с таблицы "Растворы"
-        private void DeleteSolutionBtn_Click(object sender, EventArgs e)
+        private void SolutionDelBtn_Click(object sender, EventArgs e)
         {
-            // Проверяем соединение
-            if (CheckDbConnection() == false || table == null) return;
+            if (table == null) return;
 
             try
             {
@@ -202,6 +210,14 @@ namespace Solutions.Forms
             {
                 ShowErrorMsgDialog(exception);
             }
+            finally
+            {
+                // Отключаем кнопку удаления раствора, если не осталось записей
+                if (SolutionGridView.Rows.Count == 0)
+                {
+                    SolutionDelBtn.Enabled = false;
+                }
+            }
         }
 
         // Обработчик нажатия на кнопку "Настройки соединения"
@@ -211,6 +227,36 @@ namespace Solutions.Forms
             if (_settingsForm != null)
             {
                 _settingsForm.ShowDialog();
+            }
+        }
+
+        // Обработчик изменения текущего выбора в GridView растворов
+        private void SolutionGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (SolutionGridView.Rows.Count > 0 && table2 != null)
+                {
+                    //int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
+                    //table2.DefaultView.RowFilter = string.Format($"SolutionId = {index}");
+
+
+                }
+            }
+            catch (Exception exception)
+            {
+
+                ShowErrorMsgDialog(exception);
+            }
+        }
+
+        // Обработчик изменения источника данных
+        private void SolutionGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            // Если есть записи в таблице "Растворы", включаем кнопку удаления записи
+            if (SolutionGridView.Rows.Count > 0 && SolutionDelBtn.Enabled == false)
+            {
+                SolutionDelBtn.Enabled = true;
             }
         }
 
@@ -230,7 +276,6 @@ namespace Solutions.Forms
                     }
                 }
             }
-            
         }
 
         // Обработчик нажатия кнопок в колонке
@@ -240,26 +285,6 @@ namespace Solutions.Forms
             if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-            }
-        }
-
-        // Обработчик изменения текущего выбора в GridView
-        private void SolutionGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (SolutionGridView.Rows.Count > 0 && table2 != null)
-                {
-                    int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
-                    table2.DefaultView.RowFilter = string.Format($"SolutionId = {index}");
-
-                    ComponentsGridView.DataSource = table2;
-                }
-            }
-            catch (Exception exception)
-            {
-
-                ShowErrorMsgDialog(exception);
             }
         }
     }
