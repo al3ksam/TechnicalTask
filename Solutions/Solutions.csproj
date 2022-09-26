@@ -54,7 +54,15 @@
     <Compile Include="Forms\AddSolutionForm.Designer.cs">
       <DependentUpon>AddSolutionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.Solutions.cs" />
+    <Compile Include="Forms\MainForm.DataHandlers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.SolutionsGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.GridShare.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +118,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Data\Database.Core.cs" />
+    <Compile Include="Forms\MainForm.Helpers.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

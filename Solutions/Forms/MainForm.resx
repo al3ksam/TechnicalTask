@@ -219,8 +219,38 @@
   <data name="&gt;&gt;SettingsBtn.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <metadata name="SolutionIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SolutionNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SolutionVolumeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="SolutionGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>40</value>
+  </data>
+  <data name="SolutionGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 112</value>
+  </data>
+  <data name="SolutionGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 321</value>
+  </data>
+  <data name="SolutionGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;SolutionGridView.Name" xml:space="preserve">
+    <value>SolutionGridView</value>
+  </data>
+  <data name="&gt;&gt;SolutionGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SolutionGridView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SolutionGridView.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <metadata name="SolutionIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -245,27 +275,6 @@
   </data>
   <data name="SolutionVolumeColumn.Width" type="System.Int32, mscorlib">
     <value>126</value>
-  </data>
-  <data name="SolutionGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 112</value>
-  </data>
-  <data name="SolutionGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 321</value>
-  </data>
-  <data name="SolutionGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;SolutionGridView.Name" xml:space="preserve">
-    <value>SolutionGridView</value>
-  </data>
-  <data name="&gt;&gt;SolutionGridView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SolutionGridView.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SolutionGridView.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="SolutionsLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -366,8 +375,44 @@
   <data name="&gt;&gt;SolutionAddBtn.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="ComIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SolIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ComNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ComAmountColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ComIsMainColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="ComponentsGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>40</value>
+  </data>
+  <data name="ComponentsGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 112</value>
+  </data>
+  <data name="ComponentsGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 321</value>
+  </data>
+  <data name="ComponentsGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ComponentsGridView.Name" xml:space="preserve">
+    <value>ComponentsGridView</value>
+  </data>
+  <data name="&gt;&gt;ComponentsGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComponentsGridView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ComponentsGridView.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="ComIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -411,27 +456,6 @@
   <data name="ComIsMainColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="ComponentsGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 112</value>
-  </data>
-  <data name="ComponentsGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 321</value>
-  </data>
-  <data name="ComponentsGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ComponentsGridView.Name" xml:space="preserve">
-    <value>ComponentsGridView</value>
-  </data>
-  <data name="&gt;&gt;ComponentsGridView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComponentsGridView.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ComponentsGridView.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="ComponentsLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -462,40 +486,40 @@
   <data name="&gt;&gt;ComponentsLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button1.Enabled" type="System.Boolean, mscorlib">
+  <data name="ComponentDelBtn.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="ComponentDelBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14.25pt, style=Bold</value>
   </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ComponentDelBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ComponentDelBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>1005, 72</value>
   </data>
-  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="ComponentDelBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ComponentDelBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 34</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="ComponentDelBtn.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="ComponentDelBtn.Text" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;ComponentDelBtn.Name" xml:space="preserve">
+    <value>ComponentDelBtn</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ComponentDelBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ComponentDelBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ComponentDelBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -518,6 +542,24 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Solutions</value>
+  </data>
+  <data name="&gt;&gt;SolutionIdColumn.Name" xml:space="preserve">
+    <value>SolutionIdColumn</value>
+  </data>
+  <data name="&gt;&gt;SolutionIdColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SolutionNameColumn.Name" xml:space="preserve">
+    <value>SolutionNameColumn</value>
+  </data>
+  <data name="&gt;&gt;SolutionNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SolutionVolumeColumn.Name" xml:space="preserve">
+    <value>SolutionVolumeColumn</value>
+  </data>
+  <data name="&gt;&gt;SolutionVolumeColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ComIdColumn.Name" xml:space="preserve">
     <value>ComIdColumn</value>
@@ -547,24 +589,6 @@
     <value>ComIsMainColumn</value>
   </data>
   <data name="&gt;&gt;ComIsMainColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SolutionIdColumn.Name" xml:space="preserve">
-    <value>SolutionIdColumn</value>
-  </data>
-  <data name="&gt;&gt;SolutionIdColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SolutionNameColumn.Name" xml:space="preserve">
-    <value>SolutionNameColumn</value>
-  </data>
-  <data name="&gt;&gt;SolutionNameColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SolutionVolumeColumn.Name" xml:space="preserve">
-    <value>SolutionVolumeColumn</value>
-  </data>
-  <data name="&gt;&gt;SolutionVolumeColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
