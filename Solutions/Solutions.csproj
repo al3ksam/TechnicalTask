@@ -48,53 +48,53 @@
     <Compile Include="Data\Database.AuthentificationMethod.cs" />
     <Compile Include="Data\Database.ConnectionSettings.cs" />
     <Compile Include="Data\Database.cs" />
-    <Compile Include="Forms\AddSolutionForm.cs">
+    <Compile Include="Forms\AddSolutionForm\AddSolutionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddSolutionForm.Designer.cs">
+    <Compile Include="Forms\AddSolutionForm\AddSolutionForm.Designer.cs">
       <DependentUpon>AddSolutionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.DataHandlers.cs">
+    <Compile Include="Forms\MainForm\MainForm.DataHandlers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.SolutionsGrid.cs">
+    <Compile Include="Forms\MainForm\MainForm.SolutionsGrid.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.GridShare.cs">
+    <Compile Include="Forms\MainForm\MainForm.GridShare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SettingsForm.cs">
+    <Compile Include="Forms\SettingsForm\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SettingsForm.Designer.cs">
+    <Compile Include="Forms\SettingsForm\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\IDatabase.cs" />
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solution.cs" />
-    <EmbeddedResource Include="Forms\AddSolutionForm.resx">
+    <EmbeddedResource Include="Forms\AddSolutionForm\AddSolutionForm.resx">
       <DependentUpon>AddSolutionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddSolutionForm.ru-RU.resx">
+    <EmbeddedResource Include="Forms\AddSolutionForm\AddSolutionForm.ru-RU.resx">
       <DependentUpon>AddSolutionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.ru-RU.resx">
+    <EmbeddedResource Include="Forms\MainForm\MainForm.ru-RU.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsForm.resx">
+    <EmbeddedResource Include="Forms\SettingsForm\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsForm.ru-RU.resx">
+    <EmbeddedResource Include="Forms\SettingsForm\SettingsForm.ru-RU.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ru-RU.resx">
@@ -118,7 +118,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Data\Database.Core.cs" />
-    <Compile Include="Forms\MainForm.Helpers.cs" />
+    <Compile Include="Forms\MainForm\MainForm.Helpers.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
