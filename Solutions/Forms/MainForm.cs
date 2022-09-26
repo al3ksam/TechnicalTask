@@ -14,6 +14,7 @@ namespace Solutions.Forms
         private readonly SettingsForm _settingsForm;
 
         private int _maxSolutionId = 0; // Максимальный Id таблицы "Растворы"
+        private int _maxComponentId = 0; // Максимальный Id таблицы "Растворы"
         private bool _isSolutionRowAdded = false; // Флаг добавления записи в таблицу "Растворы"
 
         // --------------------------------------------
@@ -104,16 +105,6 @@ namespace Solutions.Forms
                 sqlBuilder.GetInsertCommand();
                 sqlBuilder.GetDeleteCommand();
 
-                table.Rows.Clear();
-                sqlAdapter.Fill(table);
-
-                // Ищем максимальное значение индекса
-                string indexColName = table.Columns[0].ColumnName;
-                DataRow indexRow = table.Select($"{indexColName}=MAX({indexColName})")[0];
-                _maxSolutionId = indexRow.Field<int>(0); // Сохраняем
-
-
-
                 sqlAdapter2 = new SqlDataAdapter("SELECT *  FROM [MudDBTest].[dbo].[Components]", Database.GetInstance()._sqlConnection);
 
                 sqlBuilder2 = new SqlCommandBuilder(sqlAdapter2);
@@ -124,6 +115,34 @@ namespace Solutions.Forms
 
                 table2.Rows.Clear();
                 sqlAdapter2.Fill(table2);
+
+                if (table2.Rows.Count > 0)
+                {
+                    // Ищем максимальное значение индекса компонентов
+                    string indexComColName = table2.Columns[0].ColumnName;
+                    DataRow indexRowComponent = table2.Select($"{indexComColName}=MAX({indexComColName})")[0];
+                    _maxComponentId = indexRowComponent.Field<int>(0); // Сохраняем
+                }
+                else
+                {
+                    _maxComponentId = 0;
+                }
+                
+
+                table.Rows.Clear();
+                sqlAdapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    // Ищем максимальное значение индекса растворов
+                    string indexSolColName = table.Columns[0].ColumnName;
+                    DataRow indexRowSolution = table.Select($"{indexSolColName}=MAX({indexSolColName})")[0];
+                    _maxSolutionId = indexRowSolution.Field<int>(0); // Сохраняем
+                }
+                else
+                {
+                    _maxSolutionId = 0;
+                }
 
                 SaveBtn.Enabled = true;
                 SolutionAddBtn.Enabled = true;
@@ -143,6 +162,7 @@ namespace Solutions.Forms
             {
                 if (table != null && table2 != null)
                 {
+
                     // Сохраняем изменения в БД.
                     sqlAdapter2.Update(table2);
                     sqlAdapter.Update(table);
@@ -171,12 +191,13 @@ namespace Solutions.Forms
             {
                 _settingsForm.ShowDialog();
             }
+            Focus();
         }
 
         // Обработчик добавления записи в таблицу "Растворы"
         private void SolutionAddBtn_Click(object sender, EventArgs e)
         {
-            if (table == null) return;
+            if (table == null || table2 == null) return;
 
             try
             {
@@ -187,15 +208,27 @@ namespace Solutions.Forms
                     if (dialogResult == DialogResult.OK)
                     {
                         // Создаем новую строку и заполняем значениями
-                        DataRow row = table.NewRow();
-                        row.SetField(0, ++_maxSolutionId);
-                        row.SetField(1, addSolutionForm.SolutionName);
-                        row.SetField(2, addSolutionForm.SolutionVolume);
+                        DataRow solutionRow = table.NewRow();
+                        solutionRow.SetField(0, ++_maxSolutionId);
+                        solutionRow.SetField(1, addSolutionForm.SolutionName);
+                        solutionRow.SetField(2, addSolutionForm.SolutionVolume);
 
                         // Устанавливаем флаг добавления строки
                         _isSolutionRowAdded = true;
 
-                        table.Rows.Add(row); // Добавляем строку
+                        table.Rows.Add(solutionRow); // Добавляем строку раствора
+
+                        // Добавляем основной компонент
+                        DataRow componentRow = table2.NewRow();
+                        componentRow.SetField(0, ++_maxComponentId);
+                        componentRow.SetField(1, _maxSolutionId);
+                        componentRow.SetField(2, "Вода");
+                        componentRow.SetField(3, 100);
+                        componentRow.SetField(4, true);
+
+                        table2.Rows.Add(componentRow); // Добавляем строку основного компонента
+
+                        ComponentsGridView.Update();
                     }
                 }
             }
@@ -267,7 +300,7 @@ namespace Solutions.Forms
                     // Фильтрация компонентов по раствору
                     if (table2 != null && table2.Rows.Count > 0)
                     {
-                        int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
+                        int index = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
                         table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");
                     }
                 }
@@ -360,10 +393,13 @@ namespace Solutions.Forms
         // Обработчик изменения текущего выбора в GridView компонентов
         private void ComponentsGridView_SelectionChanged(object sender, EventArgs e)
         {
+            // Если есть компоненты
             if (ComponentsGridView.Rows.Count > 0 && ComponentsGridView.SelectedRows.Count > 0)
             {
                 try
                 {
+                    ComponentAddBtn.Enabled = true; // Включаем кнопку добавления компонентов
+
                     // Отключаем кнопку удаления компонента, если это главный компонент
                     bool isComponentMain = Convert.ToBoolean(ComponentsGridView.SelectedRows[0].Cells[4].Value);
 
@@ -381,8 +417,10 @@ namespace Solutions.Forms
                     ShowErrorMsgDialog(exeption);
                 }
             }
-            else
+            else // Если список компонентов пуст
             {
+                // Отключаем кнопки добавления и удаления компонентов
+                ComponentAddBtn.Enabled = false;
                 ComponentDelBtn.Enabled = false;
             }
         }
