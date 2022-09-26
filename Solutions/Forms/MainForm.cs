@@ -20,6 +20,7 @@ namespace Solutions.Forms
         private SqlDataAdapter sqlAdapter = null;
         private DataTable table = null;
 
+        private SqlCommandBuilder sqlBuilder2 = null;
         private SqlDataAdapter sqlAdapter2 = null;
         private DataTable table2 = null;
 
@@ -95,11 +96,14 @@ namespace Solutions.Forms
                 sqlAdapter.Fill(table);
 
 
-                sqlAdapter2 = new SqlDataAdapter(@"
-                    SELECT [MudDBTest].[dbo].[Components].[Id], [MudDBTest].[dbo].[Components].[SolutionId], [MudDBTest].[dbo].[Components].[Name], [MudDBTest].[dbo].[Components].[Percent] 
-                    FROM [MudDBTest].[dbo].[Components], [MudDBTest].[dbo].[Solutions]
-                    WHERE [MudDBTest].[dbo].[Components].[SolutionId] = [MudDBTest].[dbo].[Solutions].[Id]"
-                , Database.GetInstance()._sqlConnection);
+
+                sqlAdapter2 = new SqlDataAdapter("SELECT *  FROM [MudDBTest].[dbo].[Components]", Database.GetInstance()._sqlConnection);
+
+                sqlBuilder2 = new SqlCommandBuilder(sqlAdapter2);
+
+                sqlBuilder2.GetUpdateCommand();
+                sqlBuilder2.GetInsertCommand();
+                sqlBuilder2.GetDeleteCommand();
 
                 table2 = new DataTable();
 
