@@ -137,13 +137,15 @@ namespace Solutions.Forms
         // Обработчик нажатия на кнопку "Сохранить"
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (CheckDbConnection() == false || sqlAdapter == null) return;
+            if (CheckDbConnection() == false || sqlAdapter == null || sqlAdapter2 == null) return;
 
             try
             {
-                if (table != null)
+                if (table != null && table2 != null)
                 {
-                    sqlAdapter.Update(table); // Сохраняем изменения в БД.
+                    // Сохраняем изменения в БД.
+                    sqlAdapter2.Update(table2);
+                    sqlAdapter.Update(table);
                 }
                 else
                 {
@@ -223,7 +225,6 @@ namespace Solutions.Forms
                     // Ищем строки по индексу и удаляем.
                     DataRow[] solutionRows = table.Select($"{table.Columns[0].ColumnName} = {index}");
 
-
                     foreach (var solutionRow in solutionRows)
                     {
                         if (table2 != null)
@@ -261,20 +262,24 @@ namespace Solutions.Forms
         {
             try
             {
-                if (SolutionGridView.Rows.Count > 0 && table2 != null && table2.Rows.Count > 0)
+                // Фильтрация компонентов по раствору
+                if (
+                    SolutionGridView.Rows.Count > 0 && 
+                    SolutionGridView.SelectedRows.Count > 0 && 
+                    table2 != null && table2.Rows.Count > 0
+                )
                 {
-                    //int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
-                    //table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");
+                    int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
+                    table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");
                 }
             }
             catch (Exception exception)
             {
-
                 ShowErrorMsgDialog(exception);
             }
         }
 
-        // Обработчик изменения источника данных
+        // Обработчик изменения источника данных в таблице "Растворы"
         private void SolutionGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             // Если есть записи в таблице "Растворы", включаем кнопку удаления записи
@@ -303,7 +308,7 @@ namespace Solutions.Forms
 
         }
 
-        // Обработчик отображения элемента управления для редактирования ячейки
+        // Обработчик отображения элемента управления для редактирования ячейки таблицы "Растворы"
         private void SolutionGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (e != null)
@@ -318,6 +323,70 @@ namespace Solutions.Forms
                         tb.KeyPress += new KeyPressEventHandler(Column_KeyPress);
                     }
                 }
+            }
+        }
+
+        // Обработчик удаления записи с таблицы "Компоненты"
+        private void ComponentDelBtn_Click(object sender, EventArgs e)
+        {
+            if (table2 == null) return;
+
+            try
+            {
+                if (ComponentsGridView.Rows.Count > 0)
+                {
+                    int index = Convert.ToInt32(ComponentsGridView.CurrentRow.Cells[0].Value);
+
+                    // Ищем строки по индексу и удаляем.
+                    DataRow[] componentRows = table2.Select($"{table2.Columns[0].ColumnName} = {index}");
+
+                    foreach (var componentRow in componentRows)
+                    {
+                        componentRow.Delete(); // Удаляем запись раствора
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                ShowErrorMsgDialog(exception);
+            }
+            finally
+            {
+                // Отключаем кнопку удаления раствора, если не осталось записей
+                if (ComponentsGridView.Rows.Count == 0)
+                {
+                    ComponentDelBtn.Enabled = false;
+                }
+            }
+        }
+
+        // Обработчик изменения текущего выбора в GridView компонентов
+        private void ComponentsGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (ComponentsGridView.Rows.Count > 0 && ComponentsGridView.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    // Отключаем кнопку удаления компонента, если это главный компонент
+                    bool isComponentMain = Convert.ToBoolean(ComponentsGridView.SelectedRows[0].Cells[4].Value);
+
+                    if (isComponentMain)
+                    {
+                        ComponentDelBtn.Enabled = false;
+                    }
+                    else
+                    {
+                        ComponentDelBtn.Enabled = true;
+                    }
+                }
+                catch (Exception exeption)
+                {
+                    ShowErrorMsgDialog(exeption);
+                }
+            }
+            else
+            {
+                ComponentDelBtn.Enabled = false;
             }
         }
 

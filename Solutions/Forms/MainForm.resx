@@ -375,44 +375,8 @@
   <data name="&gt;&gt;SolutionAddBtn.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="ComIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SolIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ComNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ComAmountColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ComIsMainColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="ComponentsGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>40</value>
-  </data>
-  <data name="ComponentsGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 112</value>
-  </data>
-  <data name="ComponentsGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 321</value>
-  </data>
-  <data name="ComponentsGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ComponentsGridView.Name" xml:space="preserve">
-    <value>ComponentsGridView</value>
-  </data>
-  <data name="&gt;&gt;ComponentsGridView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComponentsGridView.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ComponentsGridView.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <metadata name="ComIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -455,6 +419,27 @@
   </data>
   <data name="ComIsMainColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="ComponentsGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 112</value>
+  </data>
+  <data name="ComponentsGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 321</value>
+  </data>
+  <data name="ComponentsGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ComponentsGridView.Name" xml:space="preserve">
+    <value>ComponentsGridView</value>
+  </data>
+  <data name="&gt;&gt;ComponentsGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComponentsGridView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ComponentsGridView.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="ComponentsLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

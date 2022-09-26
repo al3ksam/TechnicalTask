@@ -168,6 +168,7 @@ namespace Solutions.Forms
             this.ComponentsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComponentsGridView.RowTemplate.Height = 40;
             this.ComponentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ComponentsGridView.SelectionChanged += new System.EventHandler(this.ComponentsGridView_SelectionChanged);
             // 
             // ComIdColumn
             // 
@@ -217,6 +218,7 @@ namespace Solutions.Forms
             resources.ApplyResources(this.ComponentDelBtn, "ComponentDelBtn");
             this.ComponentDelBtn.Name = "ComponentDelBtn";
             this.ComponentDelBtn.UseVisualStyleBackColor = true;
+            this.ComponentDelBtn.Click += new System.EventHandler(this.ComponentDelBtn_Click);
             // 
             // MainForm
             // 
