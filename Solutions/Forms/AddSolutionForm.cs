@@ -16,9 +16,14 @@ namespace Solutions.Forms
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Имя раствора
+        /// </summary>
         public string SolutionName => NameTextBox.Text.Trim();
+        /// <summary>
+        /// Объем раствора
+        /// </summary>
         public decimal SolutionVolume => VolumeNumeric.Value;
-
 
         private void AddBtn_Click(object sender, EventArgs e)
         {

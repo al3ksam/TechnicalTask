@@ -126,19 +126,19 @@
   <data name="SettingsBtn.Text" xml:space="preserve">
     <value>Настройки соединения</value>
   </data>
-  <data name="SolutionName.HeaderText" xml:space="preserve">
+  <data name="SolutionNameColumn.HeaderText" xml:space="preserve">
     <value>Название</value>
   </data>
-  <data name="SolutionVolume.HeaderText" xml:space="preserve">
+  <data name="SolutionVolumeColumn.HeaderText" xml:space="preserve">
     <value>Объём, м3</value>
   </data>
   <data name="SolutionsLabel.Text" xml:space="preserve">
     <value>Растворы:</value>
   </data>
-  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
+  <data name="ComNameColumn.HeaderText" xml:space="preserve">
     <value>Компонент</value>
   </data>
-  <data name="dataGridViewTextBoxColumn3.HeaderText" xml:space="preserve">
+  <data name="ComAmountColumn.HeaderText" xml:space="preserve">
     <value>Количество, %</value>
   </data>
   <data name="ComponentsLabel.Text" xml:space="preserve">

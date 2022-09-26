@@ -208,12 +208,27 @@ namespace Solutions.Forms
             {
                 if (SolutionGridView.Rows.Count > 0)
                 {
-                    // Ищем строки по инлексу и удаляем.
-                    DataRow[] rows = table.Select($"{table.Columns[0].ColumnName} = {SolutionGridView.CurrentRow.Cells[0].Value}");
+                    int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
 
-                    foreach (var row in rows)
+                    // Ищем строки по индексу и удаляем.
+                    DataRow[] solutionRows = table.Select($"{table.Columns[0].ColumnName} = {index}");
+                    
+
+                    foreach (var solutionRow in solutionRows)
                     {
-                        row.Delete();
+                        if (table2 != null)
+                        {
+                            // Ищем компоненты раствора
+                            DataRow[] componentRows = table2.Select($"{table2.Columns[1].ColumnName} = {index}");
+
+                            // Удаляем записи компонентов
+                            foreach (var componentRow in componentRows)
+                            {
+                                componentRow.Delete();
+                            }
+                        }
+
+                        solutionRow.Delete(); // Удаляем запись раствора
                     }
                 }
             }
