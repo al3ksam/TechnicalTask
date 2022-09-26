@@ -366,7 +366,7 @@
   <data name="&gt;&gt;SolutionAddBtn.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="dataGridView1.ColumnHeadersHeight" type="System.Int32, mscorlib">
+  <data name="ComponentsGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -402,25 +402,25 @@
   <data name="dataGridViewTextBoxColumn3.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ComponentsGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>576, 89</value>
   </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ComponentsGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>472, 321</value>
   </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+  <data name="ComponentsGridView.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
+  <data name="&gt;&gt;ComponentsGridView.Name" xml:space="preserve">
+    <value>ComponentsGridView</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ComponentsGridView.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ComponentsGridView.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ComponentsGridView.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="ComponentsLabel.AutoSize" type="System.Boolean, mscorlib">

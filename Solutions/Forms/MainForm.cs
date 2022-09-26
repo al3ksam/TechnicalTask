@@ -94,8 +94,6 @@ namespace Solutions.Forms
 
                 sqlAdapter.Fill(table);
 
-                
-
 
                 sqlAdapter2 = new SqlDataAdapter(@"
                     SELECT [MudDBTest].[dbo].[Components].[Id], [MudDBTest].[dbo].[Components].[SolutionId], [MudDBTest].[dbo].[Components].[Name], [MudDBTest].[dbo].[Components].[Percent] 
@@ -251,7 +249,7 @@ namespace Solutions.Forms
                     int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
                     table2.DefaultView.RowFilter = string.Format($"SolutionId = {index}");
 
-                    dataGridView1.DataSource = table2;
+                    ComponentsGridView.DataSource = table2;
                 }
             }
             catch (Exception exception)

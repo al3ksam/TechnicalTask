@@ -40,14 +40,14 @@ namespace Solutions.Forms
             this.SolutionsLabel = new System.Windows.Forms.Label();
             this.DeleteSolutionBtn = new System.Windows.Forms.Button();
             this.SolutionAddBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ComponentsGridView = new System.Windows.Forms.DataGridView();
             this.ComponentsLabel = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SolutionGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComponentsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // UpdateBtn
@@ -138,31 +138,31 @@ namespace Solutions.Forms
             this.SolutionAddBtn.UseVisualStyleBackColor = true;
             this.SolutionAddBtn.Click += new System.EventHandler(this.SolutionAddBtn_Click);
             // 
-            // dataGridView1
+            // ComponentsGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ComponentsGridView.AllowUserToAddRows = false;
+            this.ComponentsGridView.AllowUserToDeleteRows = false;
+            this.ComponentsGridView.AllowUserToResizeColumns = false;
+            this.ComponentsGridView.AllowUserToResizeRows = false;
+            this.ComponentsGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.ComponentsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            resources.ApplyResources(this.ComponentsGridView, "ComponentsGridView");
+            this.ComponentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.ComponentsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.SolId,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ComponentsGridView.EnableHeadersVisualStyles = false;
+            this.ComponentsGridView.MultiSelect = false;
+            this.ComponentsGridView.Name = "ComponentsGridView";
+            this.ComponentsGridView.ReadOnly = true;
+            this.ComponentsGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.ComponentsGridView.RowHeadersVisible = false;
+            this.ComponentsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.ComponentsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComponentsGridView.RowTemplate.Height = 40;
+            this.ComponentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // ComponentsLabel
             // 
@@ -205,7 +205,7 @@ namespace Solutions.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.ComponentsLabel);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ComponentsGridView);
             this.Controls.Add(this.SolutionAddBtn);
             this.Controls.Add(this.DeleteSolutionBtn);
             this.Controls.Add(this.SolutionsLabel);
@@ -218,7 +218,7 @@ namespace Solutions.Forms
             this.Name = "MainForm";
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.SolutionGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComponentsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +236,7 @@ namespace Solutions.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn SolutionId;
         private System.Windows.Forms.DataGridViewTextBoxColumn SolutionName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SolutionVolume;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ComponentsGridView;
         private System.Windows.Forms.Label ComponentsLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SolId;
