@@ -137,6 +137,15 @@
 Проверьте подключение!</value>
   </data>
   <data name="DbConnectionNotMsgCaption" xml:space="preserve">
+    <value>Ошибка подключения</value>
+  </data>
+  <data name="MsgDlgDataNotLoaded" xml:space="preserve">
+    <value>Данные не были загружены!</value>
+  </data>
+  <data name="MsgDlgErrorCaption" xml:space="preserve">
     <value>Ошибка</value>
+  </data>
+  <data name="MsgDlgInfoCaption" xml:space="preserve">
+    <value>Информация</value>
   </data>
 </root>

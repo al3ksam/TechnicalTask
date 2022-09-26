@@ -137,6 +137,15 @@
 Check the connection!</value>
   </data>
   <data name="DbConnectionNotMsgCaption" xml:space="preserve">
+    <value>Connection error</value>
+  </data>
+  <data name="MsgDlgDataNotLoaded" xml:space="preserve">
+    <value>The data was not uploaded!</value>
+  </data>
+  <data name="MsgDlgErrorCaption" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="MsgDlgInfoCaption" xml:space="preserve">
+    <value>Info</value>
   </data>
 </root>

@@ -116,11 +116,38 @@ namespace Solutions.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Error.
+        ///   Ищет локализованную строку, похожую на Connection error.
         /// </summary>
         internal static string DbConnectionNotMsgCaption {
             get {
                 return ResourceManager.GetString("DbConnectionNotMsgCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The data was not uploaded!.
+        /// </summary>
+        internal static string MsgDlgDataNotLoaded {
+            get {
+                return ResourceManager.GetString("MsgDlgDataNotLoaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Error.
+        /// </summary>
+        internal static string MsgDlgErrorCaption {
+            get {
+                return ResourceManager.GetString("MsgDlgErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Info.
+        /// </summary>
+        internal static string MsgDlgInfoCaption {
+            get {
+                return ResourceManager.GetString("MsgDlgInfoCaption", resourceCulture);
             }
         }
     }
