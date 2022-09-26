@@ -96,7 +96,6 @@ namespace Solutions.Forms
             this.SolutionGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SolutionGridView.RowTemplate.Height = 40;
             this.SolutionGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SolutionGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.SolutionGridView_DataBindingComplete);
             this.SolutionGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.SolutionGridView_EditingControlShowing);
             this.SolutionGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.SolutionGridView_RowsAdded);
             this.SolutionGridView.SelectionChanged += new System.EventHandler(this.SolutionGridView_SelectionChanged);

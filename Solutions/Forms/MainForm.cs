@@ -260,32 +260,29 @@ namespace Solutions.Forms
         // Обработчик изменения текущего выбора в GridView растворов
         private void SolutionGridView_SelectionChanged(object sender, EventArgs e)
         {
-            try
+            if (SolutionGridView.Rows.Count > 0 && SolutionGridView.SelectedRows.Count > 0 )
             {
-                // Фильтрация компонентов по раствору
-                if (
-                    SolutionGridView.Rows.Count > 0 && 
-                    SolutionGridView.SelectedRows.Count > 0 && 
-                    table2 != null && table2.Rows.Count > 0
-                )
+                try
                 {
-                    int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
-                    table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");
+                    // Фильтрация компонентов по раствору
+                    if (table2 != null && table2.Rows.Count > 0)
+                    {
+                        int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
+                        table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");
+                    }
                 }
-            }
-            catch (Exception exception)
-            {
-                ShowErrorMsgDialog(exception);
-            }
-        }
+                catch (Exception exception)
+                {
+                    ShowErrorMsgDialog(exception);
+                }
 
-        // Обработчик изменения источника данных в таблице "Растворы"
-        private void SolutionGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            // Если есть записи в таблице "Растворы", включаем кнопку удаления записи
-            if (SolutionGridView.Rows.Count > 0 && SolutionDelBtn.Enabled == false)
-            {
+                // Включаем кнопку, если есть записи
                 SolutionDelBtn.Enabled = true;
+            }
+            else
+            {
+                // Отключаем кнопку, если нет записей
+                SolutionDelBtn.Enabled = false;
             }
         }
 
