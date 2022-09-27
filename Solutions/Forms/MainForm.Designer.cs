@@ -187,6 +187,7 @@ namespace Solutions.Forms
             resources.ApplyResources(this.ComponentAddBtn, "ComponentAddBtn");
             this.ComponentAddBtn.Name = "ComponentAddBtn";
             this.ComponentAddBtn.UseVisualStyleBackColor = true;
+            this.ComponentAddBtn.Click += new System.EventHandler(this.ComponentAddBtn_Click);
             // 
             // ComIdColumn
             // 

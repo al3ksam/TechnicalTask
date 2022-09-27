@@ -133,7 +133,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="UpdateBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="UpdateBtn.Text" xml:space="preserve">
     <value>Update</value>
@@ -169,7 +169,7 @@
     <value>112, 32</value>
   </data>
   <data name="SaveBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="SaveBtn.Text" xml:space="preserve">
     <value>Save</value>
@@ -202,7 +202,7 @@
     <value>202, 32</value>
   </data>
   <data name="SettingsBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="SettingsBtn.Text" xml:space="preserve">
     <value>Connection settings</value>
@@ -409,7 +409,7 @@
     <value>472, 321</value>
   </data>
   <data name="ComponentsGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ComponentsGridView.Name" xml:space="preserve">
     <value>ComponentsGridView</value>
@@ -472,7 +472,7 @@
     <value>45, 34</value>
   </data>
   <data name="ComponentDelBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="ComponentDelBtn.Text" xml:space="preserve">
     <value>-</value>
@@ -508,7 +508,7 @@
     <value>45, 34</value>
   </data>
   <data name="ComponentAddBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="ComponentAddBtn.Text" xml:space="preserve">
     <value>+</value>

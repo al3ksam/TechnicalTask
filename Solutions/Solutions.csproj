@@ -48,6 +48,12 @@
     <Compile Include="Data\Database.AuthentificationMethod.cs" />
     <Compile Include="Data\Database.ConnectionSettings.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Forms\AddComponentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddComponentForm.Designer.cs">
+      <DependentUpon>AddComponentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddSolutionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solution.cs" />
+    <EmbeddedResource Include="Forms\AddComponentForm.resx">
+      <DependentUpon>AddComponentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddComponentForm.ru-RU.resx">
+      <DependentUpon>AddComponentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddSolutionForm.resx">
       <DependentUpon>AddSolutionForm.cs</DependentUpon>
     </EmbeddedResource>

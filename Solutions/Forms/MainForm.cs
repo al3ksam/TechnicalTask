@@ -16,6 +16,7 @@ namespace Solutions.Forms
         private int _maxSolutionId = 0; // Максимальный Id таблицы "Растворы"
         private int _maxComponentId = 0; // Максимальный Id таблицы "Растворы"
         private bool _isSolutionRowAdded = false; // Флаг добавления записи в таблицу "Растворы"
+        private bool _isComponentRowAdded = false; // Флаг добавления записи в таблицу "Компоненты"
 
         // --------------------------------------------
         // Временно (в последствии будет перенесено в Database)
@@ -227,8 +228,6 @@ namespace Solutions.Forms
                         componentRow.SetField(4, true);
 
                         table2.Rows.Add(componentRow); // Добавляем строку основного компонента
-
-                        ComponentsGridView.Update();
                     }
                 }
             }
@@ -353,6 +352,76 @@ namespace Solutions.Forms
                         tb.KeyPress += new KeyPressEventHandler(Column_KeyPress);
                     }
                 }
+            }
+        }
+
+        // Обработчик добавления записи в таблицу "Компоненты"
+        private void ComponentAddBtn_Click(object sender, EventArgs e)
+        {
+            //if (table2 == null) return;
+
+            //try
+            //{
+            //    using (AddSolutionForm addSolutionForm = new AddSolutionForm())
+            //    {
+            //        DialogResult dialogResult = addSolutionForm.ShowDialog();
+
+            //        if (dialogResult == DialogResult.OK)
+            //        {
+            //            // Устанавливаем флаг добавления строки
+            //            _isSolutionRowAdded = true;
+
+            //            table.Rows.Add(solutionRow); // Добавляем строку раствора
+
+            //            // Добавляем основной компонент
+            //            DataRow componentRow = table2.NewRow();
+            //            componentRow.SetField(0, ++_maxComponentId);
+            //            componentRow.SetField(1, _maxSolutionId);
+            //            componentRow.SetField(2, "Вода");
+            //            componentRow.SetField(3, 100);
+            //            componentRow.SetField(4, true);
+
+            //            table2.Rows.Add(componentRow); // Добавляем строку основного компонента
+            //        }
+            //    }
+            //}
+            //catch (Exception exception)
+            //{
+            //    // Снимаем флаг, если была ошибка
+            //    if (_isSolutionRowAdded == true)
+            //    {
+            //        _isSolutionRowAdded = false;
+            //    }
+
+            //    ShowErrorMsgDialog(exception);
+            //}
+
+            if (table2 == null) return;
+
+            try
+            {
+                using (AddComponentForm addComponentForm = new AddComponentForm())
+                {
+                    DialogResult dialogResult = addComponentForm.ShowDialog();
+
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        // Устанавливаем флаг добавления строки
+                        _isComponentRowAdded = true;
+
+                        
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                // Снимаем флаг, если была ошибка
+                if (_isComponentRowAdded == true)
+                {
+                    _isComponentRowAdded = false;
+                }
+
+                ShowErrorMsgDialog(exception);
             }
         }
 
