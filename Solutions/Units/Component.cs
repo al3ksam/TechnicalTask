@@ -76,7 +76,5 @@
         {
             return left.Equals(right);
         }
-
-        
     }
 }

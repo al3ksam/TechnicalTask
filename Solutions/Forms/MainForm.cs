@@ -434,6 +434,8 @@ namespace Solutions.Forms
 
                                 table2.Rows.Add(componentRow); // Добавляем строку раствора
 
+
+                                // TODO
                                 Console.WriteLine(ComponentsGridView.Rows.Count);
 
                                 break;
@@ -441,7 +443,7 @@ namespace Solutions.Forms
                             else // Иначе выводим сообщение и возможное количество воды для нового компонента
                             {
                                 MessageBox.Show(
-                                    Program.ResManager.GetString("MsgDlgWater") + " => " + solution.WaterForComponents + "%", 
+                                    Program.ResManager.GetString("MsgDlgWater") + " => " + solution.WaterForComponent + "%", 
                                     Program.ResManager.GetString("MsgDlgInfoCaption"), 
                                     MessageBoxButtons.OK, MessageBoxIcon.Information
                                 );

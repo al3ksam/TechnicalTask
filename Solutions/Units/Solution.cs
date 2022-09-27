@@ -34,7 +34,7 @@ namespace Solutions.Units
         /// <summary>
         /// Возвращает воду, которую можно использовать для нового компонента
         /// </summary>
-        public float WaterForComponents => _water - _MIN_AMOUNT_WATER;
+        public float WaterForComponent => _water - _MIN_AMOUNT_WATER;
         
         /// <summary>
         /// Возвращает коллекцию компонентов раствора
