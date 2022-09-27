@@ -13,7 +13,7 @@ namespace Solutions.Data
         /// <summary>
         ///     Строка SQL для создания базы данных
         /// </summary>
-        private const string s_sqlStringcreateDb = "";
+        private const string s_sqlStringCreateDb = "";
 
         /// <summary>
         ///     Объект класса Database с поддержкой отложенной инициализации.

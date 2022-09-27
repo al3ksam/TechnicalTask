@@ -116,9 +116,8 @@ namespace Solutions.Data
                 {
                     try
                     {
-
-
-
+                        SqlCommand sqlCommandCreateDb = new SqlCommand(s_sqlStringCreateDb, _sqlConnection);
+                        sqlCommandCreateDb.ExecuteNonQuery();
                         return true;
                     }
                     catch (Exception)
