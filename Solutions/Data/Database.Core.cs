@@ -11,6 +11,11 @@ namespace Solutions.Data
         private const string s_tableName = "MudDbTest";
 
         /// <summary>
+        ///     Строка SQL для создания базы данных
+        /// </summary>
+        private const string s_sqlStringcreateDb = "";
+
+        /// <summary>
         ///     Объект класса Database с поддержкой отложенной инициализации.
         ///     Необходим для реализации паттерна Singleton.
         /// </summary>

@@ -7,13 +7,11 @@ namespace Solutions.Units
     /// </summary>
     public sealed class Solution
     {
-        // Максимальное количество воды в растворе
-        private const decimal _MAX_AMOUNT_WATER = 100m;
-        // Минимальное количество воды в растворе
-        private const decimal _MIN_AMOUNT_WATER = 0.1m;
+        private const decimal s_maxAmountWater = 100m; // Максимальное количество воды в растворе
+        private const decimal s_minAmountWater = 0.1m; // Минимальное количество воды в растворе
 
         // Вода, %
-        private decimal _water = _MAX_AMOUNT_WATER;
+        private decimal _water = s_maxAmountWater;
 
         // Коллекция компонентов
         private List<Component> _components = new List<Component>();
@@ -26,7 +24,7 @@ namespace Solutions.Units
         /// <summary>
         /// Возвращает минимальное количество воды, которое может содержать раствор
         /// </summary>
-        public static decimal MinimumAmountWater => _MIN_AMOUNT_WATER;
+        public static decimal MinimumAmountWater => s_minAmountWater;
 
         /// <summary>
         /// Возвращает оставшуюся воду в растворе
@@ -36,7 +34,7 @@ namespace Solutions.Units
         /// <summary>
         /// Возвращает воду, которую можно использовать для нового компонента
         /// </summary>
-        public decimal WaterForComponent => _water - _MIN_AMOUNT_WATER;
+        public decimal WaterForComponent => _water - s_minAmountWater;
         
         /// <summary>
         /// Возвращает коллекцию компонентов раствора
@@ -51,7 +49,7 @@ namespace Solutions.Units
         public bool AddComponent(in Component component)
         {
             decimal tempWater = _water - component.Amount;
-            if (tempWater < _MIN_AMOUNT_WATER) { return false; }
+            if (tempWater < s_minAmountWater) { return false; }
             _water = tempWater;
             _components.Add(component);
             return true;
@@ -68,7 +66,7 @@ namespace Solutions.Units
             if (_components.Remove(component))
             {
                 _water += component.Amount;
-                if (_water > _MAX_AMOUNT_WATER) { _water = _MAX_AMOUNT_WATER; }
+                if (_water > s_maxAmountWater) { _water = s_maxAmountWater; }
                 return true;
             }
             return false;

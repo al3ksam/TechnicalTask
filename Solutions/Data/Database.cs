@@ -103,6 +103,37 @@ namespace Solutions.Data
         }
 
         /// <summary>
+        /// Создает базу данных в MS SQL Server
+        /// </summary>
+        /// <returns></returns>
+        public bool CreateDatabase()
+        {
+            // Если подключены, закрываем соединение
+            if (IsConnected)
+            {
+                // Синхронизируем доступ к объекту SqlConnection между потоками
+                lock (_sqlConnection)
+                {
+                    try
+                    {
+
+
+
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         ///     Освобождает все неуправляемые ресурсы
         /// </summary>
         public void Dispose()
