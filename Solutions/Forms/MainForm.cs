@@ -418,16 +418,7 @@ namespace Solutions.Forms
 
                                 table2.Rows.Add(componentRow); // Добавляем строку раствора
 
-                                // Ищем в таблице "воду"
-                                foreach (DataGridViewRow compRow in ComponentsGridView.Rows)
-                                {
-                                    // Если нашли воду
-                                    if (Convert.ToBoolean(compRow.Cells[4].Value) == true)
-                                    {
-                                        // записываем значение
-                                        compRow.Cells[3].Value = solution.Water;
-                                    }
-                                }
+                                SetWaterValueInCompDbGrid(solution.Water);
 
                                 break;
                             }
@@ -477,9 +468,11 @@ namespace Solutions.Forms
 
                     foreach (var componentRow in componentRows)
                     {
-                        componentRow.Delete(); // Удаляем запись раствора
+                        // Удаляем компонент из раствора
+                        solution.DeleteComponent(componentRow.Field<int>(0));
+                        SetWaterValueInCompDbGrid(solution.Water); // Устанавливаем новое значение воды
 
-                        // TODO
+                        componentRow.Delete(); // Удаляем запись раствора
                     }
                 }
             }
@@ -557,6 +550,24 @@ namespace Solutions.Forms
                     // Создаем компонент
                     Component component = new Component(compId, compAmount);
                     solution.AddComponent(component); // Добавляем компонент в раствор
+                }
+            }
+        }
+
+        // Установить значение воды для строки с "водой" в таблице "Компоненты"
+        private void SetWaterValueInCompDbGrid(decimal waterValue)
+        {
+            if (ComponentsGridView.Rows.Count > 0)
+            {
+                // Ищем в таблице "воду"
+                foreach (DataGridViewRow compRow in ComponentsGridView.Rows)
+                {
+                    // Если нашли воду
+                    if (Convert.ToBoolean(compRow.Cells[4].Value) == true)
+                    {
+                        // записываем значение
+                        compRow.Cells[3].Value = waterValue;
+                    }
                 }
             }
         }

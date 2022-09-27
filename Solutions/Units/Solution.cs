@@ -60,7 +60,7 @@ namespace Solutions.Units
         /// <summary>
         /// Удаляет первое вхождение указанного компонента в растворе
         /// </summary>
-        /// <param name="idComponent">Компонента, который необходимо удалить</param>
+        /// <param name="idComponent">Компонент, который необходимо удалить</param>
         /// <returns>Значение true, если компонент успешно удален, в противном случае - значение false.
         /// Этот метод также возвращает false, если компонент не найден в растворе.</returns>
         public bool DeleteComponent(Component component)
@@ -72,6 +72,18 @@ namespace Solutions.Units
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Удаляет первое вхождение указанного компонента в растворе
+        /// </summary>
+        /// <param name="idComponent">Идентификатор компонента, которого необходимо удалить</param>
+        /// <returns>Значение true, если компонент успешно удален, в противном случае - значение false.
+        /// Этот метод также возвращает false, если компонент не найден в растворе.</returns>
+        public bool DeleteComponent(int idComponent)
+        {
+            Component temp = _components.Find(component => component.Id == idComponent);
+            return DeleteComponent(temp);
         }
 
         /// <summary>
