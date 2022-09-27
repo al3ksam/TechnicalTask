@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Solutions
+namespace Solutions.Units
 {
     /// <summary>
     /// Представляет раствор с компонентами. Этот класс не наследуется.

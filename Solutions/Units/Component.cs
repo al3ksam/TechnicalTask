@@ -1,4 +1,4 @@
-﻿namespace Solutions
+﻿namespace Solutions.Units
 {
     // Представляет собой Компонент раствора
     public readonly struct Component
