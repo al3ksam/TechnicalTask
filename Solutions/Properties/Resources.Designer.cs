@@ -160,5 +160,15 @@ namespace Solutions.Properties {
                 return ResourceManager.GetString("MsgDlgInfoCaption", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The remaining water that 
+        ///can be used for the a component.
+        /// </summary>
+        internal static string MsgDlgWater {
+            get {
+                return ResourceManager.GetString("MsgDlgWater", resourceCulture);
+            }
+        }
     }
 }

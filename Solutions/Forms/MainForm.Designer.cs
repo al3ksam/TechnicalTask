@@ -217,7 +217,7 @@ namespace Solutions.Forms
             // 
             this.ComAmountColumn.DataPropertyName = "Percent";
             resources.ApplyResources(this.ComAmountColumn, "ComAmountColumn");
-            this.ComAmountColumn.MaxInputLength = 3;
+            this.ComAmountColumn.MaxInputLength = 5;
             this.ComAmountColumn.Name = "ComAmountColumn";
             this.ComAmountColumn.ReadOnly = true;
             // 

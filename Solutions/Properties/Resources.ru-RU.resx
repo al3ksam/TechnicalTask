@@ -152,4 +152,8 @@
   <data name="MsgDlgInfoCaption" xml:space="preserve">
     <value>Информация</value>
   </data>
+  <data name="MsgDlgWater" xml:space="preserve">
+    <value>Оставшаяся вода, которую можно 
+использовать для нового компонента</value>
+  </data>
 </root>

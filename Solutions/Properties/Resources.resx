@@ -152,4 +152,8 @@ Enter another name!</value>
   <data name="MsgDlgInfoCaption" xml:space="preserve">
     <value>Info</value>
   </data>
+  <data name="MsgDlgWater" xml:space="preserve">
+    <value>The remaining water that 
+can be used for the a component</value>
+  </data>
 </root>

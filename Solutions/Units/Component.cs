@@ -8,7 +8,7 @@
         /// </summary>
         public static readonly Component Empty;
 
-        private const float _MIN_AMOUNT = 1.1f; // Минимальное значение количества
+        private const float _MIN_AMOUNT = 0.1f; // Минимальное значение количества
         private const float _MAX_AMOUNT = 99.9f; // Максимальное значение количества
 
         /// <summary>

@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using Solutions.Data;
+using Solutions.Units;
 
 namespace Solutions.Forms
 {
@@ -292,7 +293,7 @@ namespace Solutions.Forms
         // Обработчик изменения текущего выбора в GridView растворов
         private void SolutionGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (SolutionGridView.SelectedRows.Count > 0 )
+            if (SolutionGridView.SelectedRows.Count > 0)
             {
                 try
                 {
@@ -300,7 +301,7 @@ namespace Solutions.Forms
                     if (table2 != null && table2.Rows.Count > 0)
                     {
                         int index = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
-                        table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");
+                        table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");                        
                     }
                 }
                 catch (Exception exception)
@@ -380,29 +381,75 @@ namespace Solutions.Forms
 
             try
             {
-                using (AddComponentForm addComponentForm = new AddComponentForm())
+                // Создаем раствор
+                Solution solution = new Solution();
+
+                // 1 компонент - вода, поэтому её игнорируем
+                if (ComponentsGridView.Rows.Count > 1)
                 {
-                    DialogResult dialogResult = addComponentForm.ShowDialog();
-
-                    if (dialogResult == DialogResult.OK)
+                    // Добавляем компоненты в раствор
+                    foreach (DataGridViewRow dgViewcomponentRow in ComponentsGridView.Rows)
                     {
-                        // Id раствора
-                        int solutionId = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
-                            
-                        // Создаем новую строку и заполняем значениями
-                        DataRow componentRow = table2.NewRow();
-                        componentRow.SetField(0, ++_maxComponentId);
-                        componentRow.SetField(1, solutionId);
-                        componentRow.SetField(2, addComponentForm.ComponentName);
-                        componentRow.SetField(3, addComponentForm.ComponentAmount);
-                        componentRow.SetField(4, false);
+                        // Игнорируем основной компонент - воду
+                        if (Convert.ToBoolean(dgViewcomponentRow.Cells[4].Value) == true) continue;
 
-                        // Устанавливаем флаг добавления строки
-                        _isComponentRowAdded = true;
+                        int compId = Convert.ToInt32(dgViewcomponentRow.Cells[0].Value);
+                        float compAmount = Convert.ToSingle(dgViewcomponentRow.Cells[3].Value);
 
-                        table2.Rows.Add(componentRow); // Добавляем строку раствора
+                        // Создаем компонент
+                        Component component = new Component(compId, compAmount);
+                        solution.AddComponent(component); // Добавляем компонент в раствор
                     }
                 }
+                
+                using (AddComponentForm addComponentForm = new AddComponentForm())
+                {
+                    DialogResult dialogResult = DialogResult.None;
+
+                    while (dialogResult != DialogResult.Cancel)
+                    {
+                        dialogResult = addComponentForm.ShowDialog();
+
+                        if (dialogResult == DialogResult.OK)
+                        {
+
+                            Component component = new Component(_maxSolutionId + 1, addComponentForm.ComponentAmount);
+
+                            // Если получилось добавить компонент в раствор: 
+                            if (solution.AddComponent(component))
+                            {
+                                // Id раствора
+                                int solutionId = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
+
+                                // Создаем новую строку и заполняем значениями
+                                DataRow componentRow = table2.NewRow();
+                                componentRow.SetField(0, ++_maxComponentId);
+                                componentRow.SetField(1, solutionId);
+                                componentRow.SetField(2, addComponentForm.ComponentName);
+                                componentRow.SetField(3, addComponentForm.ComponentAmount);
+                                componentRow.SetField(4, false);
+
+                                // Устанавливаем флаг добавления строки
+                                _isComponentRowAdded = true;
+
+                                table2.Rows.Add(componentRow); // Добавляем строку раствора
+
+                                Console.WriteLine(ComponentsGridView.Rows.Count);
+
+                                break;
+                            }
+                            else // Иначе выводим сообщение и возможное количество воды для нового компонента
+                            {
+                                MessageBox.Show(
+                                    Program.ResManager.GetString("MsgDlgWater") + " => " + solution.WaterForComponents + "%", 
+                                    Program.ResManager.GetString("MsgDlgInfoCaption"), 
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                                );
+                            }
+                        }
+                    }  
+                }
+                
             }
             catch (Exception exception)
             {

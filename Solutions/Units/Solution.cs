@@ -7,8 +7,11 @@ namespace Solutions.Units
     /// </summary>
     public sealed class Solution
     {
+        // Минимальное количество воды в растворе
+        private const float _MIN_AMOUNT_WATER = 0.1f;
+
         // Вода, %
-        private float _water = 100f;
+        private float _water = 100;
 
         // Коллекция компонентов
         private List<Component> _components = new List<Component>();
@@ -19,9 +22,20 @@ namespace Solutions.Units
         public Solution() { }
 
         /// <summary>
+        /// Возвращает минимальное количество воды, которое может содержать раствор
+        /// </summary>
+        public static double MinimumAmountWater => _MIN_AMOUNT_WATER;
+
+        /// <summary>
         /// Возвращает оставшуюся воду в растворе
         /// </summary>
         public float Water => _water;
+
+        /// <summary>
+        /// Возвращает воду, которую можно использовать для нового компонента
+        /// </summary>
+        public float WaterForComponents => _water - _MIN_AMOUNT_WATER;
+        
         /// <summary>
         /// Возвращает коллекцию компонентов раствора
         /// </summary>
@@ -35,7 +49,7 @@ namespace Solutions.Units
         public bool AddComponent(in Component component)
         {
             float tempWater = _water - component.Amount;
-            if (tempWater < 0) { return false; }
+            if (tempWater < _MIN_AMOUNT_WATER) { return false; }
             _water = tempWater;
             _components.Add(component);
             return true;
