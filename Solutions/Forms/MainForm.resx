@@ -193,7 +193,7 @@
     <value>NoControl</value>
   </data>
   <data name="SettingsBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>876, 13</value>
+    <value>848, 13</value>
   </data>
   <data name="SettingsBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -250,7 +250,7 @@
     <value>13, 112</value>
   </data>
   <data name="SolutionGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 321</value>
+    <value>472, 485</value>
   </data>
   <data name="SolutionGridView.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -415,7 +415,7 @@
     <value>578, 112</value>
   </data>
   <data name="ComponentsGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 321</value>
+    <value>472, 485</value>
   </data>
   <data name="ComponentsGridView.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -541,7 +541,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1091, 753</value>
+    <value>1071, 623</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>

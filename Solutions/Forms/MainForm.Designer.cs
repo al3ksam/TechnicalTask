@@ -30,7 +30,7 @@ namespace Solutions.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.SettingsBtn = new System.Windows.Forms.Button();
@@ -217,9 +217,9 @@ namespace Solutions.Forms
             // ComAmountColumn
             // 
             this.ComAmountColumn.DataPropertyName = "Percent";
-            dataGridViewCellStyle1.Format = "N1";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ComAmountColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N1";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ComAmountColumn.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.ComAmountColumn, "ComAmountColumn");
             this.ComAmountColumn.MaxInputLength = 5;
             this.ComAmountColumn.Name = "ComAmountColumn";

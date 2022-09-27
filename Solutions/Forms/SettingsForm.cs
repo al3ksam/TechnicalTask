@@ -103,6 +103,16 @@ namespace Solutions.Forms
                 if (db.IsConnected) // Если подключились
                 {
                     UpdateStatusStrip("DbConnected");
+
+
+                    //if (db.CreateDatabase())
+                    //{
+                    //    Console.WriteLine("Создали БД");
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("Не создали БД");
+                    //}
                 }
                 else // // Если подключиться не удалось
                 {

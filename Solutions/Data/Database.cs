@@ -116,12 +116,14 @@ namespace Solutions.Data
                 {
                     try
                     {
-                        SqlCommand sqlCommandCreateDb = new SqlCommand(s_sqlStringCreateDb, _sqlConnection);
-                        sqlCommandCreateDb.ExecuteNonQuery();
+                        //SqlCommand sqlCommandCreateDb = new SqlCommand(s_sqlStringCreateDb, _sqlConnection);
+                        //sqlCommandCreateDb.ExecuteNonQuery();
+
                         return true;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message);
                         return false;
                     }
                 }

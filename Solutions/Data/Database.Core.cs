@@ -8,12 +8,7 @@ namespace Solutions.Data
         /// <summary>
         ///     Имя таблицы.
         /// </summary>
-        private const string s_tableName = "MudDbTest";
-
-        /// <summary>
-        ///     Строка SQL для создания базы данных
-        /// </summary>
-        private const string s_sqlStringCreateDb = "";
+        private const string s_dbName = "MudDbTest";
 
         /// <summary>
         ///     Объект класса Database с поддержкой отложенной инициализации.

@@ -48,6 +48,7 @@
     <Compile Include="Data\Database.AuthentificationMethod.cs" />
     <Compile Include="Data\Database.ConnectionSettings.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Database.SQLStrings.cs" />
     <Compile Include="Forms\AddComponentForm.cs">
       <SubType>Form</SubType>
     </Compile>
