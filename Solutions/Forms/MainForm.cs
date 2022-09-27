@@ -383,25 +383,9 @@ namespace Solutions.Forms
             {
                 // Создаем раствор
                 Solution solution = new Solution();
+                // Заполняем компонентами
+                FillSolutionFromComponentsGridView(solution);
 
-                // 1 компонент - вода, поэтому её игнорируем
-                if (ComponentsGridView.Rows.Count > 1)
-                {
-                    // Добавляем компоненты в раствор
-                    foreach (DataGridViewRow dgViewcomponentRow in ComponentsGridView.Rows)
-                    {
-                        // Игнорируем основной компонент - воду
-                        if (Convert.ToBoolean(dgViewcomponentRow.Cells[4].Value) == true) continue;
-
-                        int compId = Convert.ToInt32(dgViewcomponentRow.Cells[0].Value);
-                        float compAmount = Convert.ToSingle(dgViewcomponentRow.Cells[3].Value);
-
-                        // Создаем компонент
-                        Component component = new Component(compId, compAmount);
-                        solution.AddComponent(component); // Добавляем компонент в раствор
-                    }
-                }
-                
                 using (AddComponentForm addComponentForm = new AddComponentForm())
                 {
                     DialogResult dialogResult = DialogResult.None;
@@ -434,24 +418,31 @@ namespace Solutions.Forms
 
                                 table2.Rows.Add(componentRow); // Добавляем строку раствора
 
-
-                                // TODO
-                                Console.WriteLine(ComponentsGridView.Rows.Count);
+                                // Ищем в таблице "воду"
+                                foreach (DataGridViewRow compRow in ComponentsGridView.Rows)
+                                {
+                                    // Если нашли воду
+                                    if (Convert.ToBoolean(compRow.Cells[4].Value) == true)
+                                    {
+                                        // записываем значение
+                                        compRow.Cells[3].Value = solution.Water;
+                                    }
+                                }
 
                                 break;
                             }
                             else // Иначе выводим сообщение и возможное количество воды для нового компонента
                             {
                                 MessageBox.Show(
-                                    Program.ResManager.GetString("MsgDlgWater") + " => " + solution.WaterForComponent + "%", 
-                                    Program.ResManager.GetString("MsgDlgInfoCaption"), 
+                                    Program.ResManager.GetString("MsgDlgWater") + " => " + solution.WaterForComponent + "%",
+                                    Program.ResManager.GetString("MsgDlgInfoCaption"),
                                     MessageBoxButtons.OK, MessageBoxIcon.Information
                                 );
                             }
                         }
-                    }  
+                    }
                 }
-                
+
             }
             catch (Exception exception)
             {
@@ -479,9 +470,16 @@ namespace Solutions.Forms
                     // Ищем строки по индексу и удаляем.
                     DataRow[] componentRows = table2.Select($"{table2.Columns[0].ColumnName} = {index}");
 
+                    // Создаем раствор
+                    Solution solution = new Solution();
+                    // Заполняем компонентами
+                    FillSolutionFromComponentsGridView(solution);
+
                     foreach (var componentRow in componentRows)
                     {
                         componentRow.Delete(); // Удаляем запись раствора
+
+                        // TODO
                     }
                 }
             }
@@ -539,6 +537,27 @@ namespace Solutions.Forms
                 }
 
                 ComponentDelBtn.Enabled = false; // Отключаем кнопку удаления компонента
+            }
+        }
+
+        // Заполнить объект "Раствор" из таблицы "Компоненты"
+        private void FillSolutionFromComponentsGridView(Solution solution)
+        {
+            if (solution != null && ComponentsGridView.Rows.Count > 0)
+            {
+                // Добавляем компоненты в раствор
+                foreach (DataGridViewRow dgViewcomponentRow in ComponentsGridView.Rows)
+                {
+                    // Игнорируем основной компонент - воду
+                    if (Convert.ToBoolean(dgViewcomponentRow.Cells[4].Value) == true) continue;
+
+                    int compId = Convert.ToInt32(dgViewcomponentRow.Cells[0].Value);
+                    decimal compAmount = Convert.ToDecimal(dgViewcomponentRow.Cells[3].Value);
+
+                    // Создаем компонент
+                    Component component = new Component(compId, compAmount);
+                    solution.AddComponent(component); // Добавляем компонент в раствор
+                }
             }
         }
 

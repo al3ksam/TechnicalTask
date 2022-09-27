@@ -72,7 +72,7 @@ namespace Solutions.Forms
             1,
             0,
             0,
-            65536});
+            0});
             // 
             // AmountLabel
             // 

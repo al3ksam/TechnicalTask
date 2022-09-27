@@ -8,8 +8,8 @@
         /// </summary>
         public static readonly Component Empty;
 
-        private const float _MIN_AMOUNT = 0.1f; // Минимальное значение количества
-        private const float _MAX_AMOUNT = 99.9f; // Максимальное значение количества
+        private const decimal _MIN_AMOUNT = 0.1m; // Минимальное значение количества
+        private const decimal _MAX_AMOUNT = 99.9m; // Максимальное значение количества
 
         /// <summary>
         /// Создает новый компонент
@@ -19,7 +19,7 @@
         /// Количество компонента: от 0.1 до 99.9
         /// <br />Если значения меньше 0.1, будет установлено 0.1, или 99.9, если больше.
         /// </param>
-        public Component(in int id, in float amount)
+        public Component(in int id, in decimal amount)
         {
             Id = id;
 
@@ -48,7 +48,7 @@
         /// <summary>
         /// Возвращает количество компонента, %
         /// </summary>
-        public float Amount { get; }
+        public decimal Amount { get; }
 
         // Переопределение базовых методов
         public override bool Equals(object obj)

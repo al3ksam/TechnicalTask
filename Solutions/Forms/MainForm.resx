@@ -219,17 +219,32 @@
   <data name="&gt;&gt;SettingsBtn.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="SolutionGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
   <metadata name="SolutionIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="SolutionIdColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="SolutionIdColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <metadata name="SolutionNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="SolutionNameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <metadata name="SolutionVolumeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="SolutionGridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>40</value>
+  <data name="SolutionVolumeColumn.HeaderText" xml:space="preserve">
+    <value>Volume, m3</value>
+  </data>
+  <data name="SolutionVolumeColumn.Width" type="System.Int32, mscorlib">
+    <value>126</value>
   </data>
   <data name="SolutionGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 112</value>
@@ -518,30 +533,6 @@
   </data>
   <data name="&gt;&gt;ComponentAddBtn.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <metadata name="SolutionIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="SolutionIdColumn.HeaderText" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="SolutionIdColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="SolutionNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="SolutionNameColumn.HeaderText" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <metadata name="SolutionVolumeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="SolutionVolumeColumn.HeaderText" xml:space="preserve">
-    <value>Volume, m3</value>
-  </data>
-  <data name="SolutionVolumeColumn.Width" type="System.Int32, mscorlib">
-    <value>126</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

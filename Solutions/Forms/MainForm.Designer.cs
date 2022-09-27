@@ -30,10 +30,14 @@ namespace Solutions.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.SettingsBtn = new System.Windows.Forms.Button();
             this.SolutionGridView = new System.Windows.Forms.DataGridView();
+            this.SolutionIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SolutionNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SolutionVolumeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SolutionsLabel = new System.Windows.Forms.Label();
             this.SolutionDelBtn = new System.Windows.Forms.Button();
             this.SolutionAddBtn = new System.Windows.Forms.Button();
@@ -41,9 +45,6 @@ namespace Solutions.Forms
             this.ComponentsLabel = new System.Windows.Forms.Label();
             this.ComponentDelBtn = new System.Windows.Forms.Button();
             this.ComponentAddBtn = new System.Windows.Forms.Button();
-            this.SolutionIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SolutionNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SolutionVolumeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ComIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SolIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ComNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +101,28 @@ namespace Solutions.Forms
             this.SolutionGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.SolutionGridView_EditingControlShowing);
             this.SolutionGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.SolutionGridView_RowsAdded);
             this.SolutionGridView.SelectionChanged += new System.EventHandler(this.SolutionGridView_SelectionChanged);
+            // 
+            // SolutionIdColumn
+            // 
+            this.SolutionIdColumn.DataPropertyName = "Id";
+            resources.ApplyResources(this.SolutionIdColumn, "SolutionIdColumn");
+            this.SolutionIdColumn.Name = "SolutionIdColumn";
+            this.SolutionIdColumn.ReadOnly = true;
+            // 
+            // SolutionNameColumn
+            // 
+            this.SolutionNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SolutionNameColumn.DataPropertyName = "Name";
+            resources.ApplyResources(this.SolutionNameColumn, "SolutionNameColumn");
+            this.SolutionNameColumn.MaxInputLength = 128;
+            this.SolutionNameColumn.Name = "SolutionNameColumn";
+            // 
+            // SolutionVolumeColumn
+            // 
+            this.SolutionVolumeColumn.DataPropertyName = "Volume";
+            resources.ApplyResources(this.SolutionVolumeColumn, "SolutionVolumeColumn");
+            this.SolutionVolumeColumn.MaxInputLength = 9;
+            this.SolutionVolumeColumn.Name = "SolutionVolumeColumn";
             // 
             // SolutionsLabel
             // 
@@ -168,28 +191,6 @@ namespace Solutions.Forms
             this.ComponentAddBtn.UseVisualStyleBackColor = true;
             this.ComponentAddBtn.Click += new System.EventHandler(this.ComponentAddBtn_Click);
             // 
-            // SolutionIdColumn
-            // 
-            this.SolutionIdColumn.DataPropertyName = "Id";
-            resources.ApplyResources(this.SolutionIdColumn, "SolutionIdColumn");
-            this.SolutionIdColumn.Name = "SolutionIdColumn";
-            this.SolutionIdColumn.ReadOnly = true;
-            // 
-            // SolutionNameColumn
-            // 
-            this.SolutionNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SolutionNameColumn.DataPropertyName = "Name";
-            resources.ApplyResources(this.SolutionNameColumn, "SolutionNameColumn");
-            this.SolutionNameColumn.MaxInputLength = 128;
-            this.SolutionNameColumn.Name = "SolutionNameColumn";
-            // 
-            // SolutionVolumeColumn
-            // 
-            this.SolutionVolumeColumn.DataPropertyName = "Volume";
-            resources.ApplyResources(this.SolutionVolumeColumn, "SolutionVolumeColumn");
-            this.SolutionVolumeColumn.MaxInputLength = 9;
-            this.SolutionVolumeColumn.Name = "SolutionVolumeColumn";
-            // 
             // ComIdColumn
             // 
             this.ComIdColumn.DataPropertyName = "Id";
@@ -216,6 +217,9 @@ namespace Solutions.Forms
             // ComAmountColumn
             // 
             this.ComAmountColumn.DataPropertyName = "Percent";
+            dataGridViewCellStyle1.Format = "N1";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ComAmountColumn.DefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.ComAmountColumn, "ComAmountColumn");
             this.ComAmountColumn.MaxInputLength = 5;
             this.ComAmountColumn.Name = "ComAmountColumn";

@@ -17,7 +17,7 @@ namespace Solutions.Forms
         /// <summary>
         /// Количество компонента
         /// </summary>
-        public float ComponentAmount => Convert.ToSingle(string.Format("{0:0,0}", AmountNumeric.Value.ToString()));
+        public decimal ComponentAmount => AmountNumeric.Value;
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
