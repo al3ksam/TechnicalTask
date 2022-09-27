@@ -228,6 +228,9 @@
   <data name="SolutionIdColumn.HeaderText" xml:space="preserve">
     <value>Id</value>
   </data>
+  <data name="SolutionIdColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <metadata name="SolutionNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -372,11 +375,17 @@
   <data name="ComIdColumn.HeaderText" xml:space="preserve">
     <value>Id</value>
   </data>
+  <data name="ComIdColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <metadata name="SolIdColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="SolIdColumn.HeaderText" xml:space="preserve">
     <value>SolId</value>
+  </data>
+  <data name="SolIdColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <metadata name="ComNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
