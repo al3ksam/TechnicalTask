@@ -250,9 +250,9 @@ namespace Solutions.Forms
 
             try
             {
-                if (SolutionGridView.Rows.Count > 0)
+                if (SolutionGridView.SelectedRows.Count > 0)
                 {
-                    int index = Convert.ToInt32(SolutionGridView.CurrentRow.Cells[0].Value);
+                    int index = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
 
                     // Ищем строки по индексу и удаляем.
                     DataRow[] solutionRows = table.Select($"{table.Columns[0].ColumnName} = {index}");
@@ -292,7 +292,7 @@ namespace Solutions.Forms
         // Обработчик изменения текущего выбора в GridView растворов
         private void SolutionGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (SolutionGridView.Rows.Count > 0 && SolutionGridView.SelectedRows.Count > 0 )
+            if (SolutionGridView.SelectedRows.Count > 0 )
             {
                 try
                 {
@@ -308,12 +308,12 @@ namespace Solutions.Forms
                     ShowErrorMsgDialog(exception);
                 }
 
-                // Включаем кнопку, если есть записи
+                // Включаем кнопку удаления раствора, если выбрана строка
                 SolutionDelBtn.Enabled = true;
             }
             else
             {
-                // Отключаем кнопку, если нет записей
+                // Отключаем кнопку, если не выбран раствор
                 SolutionDelBtn.Enabled = false;
             }
         }
@@ -355,48 +355,28 @@ namespace Solutions.Forms
             }
         }
 
+        // Обработчик добавления строк в компонентов растворов
+        private void ComponentsGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            // Если добавили строку
+            if (_isComponentRowAdded == true)
+            {
+                // Выделяем строку и "скроллимся" на неё
+                DataGridViewRow row = ComponentsGridView.Rows[e.RowIndex];
+                if (row != null)
+                {
+                    row.Selected = true;
+                    ComponentsGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                }
+
+                _isComponentRowAdded = false; // Снимаем флаг
+            }
+        }
+
         // Обработчик добавления записи в таблицу "Компоненты"
         private void ComponentAddBtn_Click(object sender, EventArgs e)
         {
-            //if (table2 == null) return;
-
-            //try
-            //{
-            //    using (AddSolutionForm addSolutionForm = new AddSolutionForm())
-            //    {
-            //        DialogResult dialogResult = addSolutionForm.ShowDialog();
-
-            //        if (dialogResult == DialogResult.OK)
-            //        {
-            //            // Устанавливаем флаг добавления строки
-            //            _isSolutionRowAdded = true;
-
-            //            table.Rows.Add(solutionRow); // Добавляем строку раствора
-
-            //            // Добавляем основной компонент
-            //            DataRow componentRow = table2.NewRow();
-            //            componentRow.SetField(0, ++_maxComponentId);
-            //            componentRow.SetField(1, _maxSolutionId);
-            //            componentRow.SetField(2, "Вода");
-            //            componentRow.SetField(3, 100);
-            //            componentRow.SetField(4, true);
-
-            //            table2.Rows.Add(componentRow); // Добавляем строку основного компонента
-            //        }
-            //    }
-            //}
-            //catch (Exception exception)
-            //{
-            //    // Снимаем флаг, если была ошибка
-            //    if (_isSolutionRowAdded == true)
-            //    {
-            //        _isSolutionRowAdded = false;
-            //    }
-
-            //    ShowErrorMsgDialog(exception);
-            //}
-
-            if (table2 == null) return;
+            if (table2 == null || SolutionGridView.SelectedRows.Count == 0) return;
 
             try
             {
@@ -406,10 +386,21 @@ namespace Solutions.Forms
 
                     if (dialogResult == DialogResult.OK)
                     {
+                        // Id раствора
+                        int solutionId = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
+                            
+                        // Создаем новую строку и заполняем значениями
+                        DataRow componentRow = table2.NewRow();
+                        componentRow.SetField(0, ++_maxComponentId);
+                        componentRow.SetField(1, solutionId);
+                        componentRow.SetField(2, addComponentForm.ComponentName);
+                        componentRow.SetField(3, addComponentForm.ComponentAmount);
+                        componentRow.SetField(4, false);
+
                         // Устанавливаем флаг добавления строки
                         _isComponentRowAdded = true;
 
-                        
+                        table2.Rows.Add(componentRow); // Добавляем строку раствора
                     }
                 }
             }
@@ -432,9 +423,9 @@ namespace Solutions.Forms
 
             try
             {
-                if (ComponentsGridView.Rows.Count > 0)
+                if (ComponentsGridView.SelectedRows.Count > 0)
                 {
-                    int index = Convert.ToInt32(ComponentsGridView.CurrentRow.Cells[0].Value);
+                    int index = Convert.ToInt32(ComponentsGridView.SelectedRows[0].Cells[0].Value);
 
                     // Ищем строки по индексу и удаляем.
                     DataRow[] componentRows = table2.Select($"{table2.Columns[0].ColumnName} = {index}");
@@ -462,8 +453,8 @@ namespace Solutions.Forms
         // Обработчик изменения текущего выбора в GridView компонентов
         private void ComponentsGridView_SelectionChanged(object sender, EventArgs e)
         {
-            // Если есть компоненты
-            if (ComponentsGridView.Rows.Count > 0 && ComponentsGridView.SelectedRows.Count > 0)
+            // Если есть выбранный компонент
+            if (ComponentsGridView.SelectedRows.Count > 0)
             {
                 try
                 {
@@ -486,11 +477,19 @@ namespace Solutions.Forms
                     ShowErrorMsgDialog(exeption);
                 }
             }
-            else // Если список компонентов пуст
+            else // Компонент не выбран
             {
-                // Отключаем кнопки добавления и удаления компонентов
-                ComponentAddBtn.Enabled = false;
-                ComponentDelBtn.Enabled = false;
+                // Если нет записей, отключаем кнопку добавления
+                if (ComponentsGridView.Rows.Count > 0)
+                {
+                    ComponentAddBtn.Enabled = true;
+                }
+                else
+                {
+                    ComponentAddBtn.Enabled = false;
+                }
+
+                ComponentDelBtn.Enabled = false; // Отключаем кнопку удаления компонента
             }
         }
 

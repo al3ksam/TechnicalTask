@@ -125,6 +125,16 @@ namespace Solutions.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на You have entered the name of the main component.
+        ///Enter another name!.
+        /// </summary>
+        internal static string MsgDlgComponentName {
+            get {
+                return ResourceManager.GetString("MsgDlgComponentName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на The data was not uploaded!.
         /// </summary>
         internal static string MsgDlgDataNotLoaded {

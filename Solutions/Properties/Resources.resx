@@ -139,6 +139,10 @@ Check the connection!</value>
   <data name="DbConnectionNotMsgCaption" xml:space="preserve">
     <value>Connection error</value>
   </data>
+  <data name="MsgDlgComponentName" xml:space="preserve">
+    <value>You have entered the name of the main component.
+Enter another name!</value>
+  </data>
   <data name="MsgDlgDataNotLoaded" xml:space="preserve">
     <value>The data was not uploaded!</value>
   </data>

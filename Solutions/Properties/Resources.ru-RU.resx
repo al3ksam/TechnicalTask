@@ -139,6 +139,10 @@
   <data name="DbConnectionNotMsgCaption" xml:space="preserve">
     <value>Ошибка подключения</value>
   </data>
+  <data name="MsgDlgComponentName" xml:space="preserve">
+    <value>Вы ввели название основного компонента.
+Введите другое название!</value>
+  </data>
   <data name="MsgDlgDataNotLoaded" xml:space="preserve">
     <value>Данные не были загружены!</value>
   </data>

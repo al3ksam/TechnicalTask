@@ -62,7 +62,17 @@ namespace Solutions.Forms
             0,
             0,
             65536});
+            this.AmountNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.AmountNumeric.Name = "AmountNumeric";
+            this.AmountNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             // 
             // AmountLabel
             // 

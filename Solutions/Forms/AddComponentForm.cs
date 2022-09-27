@@ -21,7 +21,30 @@ namespace Solutions.Forms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            // TODO
+            string componentName = NameTextBox.Text.Trim();
+
+            if (componentName == string.Empty)
+            {
+                NameTextBox.Focus();
+                return;
+            }
+            else
+            {
+                if (componentName.ToLower() == "Вода".ToLower())
+                {
+                    MessageBox.Show(
+                        Program.ResManager.GetString("MsgDlgComponentName"), 
+                        Program.ResManager.GetString("MsgDlgInfoCaption"), 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+
+                    NameTextBox.SelectAll();
+                    NameTextBox.Focus();
+                    return;
+                }                                
+            }
+
+            DialogResult = DialogResult.OK;
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
