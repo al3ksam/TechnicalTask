@@ -8,8 +8,8 @@
         /// </summary>
         public static readonly Component Empty;
 
-        private const decimal s_minAmount = 0.1m; // Минимальное значение количества
-        private const decimal s_maxAmount = 99.9m; // Максимальное значение количества
+        private const decimal _MIN_AMOUNT = 0.1m; // Минимальное значение количества
+        private const decimal _MAX_AMOUNT = 99.9m; // Максимальное значение количества
 
         /// <summary>
         /// Создает новый компонент
@@ -24,15 +24,15 @@
             Id = id;
 
             //  Устанавливаем количество в пределах диапазона MIN..MAX
-            if (amount < s_minAmount)
+            if (amount < _MIN_AMOUNT)
             {
-                Amount = s_minAmount;
+                Amount = _MIN_AMOUNT;
             }
             else
             {
-                if (amount > s_maxAmount)
+                if (amount > _MAX_AMOUNT)
                 {
-                    Amount = s_maxAmount;
+                    Amount = _MAX_AMOUNT;
                 }
                 else
                 {
