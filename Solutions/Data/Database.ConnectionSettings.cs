@@ -9,9 +9,9 @@ namespace Solutions.Data
         /// </summary>
         public sealed class ConnectionSettings
         {
-            private const byte _MAXLEN_SERVERNAME = 128; // Максимальная длина имени сервера
-            private const byte _MAXLEN_USERNAME = 128; // Максимальная длина имени пользователя
-            private const byte _MAXLEN_PASSWORD = 128; // Максимальная длина пароля
+            private const byte _maxLengthServerName = 128; // Максимальная длина имени сервера
+            private const byte _maxLengthUsername = 128; // Максимальная длина имени пользователя
+            private const byte _maxLengthPassword = 128; // Максимальная длина пароля
 
             private string _serverName; // Имя сервера
             private string _userId; // Имя пользователя
@@ -57,9 +57,9 @@ namespace Solutions.Data
                     }
                     else
                     {
-                        if (value.Length > _MAXLEN_SERVERNAME)
+                        if (value.Length > _maxLengthServerName)
                         {
-                            throw new ArgumentException($"Server name exceeds {_MAXLEN_SERVERNAME} characters.");
+                            throw new ArgumentException($"Server name exceeds {_maxLengthServerName} characters.");
                         }
 
                         _serverName = value;
@@ -80,9 +80,9 @@ namespace Solutions.Data
                     }
                     else
                     {
-                        if (value.Length > _MAXLEN_USERNAME)
+                        if (value.Length > _maxLengthUsername)
                         {
-                            throw new ArgumentException($"Username exceeds {_MAXLEN_USERNAME} characters.");
+                            throw new ArgumentException($"Username exceeds {_maxLengthUsername} characters.");
                         }
 
                         _userId = value;
@@ -103,9 +103,9 @@ namespace Solutions.Data
                     }
                     else
                     {
-                        if (value.Length > _MAXLEN_PASSWORD)
+                        if (value.Length > _maxLengthPassword)
                         {
-                            throw new ArgumentException($"User password exceeds {_MAXLEN_PASSWORD} characters.");
+                            throw new ArgumentException($"User password exceeds {_maxLengthPassword} characters.");
                         }
                     }
 
