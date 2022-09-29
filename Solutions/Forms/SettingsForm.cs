@@ -16,24 +16,24 @@ namespace Solutions.Forms
             // Если есть подключение, запрещаем редактирование и выводим сообщение на строку состояния.
             if (Database.GetInstance().IsConnected)
             {
-                ConnectionPanel.Enabled = false;
-                ConnectionBtn.Enabled = false;
+                connectionPanel.Enabled = false;
+                connectionBtn.Enabled = false;
                 UpdateStatusStrip("DbConnection");
             }
             // Если нет подключения, разрешаем редактирование.
             else
             {
-                ConnectionPanel.Enabled = true;
-                ConnectionBtn.Enabled = true;
+                connectionPanel.Enabled = true;
+                connectionBtn.Enabled = true;
                 UpdateStatusStrip("DbConnectionNot");
             }
             
             // Проверяем наличие элементов. 
             // Устанавливаем метод аутентификации Windows по умолчанию,
             // если метод аутентификации не выбран.
-            if (AuthMethodComboBox.Items.Count > 0 && AuthMethodComboBox.SelectedIndex == -1)
+            if (authMethodComboBox.Items.Count > 0 && authMethodComboBox.SelectedIndex == -1)
             {
-                AuthMethodComboBox.SelectedIndex = 0;
+                authMethodComboBox.SelectedIndex = 0;
             }
         }
 
@@ -53,13 +53,13 @@ namespace Solutions.Forms
         {
             // Активируем панель пользователя (возможность вводить логин и пароль),
             // если выбран метод аутентификации пользователя SQL Server
-            if (AuthMethodComboBox.SelectedIndex == 0)
+            if (authMethodComboBox.SelectedIndex == 0)
             {
-                UserPanel.Enabled = false;
+                userPanel.Enabled = false;
             }
             else
             {
-                UserPanel.Enabled = true;
+                userPanel.Enabled = true;
             }
 
             ControlsValueChanged(sender, e); // Делегируем событие
@@ -69,22 +69,22 @@ namespace Solutions.Forms
         private void ConnectionBtn_Click(object sender, EventArgs e)
         {
             // Блокируем редактирование
-            ConnectionPanel.Enabled = false; 
-            ConnectionBtn.Enabled = false;
+            connectionPanel.Enabled = false; 
+            connectionBtn.Enabled = false;
 
             Database db = Database.GetInstance();
 
             // Задаем настройки подключения к БД
-            db.Settings = AuthMethodComboBox.SelectedIndex == 0 ?
+            db.Settings = authMethodComboBox.SelectedIndex == 0 ?
                 new Database.ConnectionSettings(
-                    servername: ServerNameTextBox.Text.Trim()
+                    servername: serverNameTextBox.Text.Trim()
                 )
                 :
                 new Database.ConnectionSettings
                 (
-                    servername: ServerNameTextBox.Text.Trim(),
-                    userId: UsernameTextBox.Text.Trim(),
-                    password: PasswordTextBox.Text
+                    servername: serverNameTextBox.Text.Trim(),
+                    userId: usernameTextBox.Text.Trim(),
+                    password: passwordTextBox.Text
                 );
             ;
 
@@ -117,8 +117,8 @@ namespace Solutions.Forms
                 else // // Если подключиться не удалось
                 {
                     UpdateStatusStrip("DbConnectFailed");
-                    ConnectionPanel.Enabled = true;
-                    ConnectionBtn.Enabled = true;
+                    connectionPanel.Enabled = true;
+                    connectionBtn.Enabled = true;
                 }
             }
         }
@@ -135,8 +135,8 @@ namespace Solutions.Forms
 
                 if (db.IsConnected == false)
                 {
-                    ConnectionPanel.Enabled = true;
-                    ConnectionBtn.Enabled = true;
+                    connectionPanel.Enabled = true;
+                    connectionBtn.Enabled = true;
                     UpdateStatusStrip("DbConnectionNot");
                 }
             }
@@ -155,15 +155,15 @@ namespace Solutions.Forms
                 // Если имя сервера или пользователя пустое, отключаем кнопку "Соединить".
                 if
                 (
-                    (ServerNameTextBox.Text.Trim() == string.Empty) ||
-                    (UsernameTextBox.Text.Trim() == string.Empty && AuthMethodComboBox.SelectedIndex == 1)
+                    (serverNameTextBox.Text.Trim() == string.Empty) ||
+                    (usernameTextBox.Text.Trim() == string.Empty && authMethodComboBox.SelectedIndex == 1)
                 )
                 {
-                    ConnectionBtn.Enabled = false;
+                    connectionBtn.Enabled = false;
                 }
                 else
                 {
-                    ConnectionBtn.Enabled = true;
+                    connectionBtn.Enabled = true;
                 }
             }
         }
@@ -172,7 +172,7 @@ namespace Solutions.Forms
         private void UpdateStatusStrip(in string strResKey)
         {
             // Получаем значение ресурса
-            ToolStripStatusLabel.Text = Program.ResManager.GetString(strResKey);
+            toolStripStatusLabel.Text = Program.ResManager.GetString(strResKey);
         }
     }
 }

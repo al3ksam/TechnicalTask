@@ -118,60 +118,60 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ConnectionBtn.Enabled" type="System.Boolean, mscorlib">
+  <data name="connectionBtn.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ConnectionBtn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="connectionBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>244, 193</value>
   </data>
-  <data name="ConnectionBtn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="connectionBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 28</value>
   </data>
-  <data name="ConnectionBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="connectionBtn.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="ConnectionBtn.Text" xml:space="preserve">
+  <data name="connectionBtn.Text" xml:space="preserve">
     <value>Connecting</value>
   </data>
-  <data name="&gt;&gt;ConnectionBtn.Name" xml:space="preserve">
-    <value>ConnectionBtn</value>
+  <data name="&gt;&gt;connectionBtn.Name" xml:space="preserve">
+    <value>connectionBtn</value>
   </data>
-  <data name="&gt;&gt;ConnectionBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;connectionBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ConnectionBtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;connectionBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ConnectionBtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;connectionBtn.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CancelBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cancelBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="CancelBtn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cancelBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>366, 193</value>
   </data>
-  <data name="CancelBtn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cancelBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 28</value>
   </data>
-  <data name="CancelBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="cancelBtn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="CancelBtn.Text" xml:space="preserve">
+  <data name="cancelBtn.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="&gt;&gt;CancelBtn.Name" xml:space="preserve">
-    <value>CancelBtn</value>
+  <data name="&gt;&gt;cancelBtn.Name" xml:space="preserve">
+    <value>cancelBtn</value>
   </data>
-  <data name="&gt;&gt;CancelBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;cancelBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CancelBtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cancelBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;CancelBtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cancelBtn.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -179,6 +179,9 @@
   </metadata>
   <data name="StatusStrip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="ToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
   </data>
   <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 235</value>
@@ -201,319 +204,316 @@
   <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="ServerNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="serverNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>183, 17</value>
   </data>
-  <data name="ServerNameTextBox.MaxLength" type="System.Int32, mscorlib">
+  <data name="serverNameTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>128</value>
   </data>
-  <data name="ServerNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="serverNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
   </data>
-  <data name="ServerNameTextBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="serverNameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="ServerNameTextBox.WordWrap" type="System.Boolean, mscorlib">
+  <data name="serverNameTextBox.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;ServerNameTextBox.Name" xml:space="preserve">
-    <value>ServerNameTextBox</value>
+  <data name="&gt;&gt;serverNameTextBox.Name" xml:space="preserve">
+    <value>serverNameTextBox</value>
   </data>
-  <data name="&gt;&gt;ServerNameTextBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;serverNameTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ServerNameTextBox.Parent" xml:space="preserve">
-    <value>ConnectionPanel</value>
+  <data name="&gt;&gt;serverNameTextBox.Parent" xml:space="preserve">
+    <value>connectionPanel</value>
   </data>
-  <data name="&gt;&gt;ServerNameTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;serverNameTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="AuthMethodComboBox.Items" xml:space="preserve">
+  <data name="authMethodComboBox.Items" xml:space="preserve">
     <value>Windows authentication</value>
   </data>
-  <data name="AuthMethodComboBox.Items1" xml:space="preserve">
+  <data name="authMethodComboBox.Items1" xml:space="preserve">
     <value>SQL Server authentication</value>
   </data>
-  <data name="AuthMethodComboBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="authMethodComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>183, 56</value>
   </data>
-  <data name="AuthMethodComboBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="authMethodComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 24</value>
   </data>
-  <data name="AuthMethodComboBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="authMethodComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;AuthMethodComboBox.Name" xml:space="preserve">
-    <value>AuthMethodComboBox</value>
+  <data name="&gt;&gt;authMethodComboBox.Name" xml:space="preserve">
+    <value>authMethodComboBox</value>
   </data>
-  <data name="&gt;&gt;AuthMethodComboBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;authMethodComboBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AuthMethodComboBox.Parent" xml:space="preserve">
-    <value>ConnectionPanel</value>
+  <data name="&gt;&gt;authMethodComboBox.Parent" xml:space="preserve">
+    <value>connectionPanel</value>
   </data>
-  <data name="&gt;&gt;AuthMethodComboBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;authMethodComboBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="AuthMethodLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="authMethodLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="AuthMethodLabel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="authMethodLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 57</value>
   </data>
-  <data name="AuthMethodLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="authMethodLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="AuthMethodLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="authMethodLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 21</value>
   </data>
-  <data name="AuthMethodLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="authMethodLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="AuthMethodLabel.Text" xml:space="preserve">
+  <data name="authMethodLabel.Text" xml:space="preserve">
     <value>Authentication method:</value>
   </data>
-  <data name="AuthMethodLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="authMethodLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;AuthMethodLabel.Name" xml:space="preserve">
-    <value>AuthMethodLabel</value>
+  <data name="&gt;&gt;authMethodLabel.Name" xml:space="preserve">
+    <value>authMethodLabel</value>
   </data>
-  <data name="&gt;&gt;AuthMethodLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;authMethodLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AuthMethodLabel.Parent" xml:space="preserve">
-    <value>ConnectionPanel</value>
+  <data name="&gt;&gt;authMethodLabel.Parent" xml:space="preserve">
+    <value>connectionPanel</value>
   </data>
-  <data name="&gt;&gt;AuthMethodLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;authMethodLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ServerNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="serverNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ServerNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="serverNameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 18</value>
   </data>
-  <data name="ServerNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="serverNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="ServerNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="serverNameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 21</value>
   </data>
-  <data name="ServerNameLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="serverNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="ServerNameLabel.Text" xml:space="preserve">
+  <data name="serverNameLabel.Text" xml:space="preserve">
     <value>Server name:</value>
   </data>
-  <data name="ServerNameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="serverNameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;ServerNameLabel.Name" xml:space="preserve">
-    <value>ServerNameLabel</value>
+  <data name="&gt;&gt;serverNameLabel.Name" xml:space="preserve">
+    <value>serverNameLabel</value>
   </data>
-  <data name="&gt;&gt;ServerNameLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;serverNameLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ServerNameLabel.Parent" xml:space="preserve">
-    <value>ConnectionPanel</value>
+  <data name="&gt;&gt;serverNameLabel.Parent" xml:space="preserve">
+    <value>connectionPanel</value>
   </data>
-  <data name="&gt;&gt;ServerNameLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;serverNameLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="UsernameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="usernameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>173, 14</value>
   </data>
-  <data name="UsernameTextBox.MaxLength" type="System.Int32, mscorlib">
+  <data name="usernameTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>128</value>
   </data>
-  <data name="UsernameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="usernameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
-  <data name="UsernameTextBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="usernameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="UsernameTextBox.WordWrap" type="System.Boolean, mscorlib">
+  <data name="usernameTextBox.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;UsernameTextBox.Name" xml:space="preserve">
-    <value>UsernameTextBox</value>
+  <data name="&gt;&gt;usernameTextBox.Name" xml:space="preserve">
+    <value>usernameTextBox</value>
   </data>
-  <data name="&gt;&gt;UsernameTextBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;usernameTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;UsernameTextBox.Parent" xml:space="preserve">
-    <value>UserPanel</value>
+  <data name="&gt;&gt;usernameTextBox.Parent" xml:space="preserve">
+    <value>userPanel</value>
   </data>
-  <data name="&gt;&gt;UsernameTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;usernameTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="PasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="passwordTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>173, 42</value>
   </data>
-  <data name="PasswordTextBox.MaxLength" type="System.Int32, mscorlib">
+  <data name="passwordTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>128</value>
   </data>
-  <data name="PasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="passwordTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
-  <data name="PasswordTextBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="passwordTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="PasswordTextBox.WordWrap" type="System.Boolean, mscorlib">
+  <data name="passwordTextBox.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;PasswordTextBox.Name" xml:space="preserve">
-    <value>PasswordTextBox</value>
+  <data name="&gt;&gt;passwordTextBox.Name" xml:space="preserve">
+    <value>passwordTextBox</value>
   </data>
-  <data name="&gt;&gt;PasswordTextBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;passwordTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PasswordTextBox.Parent" xml:space="preserve">
-    <value>UserPanel</value>
+  <data name="&gt;&gt;passwordTextBox.Parent" xml:space="preserve">
+    <value>userPanel</value>
   </data>
-  <data name="&gt;&gt;PasswordTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;passwordTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="PasswordLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="passwordLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="PasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="passwordLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 43</value>
   </data>
-  <data name="PasswordLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="passwordLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="PasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="passwordLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 21</value>
   </data>
-  <data name="PasswordLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="passwordLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="PasswordLabel.Text" xml:space="preserve">
+  <data name="passwordLabel.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
-  <data name="PasswordLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="passwordLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;PasswordLabel.Name" xml:space="preserve">
-    <value>PasswordLabel</value>
+  <data name="&gt;&gt;passwordLabel.Name" xml:space="preserve">
+    <value>passwordLabel</value>
   </data>
-  <data name="&gt;&gt;PasswordLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;passwordLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PasswordLabel.Parent" xml:space="preserve">
-    <value>UserPanel</value>
+  <data name="&gt;&gt;passwordLabel.Parent" xml:space="preserve">
+    <value>userPanel</value>
   </data>
-  <data name="&gt;&gt;PasswordLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;passwordLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="UsernameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="usernameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="UsernameLabel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="usernameLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 11</value>
   </data>
-  <data name="UsernameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="usernameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="UsernameLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="usernameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 21</value>
   </data>
-  <data name="UsernameLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="usernameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="UsernameLabel.Text" xml:space="preserve">
+  <data name="usernameLabel.Text" xml:space="preserve">
     <value>Username:</value>
   </data>
-  <data name="UsernameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="usernameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;UsernameLabel.Name" xml:space="preserve">
-    <value>UsernameLabel</value>
+  <data name="&gt;&gt;usernameLabel.Name" xml:space="preserve">
+    <value>usernameLabel</value>
   </data>
-  <data name="&gt;&gt;UsernameLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;usernameLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;UsernameLabel.Parent" xml:space="preserve">
-    <value>UserPanel</value>
+  <data name="&gt;&gt;usernameLabel.Parent" xml:space="preserve">
+    <value>userPanel</value>
   </data>
-  <data name="&gt;&gt;UsernameLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;usernameLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="UserPanel.Enabled" type="System.Boolean, mscorlib">
+  <data name="userPanel.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="UserPanel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="userPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 86</value>
   </data>
-  <data name="UserPanel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="userPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 76</value>
   </data>
-  <data name="UserPanel.TabIndex" type="System.Int32, mscorlib">
+  <data name="userPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;UserPanel.Name" xml:space="preserve">
-    <value>UserPanel</value>
+  <data name="&gt;&gt;userPanel.Name" xml:space="preserve">
+    <value>userPanel</value>
   </data>
-  <data name="&gt;&gt;UserPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;userPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;UserPanel.Parent" xml:space="preserve">
-    <value>ConnectionPanel</value>
+  <data name="&gt;&gt;userPanel.Parent" xml:space="preserve">
+    <value>connectionPanel</value>
   </data>
-  <data name="&gt;&gt;UserPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;userPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="ConnectionPanel.Enabled" type="System.Boolean, mscorlib">
+  <data name="connectionPanel.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="ConnectionPanel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="connectionPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 0</value>
   </data>
-  <data name="ConnectionPanel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="connectionPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>471, 164</value>
   </data>
-  <data name="ConnectionPanel.TabIndex" type="System.Int32, mscorlib">
+  <data name="connectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ConnectionPanel.Name" xml:space="preserve">
-    <value>ConnectionPanel</value>
+  <data name="&gt;&gt;connectionPanel.Name" xml:space="preserve">
+    <value>connectionPanel</value>
   </data>
-  <data name="&gt;&gt;ConnectionPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;connectionPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ConnectionPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;connectionPanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ConnectionPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;connectionPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="SeparatorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="separatorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="SeparatorLabel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="separatorLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 177</value>
   </data>
-  <data name="SeparatorLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="separatorLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>441, 2</value>
   </data>
-  <data name="SeparatorLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="separatorLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;SeparatorLabel.Name" xml:space="preserve">
-    <value>SeparatorLabel</value>
+  <data name="&gt;&gt;separatorLabel.Name" xml:space="preserve">
+    <value>separatorLabel</value>
   </data>
-  <data name="&gt;&gt;SeparatorLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;separatorLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SeparatorLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;separatorLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;SeparatorLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;separatorLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

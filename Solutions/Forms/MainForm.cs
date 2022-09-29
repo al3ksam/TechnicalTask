@@ -72,10 +72,10 @@ namespace Solutions.Forms
         private void MainForm_Load(object sender, EventArgs e)
         { 
             table = new DataTable();
-            SolutionGridView.DataSource = table;
+            solutionGridView.DataSource = table;
 
             table2 = new DataTable();
-            ComponentsGridView.DataSource = table2;
+            componentsGridView.DataSource = table2;
         }
 
         // Обработчик отображения формы
@@ -146,8 +146,8 @@ namespace Solutions.Forms
                     _maxSolutionId = 0;
                 }
 
-                SaveBtn.Enabled = true;
-                SolutionAddBtn.Enabled = true;
+                saveBtn.Enabled = true;
+                solutionAddBtn.Enabled = true;
             }
             catch (Exception exception)
             {
@@ -251,9 +251,9 @@ namespace Solutions.Forms
 
             try
             {
-                if (SolutionGridView.SelectedRows.Count > 0)
+                if (solutionGridView.SelectedRows.Count > 0)
                 {
-                    int index = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
+                    int index = Convert.ToInt32(solutionGridView.SelectedRows[0].Cells[0].Value);
 
                     // Ищем строки по индексу и удаляем.
                     DataRow[] solutionRows = table.Select($"{table.Columns[0].ColumnName} = {index}");
@@ -283,9 +283,9 @@ namespace Solutions.Forms
             finally
             {
                 // Отключаем кнопку удаления раствора, если не осталось записей
-                if (SolutionGridView.Rows.Count == 0)
+                if (solutionGridView.Rows.Count == 0)
                 {
-                    SolutionDelBtn.Enabled = false;
+                    solutionDelBtn.Enabled = false;
                 }
             }
         }
@@ -293,14 +293,14 @@ namespace Solutions.Forms
         // Обработчик изменения текущего выбора в GridView растворов
         private void SolutionGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (SolutionGridView.SelectedRows.Count > 0)
+            if (solutionGridView.SelectedRows.Count > 0)
             {
                 try
                 {
                     // Фильтрация компонентов по раствору
                     if (table2 != null && table2.Rows.Count > 0)
                     {
-                        int index = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
+                        int index = Convert.ToInt32(solutionGridView.SelectedRows[0].Cells[0].Value);
                         table2.DefaultView.RowFilter = string.Format($"{table2.Columns[1].ColumnName} = {index}");                        
                     }
                 }
@@ -310,12 +310,12 @@ namespace Solutions.Forms
                 }
 
                 // Включаем кнопку удаления раствора, если выбрана строка
-                SolutionDelBtn.Enabled = true;
+                solutionDelBtn.Enabled = true;
             }
             else
             {
                 // Отключаем кнопку, если не выбран раствор
-                SolutionDelBtn.Enabled = false;
+                solutionDelBtn.Enabled = false;
             }
         }
 
@@ -326,11 +326,11 @@ namespace Solutions.Forms
             if (_isSolutionRowAdded == true)
             {
                 // Выделяем строку и "скроллимся" на неё
-                DataGridViewRow row = SolutionGridView.Rows[e.RowIndex];
+                DataGridViewRow row = solutionGridView.Rows[e.RowIndex];
                 if (row != null)
                 {
                     row.Selected = true;
-                    SolutionGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                    solutionGridView.FirstDisplayedScrollingRowIndex = row.Index;
                 }
 
                 _isSolutionRowAdded = false; // Снимаем флаг
@@ -345,7 +345,7 @@ namespace Solutions.Forms
             {
                 // Когда редактируем значение ячейки, вешаем на ячейку обработчик нажатия кнопок клавиатуры
                 e.Control.KeyPress -= new KeyPressEventHandler(Column_KeyPress);
-                if (SolutionGridView.CurrentCell.ColumnIndex == 2)
+                if (solutionGridView.CurrentCell.ColumnIndex == 2)
                 {
                     TextBox tb = e.Control as TextBox;
                     if (tb != null)
@@ -363,11 +363,11 @@ namespace Solutions.Forms
             if (_isComponentRowAdded == true)
             {
                 // Выделяем строку и "скроллимся" на неё
-                DataGridViewRow row = ComponentsGridView.Rows[e.RowIndex];
+                DataGridViewRow row = componentsGridView.Rows[e.RowIndex];
                 if (row != null)
                 {
                     row.Selected = true;
-                    ComponentsGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                    componentsGridView.FirstDisplayedScrollingRowIndex = row.Index;
                 }
 
                 _isComponentRowAdded = false; // Снимаем флаг
@@ -377,7 +377,7 @@ namespace Solutions.Forms
         // Обработчик добавления записи в таблицу "Компоненты"
         private void ComponentAddBtn_Click(object sender, EventArgs e)
         {
-            if (table2 == null || SolutionGridView.SelectedRows.Count == 0) return;
+            if (table2 == null || solutionGridView.SelectedRows.Count == 0) return;
 
             try
             {
@@ -403,7 +403,7 @@ namespace Solutions.Forms
                             if (solution.AddComponent(component))
                             {
                                 // Id раствора
-                                int solutionId = Convert.ToInt32(SolutionGridView.SelectedRows[0].Cells[0].Value);
+                                int solutionId = Convert.ToInt32(solutionGridView.SelectedRows[0].Cells[0].Value);
 
                                 // Создаем новую строку и заполняем значениями
                                 DataRow componentRow = table2.NewRow();
@@ -454,9 +454,9 @@ namespace Solutions.Forms
 
             try
             {
-                if (ComponentsGridView.SelectedRows.Count > 0)
+                if (componentsGridView.SelectedRows.Count > 0)
                 {
-                    int index = Convert.ToInt32(ComponentsGridView.SelectedRows[0].Cells[0].Value);
+                    int index = Convert.ToInt32(componentsGridView.SelectedRows[0].Cells[0].Value);
 
                     // Ищем строки по индексу и удаляем.
                     DataRow[] componentRows = table2.Select($"{table2.Columns[0].ColumnName} = {index}");
@@ -483,9 +483,9 @@ namespace Solutions.Forms
             finally
             {
                 // Отключаем кнопку удаления раствора, если не осталось записей
-                if (ComponentsGridView.Rows.Count == 0)
+                if (componentsGridView.Rows.Count == 0)
                 {
-                    ComponentDelBtn.Enabled = false;
+                    componentDelBtn.Enabled = false;
                 }
             }
         }
@@ -494,22 +494,22 @@ namespace Solutions.Forms
         private void ComponentsGridView_SelectionChanged(object sender, EventArgs e)
         {
             // Если есть выбранный компонент
-            if (ComponentsGridView.SelectedRows.Count > 0)
+            if (componentsGridView.SelectedRows.Count > 0)
             {
                 try
                 {
-                    ComponentAddBtn.Enabled = true; // Включаем кнопку добавления компонентов
+                    componentAddBtn.Enabled = true; // Включаем кнопку добавления компонентов
 
                     // Отключаем кнопку удаления компонента, если это главный компонент
-                    bool isComponentMain = Convert.ToBoolean(ComponentsGridView.SelectedRows[0].Cells[4].Value);
+                    bool isComponentMain = Convert.ToBoolean(componentsGridView.SelectedRows[0].Cells[4].Value);
 
                     if (isComponentMain)
                     {
-                        ComponentDelBtn.Enabled = false;
+                        componentDelBtn.Enabled = false;
                     }
                     else
                     {
-                        ComponentDelBtn.Enabled = true;
+                        componentDelBtn.Enabled = true;
                     }
                 }
                 catch (Exception exeption)
@@ -520,26 +520,26 @@ namespace Solutions.Forms
             else // Компонент не выбран
             {
                 // Если нет записей, отключаем кнопку добавления
-                if (ComponentsGridView.Rows.Count > 0)
+                if (componentsGridView.Rows.Count > 0)
                 {
-                    ComponentAddBtn.Enabled = true;
+                    componentAddBtn.Enabled = true;
                 }
                 else
                 {
-                    ComponentAddBtn.Enabled = false;
+                    componentAddBtn.Enabled = false;
                 }
 
-                ComponentDelBtn.Enabled = false; // Отключаем кнопку удаления компонента
+                componentDelBtn.Enabled = false; // Отключаем кнопку удаления компонента
             }
         }
 
         // Заполнить объект "Раствор" из таблицы "Компоненты"
         private void FillSolutionFromComponentsGridView(Solution solution)
         {
-            if (solution != null && ComponentsGridView.Rows.Count > 0)
+            if (solution != null && componentsGridView.Rows.Count > 0)
             {
                 // Добавляем компоненты в раствор
-                foreach (DataGridViewRow dgViewcomponentRow in ComponentsGridView.Rows)
+                foreach (DataGridViewRow dgViewcomponentRow in componentsGridView.Rows)
                 {
                     // Игнорируем основной компонент - воду
                     if (Convert.ToBoolean(dgViewcomponentRow.Cells[4].Value) == true) continue;
@@ -557,10 +557,10 @@ namespace Solutions.Forms
         // Установить значение воды для строки с "водой" в таблице "Компоненты"
         private void SetWaterValueInCompDbGrid(decimal waterValue)
         {
-            if (ComponentsGridView.Rows.Count > 0)
+            if (componentsGridView.Rows.Count > 0)
             {
                 // Ищем в таблице "воду"
-                foreach (DataGridViewRow compRow in ComponentsGridView.Rows)
+                foreach (DataGridViewRow compRow in componentsGridView.Rows)
                 {
                     // Если нашли воду
                     if (Convert.ToBoolean(compRow.Cells[4].Value) == true)

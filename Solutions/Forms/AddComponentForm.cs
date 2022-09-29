@@ -13,19 +13,19 @@ namespace Solutions.Forms
         /// <summary>
         /// Имя компонента
         /// </summary>
-        public string ComponentName => NameTextBox.Text.Trim();
+        public string ComponentName => nameTextBox.Text.Trim();
         /// <summary>
         /// Количество компонента
         /// </summary>
-        public decimal ComponentAmount => AmountNumeric.Value;
+        public decimal ComponentAmount => amountNumeric.Value;
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            string componentName = NameTextBox.Text.Trim();
+            string componentName = nameTextBox.Text.Trim();
 
             if (componentName == string.Empty)
             {
-                NameTextBox.Focus();
+                nameTextBox.Focus();
                 return;
             }
             else if (componentName.ToLower() == "Вода".ToLower())
@@ -36,8 +36,8 @@ namespace Solutions.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
 
-                NameTextBox.SelectAll();
-                NameTextBox.Focus();
+                nameTextBox.SelectAll();
+                nameTextBox.Focus();
                 return;                              
             }
 

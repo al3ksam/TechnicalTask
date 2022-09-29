@@ -30,45 +30,45 @@ namespace Solutions.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddComponentForm));
-            this.CancelBtn = new System.Windows.Forms.Button();
-            this.AddBtn = new System.Windows.Forms.Button();
-            this.AmountNumeric = new System.Windows.Forms.NumericUpDown();
-            this.AmountLabel = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.NameLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.AmountNumeric)).BeginInit();
+            this.cancelBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.amountNumeric = new System.Windows.Forms.NumericUpDown();
+            this.amountLabel = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.amountNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // CancelBtn
             // 
-            resources.ApplyResources(this.CancelBtn, "CancelBtn");
-            this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.UseVisualStyleBackColor = true;
-            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            resources.ApplyResources(this.cancelBtn, "CancelBtn");
+            this.cancelBtn.Name = "CancelBtn";
+            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // AddBtn
             // 
-            resources.ApplyResources(this.AddBtn, "AddBtn");
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.UseVisualStyleBackColor = true;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            resources.ApplyResources(this.addBtn, "AddBtn");
+            this.addBtn.Name = "AddBtn";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // AmountNumeric
             // 
-            this.AmountNumeric.DecimalPlaces = 1;
-            resources.ApplyResources(this.AmountNumeric, "AmountNumeric");
-            this.AmountNumeric.Maximum = new decimal(new int[] {
+            this.amountNumeric.DecimalPlaces = 1;
+            resources.ApplyResources(this.amountNumeric, "AmountNumeric");
+            this.amountNumeric.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             65536});
-            this.AmountNumeric.Minimum = new decimal(new int[] {
+            this.amountNumeric.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.AmountNumeric.Name = "AmountNumeric";
-            this.AmountNumeric.Value = new decimal(new int[] {
+            this.amountNumeric.Name = "AmountNumeric";
+            this.amountNumeric.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -76,35 +76,35 @@ namespace Solutions.Forms
             // 
             // AmountLabel
             // 
-            resources.ApplyResources(this.AmountLabel, "AmountLabel");
-            this.AmountLabel.Name = "AmountLabel";
+            resources.ApplyResources(this.amountLabel, "AmountLabel");
+            this.amountLabel.Name = "AmountLabel";
             // 
             // NameTextBox
             // 
-            resources.ApplyResources(this.NameTextBox, "NameTextBox");
-            this.NameTextBox.Name = "NameTextBox";
+            resources.ApplyResources(this.nameTextBox, "NameTextBox");
+            this.nameTextBox.Name = "NameTextBox";
             // 
             // NameLabel
             // 
-            resources.ApplyResources(this.NameLabel, "NameLabel");
-            this.NameLabel.Name = "NameLabel";
+            resources.ApplyResources(this.nameLabel, "NameLabel");
+            this.nameLabel.Name = "NameLabel";
             // 
             // AddComponentForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.CancelBtn);
-            this.Controls.Add(this.AddBtn);
-            this.Controls.Add(this.AmountNumeric);
-            this.Controls.Add(this.AmountLabel);
-            this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.addBtn);
+            this.Controls.Add(this.amountNumeric);
+            this.Controls.Add(this.amountLabel);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.nameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddComponentForm";
             this.ShowInTaskbar = false;
-            ((System.ComponentModel.ISupportInitialize)(this.AmountNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amountNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,11 +112,11 @@ namespace Solutions.Forms
 
         #endregion
 
-        private System.Windows.Forms.Button CancelBtn;
-        private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.NumericUpDown AmountNumeric;
-        private System.Windows.Forms.Label AmountLabel;
-        private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.NumericUpDown amountNumeric;
+        private System.Windows.Forms.Label amountLabel;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Label nameLabel;
     }
 }

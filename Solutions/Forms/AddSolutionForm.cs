@@ -13,17 +13,17 @@ namespace Solutions.Forms
         /// <summary>
         /// Имя раствора
         /// </summary>
-        public string SolutionName => NameTextBox.Text.Trim();
+        public string SolutionName => nameTextBox.Text.Trim();
         /// <summary>
         /// Объем раствора
         /// </summary>
-        public decimal SolutionVolume => VolumeNumeric.Value;
+        public decimal SolutionVolume => volumeNumeric.Value;
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            if (NameTextBox.Text.Trim() == string.Empty)
+            if (nameTextBox.Text.Trim() == string.Empty)
             {
-                NameTextBox.Focus();
+                nameTextBox.Focus();
                 return;
             }
 

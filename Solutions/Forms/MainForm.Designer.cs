@@ -31,229 +31,229 @@ namespace Solutions.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.UpdateBtn = new System.Windows.Forms.Button();
-            this.SaveBtn = new System.Windows.Forms.Button();
-            this.SettingsBtn = new System.Windows.Forms.Button();
-            this.SolutionGridView = new System.Windows.Forms.DataGridView();
-            this.SolutionIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SolutionNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SolutionVolumeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SolutionsLabel = new System.Windows.Forms.Label();
-            this.SolutionDelBtn = new System.Windows.Forms.Button();
-            this.SolutionAddBtn = new System.Windows.Forms.Button();
-            this.ComponentsGridView = new System.Windows.Forms.DataGridView();
-            this.ComponentsLabel = new System.Windows.Forms.Label();
-            this.ComponentDelBtn = new System.Windows.Forms.Button();
-            this.ComponentAddBtn = new System.Windows.Forms.Button();
-            this.ComIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SolIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ComNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ComAmountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ComIsMainColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.SolutionGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComponentsGridView)).BeginInit();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.settingsBtn = new System.Windows.Forms.Button();
+            this.solutionGridView = new System.Windows.Forms.DataGridView();
+            this.solutionIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solutionNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solutionVolumeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solutionsLabel = new System.Windows.Forms.Label();
+            this.solutionDelBtn = new System.Windows.Forms.Button();
+            this.solutionAddBtn = new System.Windows.Forms.Button();
+            this.componentsGridView = new System.Windows.Forms.DataGridView();
+            this.componentsLabel = new System.Windows.Forms.Label();
+            this.componentDelBtn = new System.Windows.Forms.Button();
+            this.componentAddBtn = new System.Windows.Forms.Button();
+            this.comIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comAmountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comIsMainColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.solutionGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.componentsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // UpdateBtn
             // 
-            resources.ApplyResources(this.UpdateBtn, "UpdateBtn");
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.UseVisualStyleBackColor = true;
-            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
+            resources.ApplyResources(this.updateBtn, "UpdateBtn");
+            this.updateBtn.Name = "UpdateBtn";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // SaveBtn
             // 
-            resources.ApplyResources(this.SaveBtn, "SaveBtn");
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            resources.ApplyResources(this.saveBtn, "SaveBtn");
+            this.saveBtn.Name = "SaveBtn";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // SettingsBtn
             // 
-            resources.ApplyResources(this.SettingsBtn, "SettingsBtn");
-            this.SettingsBtn.Name = "SettingsBtn";
-            this.SettingsBtn.UseVisualStyleBackColor = true;
-            this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
+            resources.ApplyResources(this.settingsBtn, "SettingsBtn");
+            this.settingsBtn.Name = "SettingsBtn";
+            this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
             // 
             // SolutionGridView
             // 
-            this.SolutionGridView.AllowUserToAddRows = false;
-            this.SolutionGridView.AllowUserToDeleteRows = false;
-            this.SolutionGridView.AllowUserToResizeColumns = false;
-            this.SolutionGridView.AllowUserToResizeRows = false;
-            this.SolutionGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.SolutionGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            resources.ApplyResources(this.SolutionGridView, "SolutionGridView");
-            this.SolutionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.SolutionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SolutionIdColumn,
-            this.SolutionNameColumn,
-            this.SolutionVolumeColumn});
-            this.SolutionGridView.EnableHeadersVisualStyles = false;
-            this.SolutionGridView.MultiSelect = false;
-            this.SolutionGridView.Name = "SolutionGridView";
-            this.SolutionGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.SolutionGridView.RowHeadersVisible = false;
-            this.SolutionGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.SolutionGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SolutionGridView.RowTemplate.Height = 40;
-            this.SolutionGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SolutionGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.SolutionGridView_EditingControlShowing);
-            this.SolutionGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.SolutionGridView_RowsAdded);
-            this.SolutionGridView.SelectionChanged += new System.EventHandler(this.SolutionGridView_SelectionChanged);
+            this.solutionGridView.AllowUserToAddRows = false;
+            this.solutionGridView.AllowUserToDeleteRows = false;
+            this.solutionGridView.AllowUserToResizeColumns = false;
+            this.solutionGridView.AllowUserToResizeRows = false;
+            this.solutionGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.solutionGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            resources.ApplyResources(this.solutionGridView, "SolutionGridView");
+            this.solutionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.solutionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.solutionIdColumn,
+            this.solutionNameColumn,
+            this.solutionVolumeColumn});
+            this.solutionGridView.EnableHeadersVisualStyles = false;
+            this.solutionGridView.MultiSelect = false;
+            this.solutionGridView.Name = "SolutionGridView";
+            this.solutionGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.solutionGridView.RowHeadersVisible = false;
+            this.solutionGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.solutionGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.solutionGridView.RowTemplate.Height = 40;
+            this.solutionGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.solutionGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.SolutionGridView_EditingControlShowing);
+            this.solutionGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.SolutionGridView_RowsAdded);
+            this.solutionGridView.SelectionChanged += new System.EventHandler(this.SolutionGridView_SelectionChanged);
             // 
             // SolutionIdColumn
             // 
-            this.SolutionIdColumn.DataPropertyName = "Id";
-            resources.ApplyResources(this.SolutionIdColumn, "SolutionIdColumn");
-            this.SolutionIdColumn.Name = "SolutionIdColumn";
-            this.SolutionIdColumn.ReadOnly = true;
+            this.solutionIdColumn.DataPropertyName = "Id";
+            resources.ApplyResources(this.solutionIdColumn, "SolutionIdColumn");
+            this.solutionIdColumn.Name = "SolutionIdColumn";
+            this.solutionIdColumn.ReadOnly = true;
             // 
             // SolutionNameColumn
             // 
-            this.SolutionNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SolutionNameColumn.DataPropertyName = "Name";
-            resources.ApplyResources(this.SolutionNameColumn, "SolutionNameColumn");
-            this.SolutionNameColumn.MaxInputLength = 128;
-            this.SolutionNameColumn.Name = "SolutionNameColumn";
+            this.solutionNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.solutionNameColumn.DataPropertyName = "Name";
+            resources.ApplyResources(this.solutionNameColumn, "SolutionNameColumn");
+            this.solutionNameColumn.MaxInputLength = 128;
+            this.solutionNameColumn.Name = "SolutionNameColumn";
             // 
             // SolutionVolumeColumn
             // 
-            this.SolutionVolumeColumn.DataPropertyName = "Volume";
-            resources.ApplyResources(this.SolutionVolumeColumn, "SolutionVolumeColumn");
-            this.SolutionVolumeColumn.MaxInputLength = 9;
-            this.SolutionVolumeColumn.Name = "SolutionVolumeColumn";
+            this.solutionVolumeColumn.DataPropertyName = "Volume";
+            resources.ApplyResources(this.solutionVolumeColumn, "SolutionVolumeColumn");
+            this.solutionVolumeColumn.MaxInputLength = 9;
+            this.solutionVolumeColumn.Name = "SolutionVolumeColumn";
             // 
             // SolutionsLabel
             // 
-            resources.ApplyResources(this.SolutionsLabel, "SolutionsLabel");
-            this.SolutionsLabel.Name = "SolutionsLabel";
+            resources.ApplyResources(this.solutionsLabel, "SolutionsLabel");
+            this.solutionsLabel.Name = "SolutionsLabel";
             // 
             // SolutionDelBtn
             // 
-            resources.ApplyResources(this.SolutionDelBtn, "SolutionDelBtn");
-            this.SolutionDelBtn.Name = "SolutionDelBtn";
-            this.SolutionDelBtn.UseVisualStyleBackColor = true;
-            this.SolutionDelBtn.Click += new System.EventHandler(this.SolutionDelBtn_Click);
+            resources.ApplyResources(this.solutionDelBtn, "SolutionDelBtn");
+            this.solutionDelBtn.Name = "SolutionDelBtn";
+            this.solutionDelBtn.UseVisualStyleBackColor = true;
+            this.solutionDelBtn.Click += new System.EventHandler(this.SolutionDelBtn_Click);
             // 
             // SolutionAddBtn
             // 
-            resources.ApplyResources(this.SolutionAddBtn, "SolutionAddBtn");
-            this.SolutionAddBtn.Name = "SolutionAddBtn";
-            this.SolutionAddBtn.UseVisualStyleBackColor = true;
-            this.SolutionAddBtn.Click += new System.EventHandler(this.SolutionAddBtn_Click);
+            resources.ApplyResources(this.solutionAddBtn, "SolutionAddBtn");
+            this.solutionAddBtn.Name = "SolutionAddBtn";
+            this.solutionAddBtn.UseVisualStyleBackColor = true;
+            this.solutionAddBtn.Click += new System.EventHandler(this.SolutionAddBtn_Click);
             // 
             // ComponentsGridView
             // 
-            this.ComponentsGridView.AllowUserToAddRows = false;
-            this.ComponentsGridView.AllowUserToDeleteRows = false;
-            this.ComponentsGridView.AllowUserToResizeColumns = false;
-            this.ComponentsGridView.AllowUserToResizeRows = false;
-            this.ComponentsGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.ComponentsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            resources.ApplyResources(this.ComponentsGridView, "ComponentsGridView");
-            this.ComponentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.ComponentsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ComIdColumn,
-            this.SolIdColumn,
-            this.ComNameColumn,
-            this.ComAmountColumn,
-            this.ComIsMainColumn});
-            this.ComponentsGridView.EnableHeadersVisualStyles = false;
-            this.ComponentsGridView.MultiSelect = false;
-            this.ComponentsGridView.Name = "ComponentsGridView";
-            this.ComponentsGridView.ReadOnly = true;
-            this.ComponentsGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.ComponentsGridView.RowHeadersVisible = false;
-            this.ComponentsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.ComponentsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComponentsGridView.RowTemplate.Height = 40;
-            this.ComponentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ComponentsGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ComponentsGridView_RowsAdded);
-            this.ComponentsGridView.SelectionChanged += new System.EventHandler(this.ComponentsGridView_SelectionChanged);
+            this.componentsGridView.AllowUserToAddRows = false;
+            this.componentsGridView.AllowUserToDeleteRows = false;
+            this.componentsGridView.AllowUserToResizeColumns = false;
+            this.componentsGridView.AllowUserToResizeRows = false;
+            this.componentsGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.componentsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            resources.ApplyResources(this.componentsGridView, "ComponentsGridView");
+            this.componentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.componentsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.comIdColumn,
+            this.solIdColumn,
+            this.comNameColumn,
+            this.comAmountColumn,
+            this.comIsMainColumn});
+            this.componentsGridView.EnableHeadersVisualStyles = false;
+            this.componentsGridView.MultiSelect = false;
+            this.componentsGridView.Name = "ComponentsGridView";
+            this.componentsGridView.ReadOnly = true;
+            this.componentsGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.componentsGridView.RowHeadersVisible = false;
+            this.componentsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.componentsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.componentsGridView.RowTemplate.Height = 40;
+            this.componentsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.componentsGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ComponentsGridView_RowsAdded);
+            this.componentsGridView.SelectionChanged += new System.EventHandler(this.ComponentsGridView_SelectionChanged);
             // 
             // ComponentsLabel
             // 
-            resources.ApplyResources(this.ComponentsLabel, "ComponentsLabel");
-            this.ComponentsLabel.Name = "ComponentsLabel";
+            resources.ApplyResources(this.componentsLabel, "ComponentsLabel");
+            this.componentsLabel.Name = "ComponentsLabel";
             // 
             // ComponentDelBtn
             // 
-            resources.ApplyResources(this.ComponentDelBtn, "ComponentDelBtn");
-            this.ComponentDelBtn.Name = "ComponentDelBtn";
-            this.ComponentDelBtn.UseVisualStyleBackColor = true;
-            this.ComponentDelBtn.Click += new System.EventHandler(this.ComponentDelBtn_Click);
+            resources.ApplyResources(this.componentDelBtn, "ComponentDelBtn");
+            this.componentDelBtn.Name = "ComponentDelBtn";
+            this.componentDelBtn.UseVisualStyleBackColor = true;
+            this.componentDelBtn.Click += new System.EventHandler(this.ComponentDelBtn_Click);
             // 
             // ComponentAddBtn
             // 
-            resources.ApplyResources(this.ComponentAddBtn, "ComponentAddBtn");
-            this.ComponentAddBtn.Name = "ComponentAddBtn";
-            this.ComponentAddBtn.UseVisualStyleBackColor = true;
-            this.ComponentAddBtn.Click += new System.EventHandler(this.ComponentAddBtn_Click);
+            resources.ApplyResources(this.componentAddBtn, "ComponentAddBtn");
+            this.componentAddBtn.Name = "ComponentAddBtn";
+            this.componentAddBtn.UseVisualStyleBackColor = true;
+            this.componentAddBtn.Click += new System.EventHandler(this.ComponentAddBtn_Click);
             // 
             // ComIdColumn
             // 
-            this.ComIdColumn.DataPropertyName = "Id";
-            resources.ApplyResources(this.ComIdColumn, "ComIdColumn");
-            this.ComIdColumn.Name = "ComIdColumn";
-            this.ComIdColumn.ReadOnly = true;
+            this.comIdColumn.DataPropertyName = "Id";
+            resources.ApplyResources(this.comIdColumn, "ComIdColumn");
+            this.comIdColumn.Name = "ComIdColumn";
+            this.comIdColumn.ReadOnly = true;
             // 
             // SolIdColumn
             // 
-            this.SolIdColumn.DataPropertyName = "SolutionId";
-            resources.ApplyResources(this.SolIdColumn, "SolIdColumn");
-            this.SolIdColumn.Name = "SolIdColumn";
-            this.SolIdColumn.ReadOnly = true;
+            this.solIdColumn.DataPropertyName = "SolutionId";
+            resources.ApplyResources(this.solIdColumn, "SolIdColumn");
+            this.solIdColumn.Name = "SolIdColumn";
+            this.solIdColumn.ReadOnly = true;
             // 
             // ComNameColumn
             // 
-            this.ComNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ComNameColumn.DataPropertyName = "Name";
-            resources.ApplyResources(this.ComNameColumn, "ComNameColumn");
-            this.ComNameColumn.MaxInputLength = 128;
-            this.ComNameColumn.Name = "ComNameColumn";
-            this.ComNameColumn.ReadOnly = true;
+            this.comNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.comNameColumn.DataPropertyName = "Name";
+            resources.ApplyResources(this.comNameColumn, "ComNameColumn");
+            this.comNameColumn.MaxInputLength = 128;
+            this.comNameColumn.Name = "ComNameColumn";
+            this.comNameColumn.ReadOnly = true;
             // 
             // ComAmountColumn
             // 
-            this.ComAmountColumn.DataPropertyName = "Percent";
+            this.comAmountColumn.DataPropertyName = "Percent";
             dataGridViewCellStyle2.Format = "N1";
             dataGridViewCellStyle2.NullValue = null;
-            this.ComAmountColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.ComAmountColumn, "ComAmountColumn");
-            this.ComAmountColumn.MaxInputLength = 5;
-            this.ComAmountColumn.Name = "ComAmountColumn";
-            this.ComAmountColumn.ReadOnly = true;
+            this.comAmountColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.comAmountColumn, "ComAmountColumn");
+            this.comAmountColumn.MaxInputLength = 5;
+            this.comAmountColumn.Name = "ComAmountColumn";
+            this.comAmountColumn.ReadOnly = true;
             // 
             // ComIsMainColumn
             // 
-            this.ComIsMainColumn.DataPropertyName = "IsMain";
-            resources.ApplyResources(this.ComIsMainColumn, "ComIsMainColumn");
-            this.ComIsMainColumn.Name = "ComIsMainColumn";
-            this.ComIsMainColumn.ReadOnly = true;
+            this.comIsMainColumn.DataPropertyName = "IsMain";
+            resources.ApplyResources(this.comIsMainColumn, "ComIsMainColumn");
+            this.comIsMainColumn.Name = "ComIsMainColumn";
+            this.comIsMainColumn.ReadOnly = true;
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.ComponentAddBtn);
-            this.Controls.Add(this.ComponentDelBtn);
-            this.Controls.Add(this.ComponentsLabel);
-            this.Controls.Add(this.ComponentsGridView);
-            this.Controls.Add(this.SolutionAddBtn);
-            this.Controls.Add(this.SolutionDelBtn);
-            this.Controls.Add(this.SolutionsLabel);
-            this.Controls.Add(this.SolutionGridView);
-            this.Controls.Add(this.SettingsBtn);
-            this.Controls.Add(this.SaveBtn);
-            this.Controls.Add(this.UpdateBtn);
+            this.Controls.Add(this.componentAddBtn);
+            this.Controls.Add(this.componentDelBtn);
+            this.Controls.Add(this.componentsLabel);
+            this.Controls.Add(this.componentsGridView);
+            this.Controls.Add(this.solutionAddBtn);
+            this.Controls.Add(this.solutionDelBtn);
+            this.Controls.Add(this.solutionsLabel);
+            this.Controls.Add(this.solutionGridView);
+            this.Controls.Add(this.settingsBtn);
+            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.updateBtn);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.SolutionGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComponentsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.solutionGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.componentsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,25 +261,25 @@ namespace Solutions.Forms
 
         #endregion
 
-        private System.Windows.Forms.Button UpdateBtn;
-        private System.Windows.Forms.Button SaveBtn;
-        private System.Windows.Forms.Button SettingsBtn;
-        private System.Windows.Forms.DataGridView SolutionGridView;
-        private System.Windows.Forms.Label SolutionsLabel;
-        private System.Windows.Forms.Button SolutionDelBtn;
-        private System.Windows.Forms.Button SolutionAddBtn;
-        private System.Windows.Forms.DataGridView ComponentsGridView;
-        private System.Windows.Forms.Label ComponentsLabel;
-        private System.Windows.Forms.Button ComponentDelBtn;
-        private System.Windows.Forms.Button ComponentAddBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SolutionIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SolutionNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SolutionVolumeColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ComIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SolIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ComNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ComAmountColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ComIsMainColumn;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button settingsBtn;
+        private System.Windows.Forms.DataGridView solutionGridView;
+        private System.Windows.Forms.Label solutionsLabel;
+        private System.Windows.Forms.Button solutionDelBtn;
+        private System.Windows.Forms.Button solutionAddBtn;
+        private System.Windows.Forms.DataGridView componentsGridView;
+        private System.Windows.Forms.Label componentsLabel;
+        private System.Windows.Forms.Button componentDelBtn;
+        private System.Windows.Forms.Button componentAddBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn solutionIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn solutionNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn solutionVolumeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn solIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comAmountColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comIsMainColumn;
     }
 }
 
