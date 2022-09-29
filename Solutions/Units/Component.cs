@@ -28,16 +28,13 @@
             {
                 Amount = _minAmount;
             }
+            else if (amount > _maxAmount)
+            {
+                Amount = _maxAmount;
+            }
             else
             {
-                if (amount > _maxAmount)
-                {
-                    Amount = _maxAmount;
-                }
-                else
-                {
-                    Amount = amount;
-                }
+                Amount = amount;
             }
         }
 

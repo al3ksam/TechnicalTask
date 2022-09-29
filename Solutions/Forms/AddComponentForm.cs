@@ -28,20 +28,17 @@ namespace Solutions.Forms
                 NameTextBox.Focus();
                 return;
             }
-            else
+            else if (componentName.ToLower() == "Вода".ToLower())
             {
-                if (componentName.ToLower() == "Вода".ToLower())
-                {
-                    MessageBox.Show(
-                        Program.ResManager.GetString("MsgDlgComponentName"), 
-                        Program.ResManager.GetString("MsgDlgInfoCaption"), 
-                        MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
+                MessageBox.Show(
+                    Program.ResManager.GetString("MsgDlgComponentName"), 
+                    Program.ResManager.GetString("MsgDlgInfoCaption"), 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
 
-                    NameTextBox.SelectAll();
-                    NameTextBox.Focus();
-                    return;
-                }                                
+                NameTextBox.SelectAll();
+                NameTextBox.Focus();
+                return;                              
             }
 
             DialogResult = DialogResult.OK;
