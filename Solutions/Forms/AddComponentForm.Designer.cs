@@ -39,24 +39,24 @@ namespace Solutions.Forms
             ((System.ComponentModel.ISupportInitialize)(this.amountNumeric)).BeginInit();
             this.SuspendLayout();
             // 
-            // CancelBtn
+            // cancelBtn
             // 
-            resources.ApplyResources(this.cancelBtn, "CancelBtn");
-            this.cancelBtn.Name = "CancelBtn";
+            resources.ApplyResources(this.cancelBtn, "cancelBtn");
+            this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // AddBtn
+            // addBtn
             // 
-            resources.ApplyResources(this.addBtn, "AddBtn");
-            this.addBtn.Name = "AddBtn";
+            resources.ApplyResources(this.addBtn, "addBtn");
+            this.addBtn.Name = "addBtn";
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // AmountNumeric
+            // amountNumeric
             // 
             this.amountNumeric.DecimalPlaces = 1;
-            resources.ApplyResources(this.amountNumeric, "AmountNumeric");
+            resources.ApplyResources(this.amountNumeric, "amountNumeric");
             this.amountNumeric.Maximum = new decimal(new int[] {
             999,
             0,
@@ -67,27 +67,27 @@ namespace Solutions.Forms
             0,
             0,
             65536});
-            this.amountNumeric.Name = "AmountNumeric";
+            this.amountNumeric.Name = "amountNumeric";
             this.amountNumeric.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // AmountLabel
+            // amountLabel
             // 
-            resources.ApplyResources(this.amountLabel, "AmountLabel");
-            this.amountLabel.Name = "AmountLabel";
+            resources.ApplyResources(this.amountLabel, "amountLabel");
+            this.amountLabel.Name = "amountLabel";
             // 
-            // NameTextBox
+            // nameTextBox
             // 
-            resources.ApplyResources(this.nameTextBox, "NameTextBox");
-            this.nameTextBox.Name = "NameTextBox";
+            resources.ApplyResources(this.nameTextBox, "nameTextBox");
+            this.nameTextBox.Name = "nameTextBox";
             // 
-            // NameLabel
+            // nameLabel
             // 
-            resources.ApplyResources(this.nameLabel, "NameLabel");
-            this.nameLabel.Name = "NameLabel";
+            resources.ApplyResources(this.nameLabel, "nameLabel");
+            this.nameLabel.Name = "nameLabel";
             // 
             // AddComponentForm
             // 

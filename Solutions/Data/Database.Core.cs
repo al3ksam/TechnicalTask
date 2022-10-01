@@ -6,7 +6,7 @@ namespace Solutions.Data
     partial class Database
     {
         /// <summary>
-        ///     Имя таблицы.
+        ///     Имя базы данных.
         /// </summary>
         private const string _dbName = "MudDbTest";
 

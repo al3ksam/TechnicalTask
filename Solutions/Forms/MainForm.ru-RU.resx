@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UpdateBtn.Text" xml:space="preserve">
+  <data name="updateBtn.Text" xml:space="preserve">
     <value>Обновить</value>
   </data>
-  <data name="SaveBtn.Text" xml:space="preserve">
+  <data name="saveBtn.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
-  <data name="SettingsBtn.Text" xml:space="preserve">
+  <data name="settingsBtn.Text" xml:space="preserve">
     <value>Настройки соединения</value>
   </data>
-  <data name="SolutionNameColumn.HeaderText" xml:space="preserve">
+  <data name="solutionNameColumn.HeaderText" xml:space="preserve">
     <value>Название</value>
   </data>
-  <data name="SolutionVolumeColumn.HeaderText" xml:space="preserve">
+  <data name="solutionVolumeColumn.HeaderText" xml:space="preserve">
     <value>Объём, м3</value>
   </data>
-  <data name="SolutionsLabel.Text" xml:space="preserve">
+  <data name="solutionsLabel.Text" xml:space="preserve">
     <value>Растворы:</value>
   </data>
-  <data name="ComNameColumn.HeaderText" xml:space="preserve">
+  <data name="comNameColumn.HeaderText" xml:space="preserve">
     <value>Компонент</value>
   </data>
-  <data name="ComAmountColumn.HeaderText" xml:space="preserve">
+  <data name="comAmountColumn.HeaderText" xml:space="preserve">
     <value>Количество, %</value>
   </data>
-  <data name="ComponentsLabel.Text" xml:space="preserve">
+  <data name="componentsLabel.Text" xml:space="preserve">
     <value>Компоненты:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">

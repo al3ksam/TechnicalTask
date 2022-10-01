@@ -39,42 +39,42 @@ namespace Solutions.Forms
             ((System.ComponentModel.ISupportInitialize)(this.volumeNumeric)).BeginInit();
             this.SuspendLayout();
             // 
-            // NameLabel
+            // nameLabel
             // 
-            resources.ApplyResources(this.nameLabel, "NameLabel");
-            this.nameLabel.Name = "NameLabel";
+            resources.ApplyResources(this.nameLabel, "nameLabel");
+            this.nameLabel.Name = "nameLabel";
             // 
-            // NameTextBox
+            // nameTextBox
             // 
-            resources.ApplyResources(this.nameTextBox, "NameTextBox");
-            this.nameTextBox.Name = "NameTextBox";
+            resources.ApplyResources(this.nameTextBox, "nameTextBox");
+            this.nameTextBox.Name = "nameTextBox";
             // 
-            // VolumeLabel
+            // volumeLabel
             // 
-            resources.ApplyResources(this.volumeLabel, "VolumeLabel");
-            this.volumeLabel.Name = "VolumeLabel";
+            resources.ApplyResources(this.volumeLabel, "volumeLabel");
+            this.volumeLabel.Name = "volumeLabel";
             // 
-            // VolumeNumeric
+            // volumeNumeric
             // 
-            resources.ApplyResources(this.volumeNumeric, "VolumeNumeric");
+            resources.ApplyResources(this.volumeNumeric, "volumeNumeric");
             this.volumeNumeric.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
-            this.volumeNumeric.Name = "VolumeNumeric";
+            this.volumeNumeric.Name = "volumeNumeric";
             // 
-            // AddBtn
+            // addBtn
             // 
-            resources.ApplyResources(this.addBtn, "AddBtn");
-            this.addBtn.Name = "AddBtn";
+            resources.ApplyResources(this.addBtn, "addBtn");
+            this.addBtn.Name = "addBtn";
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // CancelBtn
+            // cancelBtn
             // 
-            resources.ApplyResources(this.cancelBtn, "CancelBtn");
-            this.cancelBtn.Name = "CancelBtn";
+            resources.ApplyResources(this.cancelBtn, "cancelBtn");
+            this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 

@@ -35,6 +35,9 @@ namespace Solutions.Forms
             {
                 authMethodComboBox.SelectedIndex = 0;
             }
+
+            serverNameTextBox.Focus();
+            serverNameTextBox.SelectAll();
         }
 
         // Обработчик закрытия формы.

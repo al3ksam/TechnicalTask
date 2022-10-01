@@ -55,7 +55,6 @@ namespace Solutions.Forms
             // 
             resources.ApplyResources(this.connectionBtn, "connectionBtn");
             this.connectionBtn.Name = "connectionBtn";
-            this.connectionBtn.TabStop = false;
             this.connectionBtn.UseVisualStyleBackColor = true;
             this.connectionBtn.Click += new System.EventHandler(this.ConnectionBtn_Click);
             // 
@@ -63,22 +62,21 @@ namespace Solutions.Forms
             // 
             resources.ApplyResources(this.cancelBtn, "cancelBtn");
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.TabStop = false;
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // StatusStrip
+            // statusStrip
             // 
-            resources.ApplyResources(this.statusStrip, "StatusStrip");
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Name = "StatusStrip";
+            this.statusStrip.Name = "statusStrip";
             this.statusStrip.SizingGrip = false;
             // 
-            // ToolStripStatusLabel
+            // toolStripStatusLabel
             // 
-            this.toolStripStatusLabel.Name = "ToolStripStatusLabel";
-            resources.ApplyResources(this.toolStripStatusLabel, "ToolStripStatusLabel");
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
             // 
             // connectionPanel
             // 
@@ -89,6 +87,7 @@ namespace Solutions.Forms
             this.connectionPanel.Controls.Add(this.userPanel);
             resources.ApplyResources(this.connectionPanel, "connectionPanel");
             this.connectionPanel.Name = "connectionPanel";
+            this.connectionPanel.TabStop = true;
             // 
             // serverNameTextBox
             // 
@@ -126,6 +125,7 @@ namespace Solutions.Forms
             this.userPanel.Controls.Add(this.usernameLabel);
             resources.ApplyResources(this.userPanel, "userPanel");
             this.userPanel.Name = "userPanel";
+            this.userPanel.TabStop = true;
             // 
             // usernameTextBox
             // 

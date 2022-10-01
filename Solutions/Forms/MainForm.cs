@@ -396,7 +396,6 @@ namespace Solutions.Forms
 
                         if (dialogResult == DialogResult.OK)
                         {
-
                             Component component = new Component(_maxSolutionId + 1, addComponentForm.ComponentAmount);
 
                             // Если получилось добавить компонент в раствор: 
