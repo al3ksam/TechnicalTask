@@ -432,7 +432,6 @@ namespace Solutions.Forms
                         }
                     }
                 }
-
             }
             catch (Exception exception)
             {
