@@ -45,10 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Database.AuthentificationMethod.cs" />
-    <Compile Include="Data\Database.ConnectionSettings.cs" />
+    <Compile Include="Data\AuthentificationMethod.cs" />
     <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Database.SolutionTable.cs" />
     <Compile Include="Data\Database.SQLStrings.cs" />
+    <Compile Include="Data\ConnectionSettings.cs" />
     <Compile Include="Forms\AddComponentForm.cs">
       <SubType>Form</SubType>
     </Compile>

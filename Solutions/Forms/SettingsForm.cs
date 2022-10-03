@@ -79,11 +79,11 @@ namespace Solutions.Forms
 
             // Задаем настройки подключения к БД
             db.Settings = authMethodComboBox.SelectedIndex == 0 ?
-                new Database.ConnectionSettings(
+                new ConnectionSettings(
                     servername: serverNameTextBox.Text.Trim()
                 )
                 :
-                new Database.ConnectionSettings
+                new ConnectionSettings
                 (
                     servername: serverNameTextBox.Text.Trim(),
                     userId: usernameTextBox.Text.Trim(),
