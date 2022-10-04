@@ -17,12 +17,6 @@ namespace Solutions.Data
         private static readonly Lazy<Database> _lazyDb =
             new Lazy<Database>(() => new Database());
 
-        // ------------------------
-        //
-        //  Временно public (в последствии private) 
-        //
-        // ------------------------
-
         /// <summary>
         ///     Объект соединения с базой данных MS SQL Server.
         /// </summary>

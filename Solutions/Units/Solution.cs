@@ -10,12 +10,6 @@ namespace Solutions.Units
         private const decimal _minAmountWater = 0.1m; // Минимальное количество воды в растворе
         private const decimal _maxAmountWater = 100m; // Максимальное количество воды в растворе
 
-        // Вода, %
-        private decimal _water = _maxAmountWater;
-
-        // Коллекция компонентов
-        private List<Component> _components = new List<Component>();
-
         /// <summary>
         /// Создает новый раствор
         /// </summary>
@@ -29,18 +23,18 @@ namespace Solutions.Units
         /// <summary>
         /// Возвращает оставшуюся воду в растворе
         /// </summary>
-        public decimal Water => _water;
+        public decimal Water { get; private set; } = _maxAmountWater;
 
         /// <summary>
         /// Возвращает воду, которую можно использовать для нового компонента
         /// </summary>
-        public decimal WaterForComponent => _water - _minAmountWater;
-        
+        public decimal WaterForComponent => Water - _minAmountWater;
+
         /// <summary>
         /// Возвращает коллекцию компонентов раствора
         /// </summary>
-        public List<Component> Components => _components;
-        
+        public List<Component> Components { get; } = new List<Component>();
+
         /// <summary>
         /// Добавляет компонент в раствор
         /// </summary>
@@ -48,10 +42,10 @@ namespace Solutions.Units
         /// <returns>Возвращает True, в случае успешного добавления компонента, или False - в случае неудачи (в растворе не хватает воды)</returns>
         public bool AddComponent(in Component component)
         {
-            decimal tempWater = _water - component.Amount;
+            decimal tempWater = Water - component.Amount;
             if (tempWater < _minAmountWater) { return false; }
-            _water = tempWater;
-            _components.Add(component);
+            Water = tempWater;
+            Components.Add(component);
             return true;
         }
 
@@ -63,10 +57,9 @@ namespace Solutions.Units
         /// Этот метод также возвращает false, если компонент не найден в растворе.</returns>
         public bool DeleteComponent(Component component)
         {
-            if (_components.Remove(component))
-            {
-                _water += component.Amount;
-                if (_water > _maxAmountWater) { _water = _maxAmountWater; }
+            if (Components.Remove(component)) {
+                Water += component.Amount;
+                if (Water > _maxAmountWater) { Water = _maxAmountWater; }
                 return true;
             }
             return false;
@@ -80,7 +73,7 @@ namespace Solutions.Units
         /// Этот метод также возвращает false, если компонент не найден в растворе.</returns>
         public bool DeleteComponent(int idComponent)
         {
-            Component temp = _components.Find(component => component.Id == idComponent);
+            Component temp = Components.Find(component => component.Id == idComponent);
             return DeleteComponent(temp);
         }
 
@@ -91,7 +84,7 @@ namespace Solutions.Units
         /// <returns>Возвращает компонент, если он найден; в противном случае - пустой компонент.</returns>
         public Component FindComponent(int idComponent)
         {
-            return _components.Find(component => component.Id == idComponent);
+            return Components.Find(component => component.Id == idComponent);
         }
     }
 }
