@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Solutions.Properties;
 using Solutions.Data;
 
 namespace Solutions.Forms
@@ -18,16 +19,16 @@ namespace Solutions.Forms
             {
                 connectionPanel.Enabled = false;
                 connectionBtn.Enabled = false;
-                UpdateStatusStrip("DbConnection");
+                toolStripStatusLabel.Text = Resources.DbConnection;
             }
             // Если нет подключения, разрешаем редактирование.
             else
             {
                 connectionPanel.Enabled = true;
                 connectionBtn.Enabled = true;
-                UpdateStatusStrip("DbConnectionNot");
+                toolStripStatusLabel.Text = Resources.DbConnectionNot;
             }
-            
+
             // Проверяем наличие элементов. 
             // Устанавливаем метод аутентификации Windows по умолчанию,
             // если метод аутентификации не выбран.
@@ -91,7 +92,7 @@ namespace Solutions.Forms
                 );
             ;
 
-            UpdateStatusStrip("DbConnecting");
+            toolStripStatusLabel.Text = Resources.DbConnecting;
 
             try
             {
@@ -105,7 +106,8 @@ namespace Solutions.Forms
             {
                 if (db.IsConnected) // Если подключились
                 {
-                    UpdateStatusStrip("DbConnected");
+                    toolStripStatusLabel.Text = Resources.DbConnected;
+
 
 
                     //if (db.CreateDatabase())
@@ -119,7 +121,7 @@ namespace Solutions.Forms
                 }
                 else // // Если подключиться не удалось
                 {
-                    UpdateStatusStrip("DbConnectFailed");
+                    toolStripStatusLabel.Text = Resources.DbConnectFailed;
                     connectionPanel.Enabled = true;
                     connectionBtn.Enabled = true;
                 }
@@ -140,7 +142,7 @@ namespace Solutions.Forms
                 {
                     connectionPanel.Enabled = true;
                     connectionBtn.Enabled = true;
-                    UpdateStatusStrip("DbConnectionNot");
+                    toolStripStatusLabel.Text = Resources.DbConnectionNot;
                 }
             }
             else // ... Или скрываем форму, если отключены
@@ -169,13 +171,6 @@ namespace Solutions.Forms
                     connectionBtn.Enabled = true;
                 }
             }
-        }
-
-        // Обновление полосы состояния, параметр strResKey - имя строкового ресурса.
-        private void UpdateStatusStrip(in string strResKey)
-        {
-            // Получаем значение ресурса
-            toolStripStatusLabel.Text = Program.ResManager.GetString(strResKey);
         }
     }
 }

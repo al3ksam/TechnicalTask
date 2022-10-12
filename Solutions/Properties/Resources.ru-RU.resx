@@ -154,6 +154,6 @@
   </data>
   <data name="MsgDlgWater" xml:space="preserve">
     <value>Оставшаяся вода, которую можно 
-использовать для нового компонента</value>
+использовать для нового компонента =&gt; {0}%</value>
   </data>
 </root>

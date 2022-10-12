@@ -154,6 +154,6 @@ Enter another name!</value>
   </data>
   <data name="MsgDlgWater" xml:space="preserve">
     <value>The remaining water that 
-can be used for the a component</value>
+can be used for the a component =&gt; {0}%</value>
   </data>
 </root>

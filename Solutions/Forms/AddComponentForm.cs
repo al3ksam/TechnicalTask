@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Solutions.Properties;
 
 namespace Solutions.Forms
 {
@@ -31,8 +32,7 @@ namespace Solutions.Forms
             else if (componentName.ToLower() == "Вода".ToLower())
             {
                 MessageBox.Show(
-                    Program.ResManager.GetString("MsgDlgComponentName"), 
-                    Program.ResManager.GetString("MsgDlgInfoCaption"), 
+                    Resources.MsgDlgComponentName, Resources.MsgDlgInfoCaption, 
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
 

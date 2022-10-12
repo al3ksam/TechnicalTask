@@ -163,7 +163,7 @@ namespace Solutions.Properties {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на The remaining water that 
-        ///can be used for the a component.
+        ///can be used for the a component =&gt; {0}%.
         /// </summary>
         internal static string MsgDlgWater {
             get {

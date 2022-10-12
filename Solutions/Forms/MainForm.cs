@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using Solutions.Data;
 using Solutions.Units;
+using Solutions.Properties;
 
 namespace Solutions.Forms
 {
@@ -42,8 +43,7 @@ namespace Solutions.Forms
         private static void ShowErrorMsgDialog(Exception exception)
         {
             MessageBox.Show(
-                exception.Message,
-                Program.ResManager.GetString("MsgDlgErrorCaption"),
+                exception.Message, Resources.MsgDlgErrorCaption,
                 MessageBoxButtons.OK, MessageBoxIcon.Error
             );
         }
@@ -54,12 +54,10 @@ namespace Solutions.Forms
             if (Database.GetInstance().IsConnected == false)
             {
                 MessageBox.Show(
-                    Program.ResManager.GetString("DbConnectionNotMsg"),
-                    Program.ResManager.GetString("DbConnectionNotMsgCaption"),
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
+                    Resources.DbConnectionNotMsg, Resources.DbConnectionNotMsgCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error
                 );
-
+                
                 return false;
             }
             else
@@ -172,10 +170,8 @@ namespace Solutions.Forms
                 else
                 {
                     MessageBox.Show(
-                        Program.ResManager.GetString("MsgDlgDataNotLoaded"),
-                        Program.ResManager.GetString("MsgDlgInfoCaption"),
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
+                        Resources.MsgDlgDataNotLoaded, Resources.MsgDlgInfoCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
             }
@@ -424,8 +420,8 @@ namespace Solutions.Forms
                             else // Иначе выводим сообщение и возможное количество воды для нового компонента
                             {
                                 MessageBox.Show(
-                                    Program.ResManager.GetString("MsgDlgWater") + " => " + solution.WaterForComponent + "%",
-                                    Program.ResManager.GetString("MsgDlgInfoCaption"),
+                                    string.Format(Resources.MsgDlgWater, solution.WaterForComponent),
+                                    Resources.MsgDlgInfoCaption,
                                     MessageBoxButtons.OK, MessageBoxIcon.Information
                                 );
                             }
