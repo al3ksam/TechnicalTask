@@ -7,8 +7,8 @@ namespace Solutions.Units
     /// </summary>
     public sealed class Solution
     {
-        private const decimal _minAmountWater = 0.1m; // Минимальное количество воды в растворе
-        private const decimal _maxAmountWater = 100m; // Максимальное количество воды в растворе
+        private const decimal MinAmountWater = 0.1m; // Минимальное количество воды в растворе
+        private const decimal MaxAmountWater = 100m; // Максимальное количество воды в растворе
 
         /// <summary>
         /// Создает новый раствор
@@ -18,17 +18,17 @@ namespace Solutions.Units
         /// <summary>
         /// Возвращает минимальное количество воды, которое может содержать раствор
         /// </summary>
-        public static decimal MinimumAmountWater => _minAmountWater;
+        public static decimal MinimumAmountWater => MinAmountWater;
 
         /// <summary>
         /// Возвращает оставшуюся воду в растворе
         /// </summary>
-        public decimal Water { get; private set; } = _maxAmountWater;
+        public decimal Water { get; private set; } = MaxAmountWater;
 
         /// <summary>
         /// Возвращает воду, которую можно использовать для нового компонента
         /// </summary>
-        public decimal WaterForComponent => Water - _minAmountWater;
+        public decimal WaterForComponent => Water - MinAmountWater;
 
         /// <summary>
         /// Возвращает коллекцию компонентов раствора
@@ -43,7 +43,7 @@ namespace Solutions.Units
         public bool AddComponent(in Component component)
         {
             decimal tempWater = Water - component.Amount;
-            if (tempWater < _minAmountWater) { return false; }
+            if (tempWater < MinAmountWater) { return false; }
             Water = tempWater;
             Components.Add(component);
             return true;
@@ -59,7 +59,7 @@ namespace Solutions.Units
         {
             if (Components.Remove(component)) {
                 Water += component.Amount;
-                if (Water > _maxAmountWater) { Water = _maxAmountWater; }
+                if (Water > MaxAmountWater) { Water = MaxAmountWater; }
                 return true;
             }
             return false;

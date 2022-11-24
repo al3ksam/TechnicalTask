@@ -1,7 +1,7 @@
 ﻿namespace Solutions.Data
 {
     /// <summary>
-    ///     Описывает метод аутентификации подключения к базе данных.
+    /// Описывает метод аутентификации подключения к базе данных.
     /// </summary>
     public enum AuthentificationMethod : byte
     {

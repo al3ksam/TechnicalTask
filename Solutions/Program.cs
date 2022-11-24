@@ -1,7 +1,6 @@
-﻿using System;
-using System.Resources;
+﻿using Solutions.Forms;
+using System;
 using System.Windows.Forms;
-using Solutions.Forms;
 
 namespace Solutions
 {

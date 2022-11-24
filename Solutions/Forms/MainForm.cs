@@ -15,20 +15,20 @@ namespace Solutions.Forms
         /// </summary>
         private readonly SettingsForm _settingsForm;
 
-        private int _maxSolutionId = 0; // Максимальный Id таблицы "Растворы"
-        private int _maxComponentId = 0; // Максимальный Id таблицы "Растворы"
-        private bool _isSolutionRowAdded = false; // Флаг добавления записи в таблицу "Растворы"
-        private bool _isComponentRowAdded = false; // Флаг добавления записи в таблицу "Компоненты"
+        private int _maxSolutionId; // Максимальный Id таблицы "Растворы"
+        private int _maxComponentId; // Максимальный Id таблицы "Растворы"
+        private bool _isSolutionRowAdded; // Флаг добавления записи в таблицу "Растворы"
+        private bool _isComponentRowAdded; // Флаг добавления записи в таблицу "Компоненты"
 
         // --------------------------------------------
         // Временно (в последствии будет перенесено в Database)
-        private SqlCommandBuilder sqlBuilder = null;
-        private SqlDataAdapter sqlAdapter = null;
-        private DataTable table = null;
+        private SqlCommandBuilder sqlBuilder;
+        private SqlDataAdapter sqlAdapter;
+        private DataTable table;
 
-        private SqlCommandBuilder sqlBuilder2 = null;
-        private SqlDataAdapter sqlAdapter2 = null;
-        private DataTable table2 = null;
+        private SqlCommandBuilder sqlBuilder2;
+        private SqlDataAdapter sqlAdapter2;
+        private DataTable table2;
 
         // --------------------------------------------
 
@@ -97,7 +97,7 @@ namespace Solutions.Forms
 
             try
             {
-                sqlAdapter = new SqlDataAdapter("SELECT * FROM [MudDBTest].[dbo].[Solutions]", Database.GetInstance()._sqlConnection);
+                sqlAdapter = new SqlDataAdapter("SELECT * FROM [MudDBTest].[dbo].[Solutions]", Database.GetInstance().sqlConnection);
 
                 sqlBuilder = new SqlCommandBuilder(sqlAdapter);
 
@@ -105,7 +105,7 @@ namespace Solutions.Forms
                 sqlBuilder.GetInsertCommand();
                 sqlBuilder.GetDeleteCommand();
 
-                sqlAdapter2 = new SqlDataAdapter("SELECT *  FROM [MudDBTest].[dbo].[Components]", Database.GetInstance()._sqlConnection);
+                sqlAdapter2 = new SqlDataAdapter("SELECT *  FROM [MudDBTest].[dbo].[Components]", Database.GetInstance().sqlConnection);
 
                 sqlBuilder2 = new SqlCommandBuilder(sqlAdapter2);
 
